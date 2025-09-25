@@ -124,6 +124,9 @@ export default function DashboardPage() {
                 <Link href="/analytics" className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-l-4 border-violet-500 bg-violet-50 dark:bg-violet-900/20">
                   📊 Community Analytics
                 </Link>
+                <Link href="/minion-calculator" className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-l-4 border-purple-500 bg-purple-50 dark:bg-purple-900/20">
+                  🧮 Minion & Totem DPS
+                </Link>
               </div>
             </div>
           </div>
