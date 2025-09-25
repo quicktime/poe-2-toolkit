@@ -1,0 +1,50 @@
+{
+  "name": "poe-2-toolkit",
+  "version": "0.1.0",
+  "description": "Path of Exile 2 character planning and build optimization toolkit (PoE 2 ONLY - Patch 0.3+)",
+  "keywords": [
+    "path-of-exile-2",
+    "poe2",
+    "build-planner",
+    "dps-calculator"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@tanstack/react-query": "^5.0.0",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "axios": "^1.12.2",
+    "clsx": "^2.1.0",
+    "jose": "^6.1.0",
+    "js-cookie": "^3.0.5",
+    "lodash.debounce": "^4.0.8",
+    "next": "^15.5.4",
+    "p-queue": "^8.1.1",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-hook-form": "^7.50.0",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^3.22.0",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^15.5.4",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.9.2"
+  }
+}
