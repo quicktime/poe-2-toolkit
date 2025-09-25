@@ -1,155 +1,197 @@
 # Path of Exile 2 Toolkit
 
-A comprehensive character planning and build optimization platform specifically for **Path of Exile 2** (Early Access - Patch 0.3+).
+A comprehensive character planning, build optimization, and community analytics platform specifically for **Path of Exile 2** (Early Access - Patch 0.3+).
 
 > ⚠️ **Note**: This toolkit is designed exclusively for Path of Exile 2 and includes all the new mechanics introduced in the sequel. It is NOT compatible with Path of Exile 1.
 
-## 🚀 Features (Path of Exile 2 Specific)
+## 🚀 Current Features (9 Major Tools Complete)
 
-### Core Features
-- **OAuth Authentication**: Secure login with Path of Exile account
-- **Character Management**: Import and manage your PoE 2 characters
-- **DPS Calculator**: Advanced damage calculations with PoE 2 mechanics
-- **Passive Tree Planner**: Interactive passive tree for all 6 classes
-- **Build Optimizer**: AI-powered optimization using genetic algorithms
-- **Equipment Analysis**: Upgrade recommendations and efficiency scoring
+### 🎯 Core Character Tools
+- **🔐 OAuth Authentication**: Secure login with Path of Exile account
+- **👤 Character Management**: Import and analyze your real PoE 2 characters
+- **⚡ DPS Calculator**: Mathematically accurate damage calculations with PoE 2 formulas
+- **🌳 Passive Tree Planner**: Interactive passive tree for all 6 classes with import/export
+- **⚖️ Character Comparison**: Side-by-side analysis of multiple characters with DPS/stats comparison
 
-### Path of Exile 2 Exclusive Mechanics
-- **Spirit System**: Manage spirit reservations for buffs and minions
-- **Combo System**: Calculate combo multipliers for melee builds
+### 🛠️ Advanced Build Tools
+- **🔍 Build Optimizer**: AI-powered jewel swapping and optimization using genetic algorithms
+- **📈 Equipment Upgrades**: Smart upgrade recommendations with DPS impact analysis
+- **✨ Build Templates**: Save, categorize, and share character builds with complexity scoring
+- **🧠 Character Insights**: Deep analysis of inventory, gems, weaknesses, and combat style
+
+### 📊 Community & Analytics
+- **📊 Community Analytics**: Real-time insights on class distribution, popular builds, and equipment meta
+
+## 🎮 Path of Exile 2 Exclusive Mechanics
+
+### Fully Supported Systems
+- **Spirit System**: Manage spirit reservations for buffs and minions with optimization
+- **Combo System**: Calculate combo multipliers and point efficiency for melee builds
 - **Uncut Gem Support**: Optimize support gem configurations with spirit costs
-- **Honor Resistance**: Track and optimize honor resistance
+- **Honor Resistance**: Track and optimize all resistance types including honor
 - **Dodge Roll Mechanics**: Factor dodge rolls into defensive calculations
 - **Dual Weapon Sets**: Manage and optimize weapon swap configurations
-- **New Flask System**: Charge-based flask optimization
+- **New Flask System**: Charge-based flask optimization and effectiveness
+- **Jewel Socket System**: Real jewel data analysis with "what-if" scenarios
 
 ### Supported Classes & Ascendancies
 - **Warrior**: Warbringer, Titan
 - **Monk**: Invoker, Acolyte of Chayula
-- **Ranger**: Deadeye, Survivalist
+- **Ranger**: Deadeye, Pathfinder
 - **Mercenary**: Witchhunter, Gemling Legionnaire
 - **Witch**: Infernalist, Blood Mage
 - **Sorceress**: Stormweaver, Chronomancer
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js 14, TypeScript, React
-- **Styling**: Tailwind CSS
-- **State Management**: React Query, Zustand
-- **Authentication**: OAuth 2.0 with PKCE
-- **Performance**: Web Workers, Service Workers
+- **Frontend**: Next.js 15, TypeScript, React 18
+- **Styling**: Tailwind CSS with responsive design
+- **State Management**: React Query, Context API
+- **Authentication**: OAuth 2.0 with PKCE (no client secret required)
+- **Data Storage**: LocalStorage-based character database
+- **Performance**: Optimized calculations with singleton pattern services
+- **Visualization**: Canvas-based passive tree, responsive charts
 
-## 📦 Installation
+## 📦 Quick Start
 
-1. Clone the repository:
+1. **Clone and Install**:
 ```bash
-git clone https://github.com/quicktime/poe-2-toolkit.git
+git clone https://github.com/your-repo/poe-2-toolkit.git
 cd poe-2-toolkit
-```
-
-2. Install dependencies:
-```bash
 npm install
 ```
 
-3. Run the development server:
+2. **Configure Environment**:
+```bash
+cp .env.local.example .env.local
+# Add your PoE OAuth Client ID to .env.local
+```
+
+3. **Run Development Server**:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. **Open**: http://localhost:3002
 
 ## 🔐 OAuth Setup
 
 To enable authentication with Path of Exile:
 
-1. Create `.env.local` from the example:
-```bash
-cp .env.local.example .env.local
-```
-
-2. Register with Path of Exile OAuth:
-   - Visit https://www.pathofexile.com/developer/docs
-   - Create a new OAuth application with these settings:
+1. **Register OAuth Application**:
+   - Visit: https://www.pathofexile.com/developer/docs
+   - Create new OAuth application with:
      - **Grant Type**: Authorization Code with PKCE
-     - **Redirect URI**: `http://localhost:3000/auth/callback`
-     - **Scopes**: `account:profile`, `account:characters`, `account:stashes`
-   - Copy your Client ID to `.env.local` (no client secret needed for PKCE)
+     - **Redirect URI**: `http://localhost:3002/api/auth/callback`
+     - **Scopes**: `account:characters`, `account:profile`
 
-## 🔐 Authentication Flow
+2. **Configure Environment**:
+   ```bash
+   # .env.local
+   POE_CLIENT_ID=your_oauth_client_id_here
+   NEXTAUTH_SECRET=your_random_secret_here
+   NEXTAUTH_URL=http://localhost:3002
+   ```
 
-The toolkit uses OAuth 2.0 with PKCE for secure authentication:
+## 🎯 Development Status
 
-1. User clicks "Sign in with Path of Exile"
-2. Redirected to Path of Exile OAuth authorization
-3. User grants permissions
-4. Redirected back with authorization code
-5. Code exchanged for access token
-6. Token stored in httpOnly cookies
+### ✅ Phase 1: Core PoE 2 Integration (COMPLETE)
+- ✅ Real PoE API integration with OAuth 2.0 PKCE authentication
+- ✅ Mathematically accurate PoE 2 DPS calculator with correct formulas
+- ✅ Interactive passive tree with canvas-based visualization
+- ✅ Comprehensive character data parsing and display
+- ✅ Spirit system support and combo mechanics
+
+### ✅ Phase 2: Advanced Character Tools (COMPLETE)
+- ✅ **Character Comparison Tool**: Side-by-side analysis with export functionality
+- ✅ **Build Optimization Engine**: Jewel swapping "what-if" analysis with genetic algorithms
+- ✅ **Equipment Upgrade System**: AI-powered upgrade recommendations with DPS impact
+
+### ✅ Phase 3: Enhanced Analysis Features (COMPLETE)
+- ✅ **Advanced Build Analysis**: Build Template System with complexity scoring
+- ✅ **Enhanced Character Insights**: Comprehensive 5-tab character analysis system
+- ✅ **Data-Driven Features**: Community Analytics with real-time insights
+
+### 🚧 Phase 4: Advanced Calculations (PLANNED)
+- [ ] **Minion DPS Calculator**: Calculate summon/totem DPS (high priority)
+- [ ] **DoT DPS Calculator**: Damage over time effects (ignite, poison, bleed)
+- [ ] **Effective HP Calculator**: Total EHP with all mitigation layers
+- [ ] **Status Effect Calculator**: Ailment effectiveness, duration, stacking
+- [ ] **Future Level Planner**: Plan character progression to level 100
 
 ## 📁 Project Structure
 
 ```
 poe-2-toolkit/
-├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes
-│   ├── auth/              # Authentication pages
-│   ├── dashboard/         # Dashboard page
-│   └── login/             # Login page
-├── components/            # React components
-├── contexts/              # React contexts
-├── lib/                   # Utility libraries
-│   └── auth/             # Authentication service
-├── docs/                  # Documentation
-│   ├── PHASE_*_HLD.md    # High-level design docs
-│   └── PHASE_*_LLD.md    # Low-level implementation docs
-└── public/                # Static assets
+├── app/                      # Next.js App Router pages
+│   ├── analytics/           # Community analytics dashboard
+│   ├── api/                 # API routes & authentication
+│   ├── compare/             # Character comparison tool
+│   ├── dashboard/           # Main user dashboard
+│   ├── dps-calculator/      # DPS calculation interface
+│   ├── insights/            # Character insights analyzer
+│   └── optimize/            # Build optimization tool
+├── components/              # React components
+│   ├── BuildTemplateManager.tsx
+│   ├── CharacterInsightsAnalyzer.tsx
+│   ├── CommunityAnalytics.tsx
+│   └── DPSCalculator.tsx
+├── contexts/                # React contexts (Auth, etc.)
+├── hooks/                   # Custom React hooks
+├── lib/                     # Core business logic
+│   ├── calculator/          # DPS calculation engines
+│   ├── database/            # Character database layer
+│   └── auth/               # Authentication services
+└── docs/                    # Documentation
 ```
 
 ## 🔧 Available Scripts
 
 ```bash
-npm run dev        # Start development server
+npm run dev        # Start development server (port 3002)
 npm run build      # Build for production
 npm run start      # Start production server
 npm run lint       # Run ESLint
 npm run typecheck  # Run TypeScript type checking
 ```
 
-## 📝 Development Roadmap
+## 🎯 Key Features Spotlight
 
-### Phase 1: Foundation (Current) ✅
-- [x] OAuth authentication
-- [x] Basic project setup
-- [x] User dashboard
-- [ ] Character import
-- [ ] Basic calculations
+### ⚡ Advanced DPS Calculator
+- Accurate PoE 2 damage formulas with hit chance calculations
+- Support for all damage types: physical, elemental, chaos
+- Combo multiplier and spirit cost optimization
+- Weapon swap and skill gem interaction analysis
 
-### Phase 2: Advanced Mechanics
-- [ ] Skill interactions
-- [ ] Support gem calculations
-- [ ] Defensive mechanics
-- [ ] DoT systems
+### 🔍 Build Optimization Engine
+- Genetic algorithm-powered optimization
+- "What if I swap this jewel?" analysis
+- Multi-objective optimization (DPS, defense, spirit efficiency)
+- Real-time impact calculations
 
-### Phase 3: Optimization
-- [ ] Genetic algorithm optimizer
-- [ ] Equipment analysis
-- [ ] Build comparison
-- [ ] Recommendations
+### 📊 Community Analytics
+- Automatic character data collection (privacy-focused, localStorage only)
+- Class distribution and build popularity tracking
+- Equipment meta analysis and trends
+- Level progression insights across the community
 
-### Phase 4: Polish
-- [ ] PWA support
-- [ ] Mobile optimization
-- [ ] Advanced visualizations
-- [ ] Community features
+### 🧠 Character Insights System
+- 5-tab analysis: Inventory, Gems, Weaknesses, Resources, Combat Style
+- Build complexity scoring and difficulty assessment
+- Skill gem synergy and conflict detection
+- Resource efficiency optimization recommendations
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read the contributing guidelines before submitting PRs.
+Contributions welcome! Areas needing help:
+- **Calculations**: Minion DPS, DoT mechanics, defensive formulas
+- **UI/UX**: Mobile responsiveness, accessibility improvements
+- **Data**: PoE 2 item database expansion, skill gem interactions
+- **Testing**: Build validation, edge case handling
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License - see LICENSE file for details.
 
 ## ⚠️ Disclaimer
 
@@ -157,6 +199,11 @@ This is an unofficial fan-made tool. Not affiliated with Grinding Gear Games.
 
 ## 🔗 Resources
 
-- [Path of Exile API Documentation](https://www.pathofexile.com/developer/docs)
-- [Project Documentation](./docs/DESIGN_OVERVIEW.md)
-- [Implementation Roadmap](./docs/IMPLEMENTATION_ROADMAP.md)
+- [Path of Exile 2 Website](https://pathofexile2.com/)
+- [PoE API Documentation](https://www.pathofexile.com/developer/docs)
+- [Project Roadmap](./NEXT_STEPS.md)
+- [Development Updates](https://github.com/your-repo/poe-2-toolkit/commits/main)
+
+---
+
+**⭐ Star this repo if the toolkit helps your PoE 2 theorycrafting!**
