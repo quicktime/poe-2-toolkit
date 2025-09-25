@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { useAuthenticatedCharacters } from '@/hooks/useCharacter';
+import { useCharacters } from '@/hooks/useCharacter';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import CharacterComparisonView from '@/components/CharacterComparisonView';
 
 export default function ComparisonPage() {
   const { isAuthenticated, isLoading: authLoading } = useAuth();
-  const { data: characters, isLoading, error } = useAuthenticatedCharacters();
+  const { data: characters, isLoading, error } = useCharacters();
   const [selectedCharacters, setSelectedCharacters] = useState<string[]>([]);
   const [maxCharacters] = useState(4); // Support up to 4 character comparison
 

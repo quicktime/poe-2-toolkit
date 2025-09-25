@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useAuthenticatedCharacters } from '@/hooks/useCharacter';
+import { useCharacters } from '@/hooks/useCharacter';
 import { PoE2DPSCalculator } from '@/lib/calculator/poe2DpsCalculator';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
@@ -30,7 +30,7 @@ interface ComparisonData {
 }
 
 export default function CharacterComparisonView({ selectedCharacters }: CharacterComparisonViewProps) {
-  const { data: characters, isLoading } = useAuthenticatedCharacters();
+  const { data: characters, isLoading } = useCharacters();
   const [activeTab, setActiveTab] = useState<'overview' | 'dps' | 'stats' | 'equipment' | 'skills'>('overview');
   const [comparisonData, setComparisonData] = useState<ComparisonData[]>([]);
   const [isCalculating, setIsCalculating] = useState(false);

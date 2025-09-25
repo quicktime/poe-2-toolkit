@@ -109,9 +109,9 @@ export default function DashboardPage() {
                 <Link href="/skills" className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
                   💎 Configure Skills
                 </Link>
-                <button className="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded opacity-50 cursor-not-allowed">
-                  🔍 Optimize Build (Coming Soon)
-                </button>
+                <Link href="/optimize" className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-l-4 border-purple-500 bg-purple-50 dark:bg-purple-900/20">
+                  🔍 Optimize Build & Jewels
+                </Link>
               </div>
             </div>
           </div>
