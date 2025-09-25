@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useAuthenticatedCharacters } from '@/hooks/useCharacter';
+import { useCharacters } from '@/hooks/useCharacter';
 import DPSCalculator from '@/components/DPSCalculator';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
 export default function DPSCalculatorPage() {
-  const { data: characters, isLoading, error } = useAuthenticatedCharacters();
+  const { data: characters, isLoading, error } = useCharacters();
   const [selectedCharacter, setSelectedCharacter] = useState<string>('');
 
   if (isLoading) {
