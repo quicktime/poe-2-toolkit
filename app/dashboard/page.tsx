@@ -97,6 +97,9 @@ export default function DashboardPage() {
                 <Link href="/dps-calculator" className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-l-4 border-green-500 bg-green-50 dark:bg-green-900/20">
                   ⚡ PoE 2 DPS Calculator
                 </Link>
+                <Link href="/compare" className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-900/20">
+                  ⚖️ Compare Characters
+                </Link>
                 <Link href="/planner" className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
                   🌳 Plan Passive Tree
                 </Link>
