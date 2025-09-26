@@ -116,6 +116,50 @@ The project follows a 4-phase implementation plan:
 3. **Phase 3 (Optimization)**: Build optimization algorithms, equipment analysis, comparisons
 4. **Phase 4 (Polish)**: Performance optimization, mobile support, visualizations, community features
 
+## Path of Exile 2 Version 0.3 Specific Mechanics
+
+### CRITICAL: Always use version 0.3+ (2025 Early Access) information, NOT 2024 or earlier data
+
+### Verified Damage Formulas (PoE 2 v0.3+)
+
+#### Hit Chance
+- **Formula**: `Hit Chance = AA / (AA + (DE/4)^0.9)` where AA = Attacker's Accuracy, DE = Defender's Evasion
+- Minimum 5% hit chance always applies
+
+#### Critical Damage System
+- **Base Critical Damage Bonus**: 100% (not 150% like PoE 1)
+- Total damage on crit = 200% (100% base + 100% bonus)
+- Two types of scaling: "increased" (multiplicative with base) and "added" (additive to base)
+
+#### Damage Over Time (Ailments)
+- **Bleeding**: 70% of physical damage total over 5 seconds (14% per second)
+  - Triples to 210% total (42% per second) when enemy is moving
+- **Ignite**: 20% of fire damage per second for 4 seconds
+- **Poison**: 30% of (physical + chaos) damage per second for 2 seconds
+  - Can stack (default limit 1, increasable)
+
+#### Damage Calculation Order
+1. Base damage (weapon/spell)
+2. Added damage
+3. Increased damage modifiers (additive with each other)
+4. More damage modifiers (multiplicative with each other)
+5. Damage effectiveness
+6. Critical strike multiplier (if crit)
+
+#### Armor and Mitigation (v0.3 changes)
+- **Formula**: `Damage Reduction = Armor / (Armor + 10 × Damage)`
+- **CRITICAL ORDER**: In PoE 2, armor is applied BEFORE resistances (opposite of PoE 1)
+- v0.3 added suffix modifiers allowing % of armor to mitigate elemental damage
+
+#### Damage Conversion
+- Physical → Lightning → Cold → Fire → Chaos (one-way only)
+- Converted damage ONLY scales with its final type (not original type like PoE 1)
+- Skill conversions apply first, then gear/passive conversions
+
+#### Combo System
+- Combo points provide scaling damage bonuses
+- Baseline ~30% more damage per combo point (varies by skill)
+
 ## Important Implementation Notes
 
 - All calculations use Web Workers to prevent UI blocking
