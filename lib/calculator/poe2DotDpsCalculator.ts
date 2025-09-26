@@ -79,9 +79,10 @@ class PoE2DotDPSCalculator {
     modifiers: DotModifiers,
     enemyIsMoving: boolean = false
   ): DotCalculationResult {
-    // Bleeding: 15% of physical hit damage per second for 5 seconds
+    // Bleeding: 70% of physical hit damage TOTAL over 5 seconds
+    // That's 14% per second (70% / 5 seconds = 14% per second)
     // Triples (300% total) when enemy is moving
-    const baseMagnitude = 0.15; // 15% of physical damage per second
+    const baseMagnitude = 0.14; // 14% of physical damage per second (70% over 5 seconds)
     const baseDuration = modifiers.bleedingDuration || 5; // 5 seconds default
 
     // Calculate base DPS
@@ -132,8 +133,9 @@ class PoE2DotDPSCalculator {
     hitStats: DotAilmentStats,
     modifiers: DotModifiers
   ): DotCalculationResult {
-    // Ignite: 90% of fire hit damage per second for 4 seconds
-    const baseMagnitude = 0.90; // 90% of fire damage per second
+    // Ignite: 20% of fire hit damage per second for 4 seconds
+    // This is the correct PoE 2 value (not 90%)
+    const baseMagnitude = 0.20; // 20% of fire damage per second
     const baseDuration = modifiers.igniteDuration || 4; // 4 seconds default
 
     // Calculate base DPS
