@@ -12,6 +12,8 @@ export interface PoE2DPSCalculation {
   totalDPS: number;
   skillDPS: number;
   effectiveDPS: number; // After hit chance, resistances, etc.
+  minionDPS?: number; // Minion/totem DPS if applicable
+  combinedDPS?: number; // Total DPS including minions
 
   // Damage breakdown by type
   physicalDPS: number;
@@ -38,6 +40,9 @@ export interface PoE2DPSCalculation {
   comboPointsGenerated: number;
   dodgeEffectiveness: number;
   blockChance: number;
+
+  // Minion stats (if applicable)
+  minionModifiers?: any;
 
   // Detailed breakdown
   calculations: PoE2CalculationDetails;
@@ -212,10 +217,23 @@ export class PoE2DPSCalculator {
     const comboDPS = this.calculateComboDPS(effectiveDPS, skill);
     const spiritEfficiency = skill.spiritCost ? effectiveDPS / skill.spiritCost : 0;
 
+    // Extract minion modifiers if character has them
+    const minionModifiers = this.extractMinionModifiers(character, allocated, treeData);
+
+    // Calculate combined DPS with minions if applicable
+    let combinedDPS = effectiveDPS;
+    if (minionModifiers && (minionModifiers.increasedMinionDamage > 0 || minionModifiers.additionalMinions > 0)) {
+      // This is a simplified calculation - actual minion DPS would need more details
+      // about which minions are active, their gem levels, etc.
+      combinedDPS = effectiveDPS; // Will be enhanced when minion skills are detected
+    }
+
     return {
       totalDPS: effectiveDPS,
       skillDPS: rawDPS,
       effectiveDPS,
+      minionDPS: 0, // Will be calculated separately when minion skills are detected
+      combinedDPS,
       physicalDPS: (scaledDamage.physical * attackSpeed * hitChance) / 100,
       elementalDPS: {
         fire: (scaledDamage.fire * attackSpeed * hitChance) / 100,
@@ -233,6 +251,7 @@ export class PoE2DPSCalculator {
       comboPointsGenerated: skill.comboPointsGenerated || 0,
       dodgeEffectiveness: characterStats.dodgeEffectiveness || 0,
       blockChance: characterStats.blockChance || 0,
+      minionModifiers,
       calculations: {
         baseWeaponDamage: this.weaponToDamageComponents(weapon),
         baseSkillDamage: skill.baseDamage || { physical: 0, fire: 0, cold: 0, lightning: 0, chaos: 0 },
@@ -714,6 +733,155 @@ export class PoE2DPSCalculator {
         regex: /(\d+)%\s+increased\s+dodge\s+roll\s+effectiveness/i,
         handler: (match: RegExpMatchArray) => {
           stats.dodgeEffectiveness += parseInt(match[1]);
+        }
+      },
+      // Minion damage modifiers
+      {
+        regex: /(\d+)%\s+increased\s+minion\s+damage/i,
+        handler: (match: RegExpMatchArray) => {
+          stats.minionModifiers = stats.minionModifiers || {};
+          stats.minionModifiers.increasedMinionDamage = (stats.minionModifiers.increasedMinionDamage || 0) + parseInt(match[1]);
+        }
+      },
+      {
+        regex: /(\d+)%\s+more\s+minion\s+damage/i,
+        handler: (match: RegExpMatchArray) => {
+          stats.minionModifiers = stats.minionModifiers || {};
+          stats.minionModifiers.moreMinionDamage = (stats.minionModifiers.moreMinionDamage || 0) + parseInt(match[1]);
+        }
+      },
+      // Minion attack speed
+      {
+        regex: /minions\s+have\s+(\d+)%\s+increased\s+attack\s+speed/i,
+        handler: (match: RegExpMatchArray) => {
+          stats.minionModifiers = stats.minionModifiers || {};
+          stats.minionModifiers.increasedAttackSpeed = (stats.minionModifiers.increasedAttackSpeed || 0) + parseInt(match[1]);
+        }
+      },
+      // Additional minions
+      {
+        regex: /\+(\d+)\s+to\s+maximum\s+number\s+of\s+(skeletons|zombies|minions)/i,
+        handler: (match: RegExpMatchArray) => {
+          stats.minionModifiers = stats.minionModifiers || {};
+          stats.minionModifiers.additionalMinions = (stats.minionModifiers.additionalMinions || 0) + parseInt(match[1]);
+        }
+      },
+      // Minion life
+      {
+        regex: /minions\s+have\s+(\d+)%\s+increased\s+maximum\s+life/i,
+        handler: (match: RegExpMatchArray) => {
+          stats.minionModifiers = stats.minionModifiers || {};
+          stats.minionModifiers.increasedMinionLife = (stats.minionModifiers.increasedMinionLife || 0) + parseInt(match[1]);
+        }
+      },
+      // Spirit efficiency
+      {
+        regex: /(\d+)%\s+reduced\s+spirit\s+cost\s+of\s+skills/i,
+        handler: (match: RegExpMatchArray) => {
+          stats.minionModifiers = stats.minionModifiers || {};
+          stats.minionModifiers.spiritEfficiency = (stats.minionModifiers.spiritEfficiency || 0) + parseInt(match[1]);
+        }
+      }
+    ];
+
+    for (const pattern of patterns) {
+      const match = stat.match(pattern.regex);
+      if (match) {
+        pattern.handler(match);
+        break;
+      }
+    }
+  }
+
+  /**
+   * Extract minion modifiers from character data
+   */
+  extractMinionModifiers(
+    character: PoECharacterDetails,
+    allocated: AllocatedPassives,
+    treeData: PassiveTreeData
+  ): any {
+    const modifiers = {
+      increasedMinionDamage: 0,
+      moreMinionDamage: 0,
+      increasedAttackSpeed: 0,
+      moreAttackSpeed: 0,
+      increasedMinionLife: 0,
+      minionDuration: 0,
+      additionalMinions: 0,
+      spiritEfficiency: 0,
+      weaponBaseDamageToMinions: 0
+    };
+
+    // Extract from passive tree
+    if (allocated && treeData) {
+      allocated.nodes.forEach(nodeId => {
+        const node = treeData.nodes[nodeId];
+        if (node?.stats) {
+          node.stats.forEach(stat => {
+            this.parseMinionStatString(stat, modifiers);
+          });
+        }
+      });
+    }
+
+    // Extract from items
+    character.items?.forEach(item => {
+      [...(item.explicitMods || []), ...(item.implicitMods || []), ...(item.craftedMods || [])]
+        .forEach(mod => {
+          this.parseMinionStatString(mod, modifiers);
+        });
+    });
+
+    // Get weapon base damage for minion scaling
+    const weapon = this.getMainHandWeapon(character.items);
+    if (weapon) {
+      const weaponStats = this.parseWeapon(weapon);
+      modifiers.weaponBaseDamageToMinions = weaponStats.physicalDamage.average;
+    }
+
+    return modifiers;
+  }
+
+  /**
+   * Parse minion-specific stat strings
+   */
+  private parseMinionStatString(stat: string, modifiers: any): void {
+    const patterns = [
+      {
+        regex: /(\d+)%\s+increased\s+minion\s+damage/i,
+        handler: (match: RegExpMatchArray) => {
+          modifiers.increasedMinionDamage += parseInt(match[1]);
+        }
+      },
+      {
+        regex: /(\d+)%\s+more\s+minion\s+damage/i,
+        handler: (match: RegExpMatchArray) => {
+          modifiers.moreMinionDamage += parseInt(match[1]);
+        }
+      },
+      {
+        regex: /minions\s+have\s+(\d+)%\s+increased\s+attack\s+speed/i,
+        handler: (match: RegExpMatchArray) => {
+          modifiers.increasedAttackSpeed += parseInt(match[1]);
+        }
+      },
+      {
+        regex: /\+(\d+)\s+to\s+maximum\s+number\s+of\s+(skeletons|zombies|minions)/i,
+        handler: (match: RegExpMatchArray) => {
+          modifiers.additionalMinions += parseInt(match[1]);
+        }
+      },
+      {
+        regex: /minions\s+have\s+(\d+)%\s+increased\s+maximum\s+life/i,
+        handler: (match: RegExpMatchArray) => {
+          modifiers.increasedMinionLife += parseInt(match[1]);
+        }
+      },
+      {
+        regex: /(\d+)%\s+reduced\s+spirit\s+cost\s+of\s+skills/i,
+        handler: (match: RegExpMatchArray) => {
+          modifiers.spiritEfficiency += parseInt(match[1]);
         }
       }
     ];

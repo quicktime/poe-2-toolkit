@@ -18,6 +18,7 @@ A comprehensive character planning, build optimization, and community analytics 
 - **📈 Equipment Upgrades**: Smart upgrade recommendations with DPS impact analysis
 - **✨ Build Templates**: Save, categorize, and share character builds with complexity scoring
 - **🧠 Character Insights**: Deep analysis of inventory, gems, weaknesses, and combat style
+- **🧮 Minion DPS Calculator**: Accurate minion/totem DPS with spirit optimization and passive tree integration
 
 ### 📊 Community & Analytics
 - **📊 Community Analytics**: Real-time insights on class distribution, popular builds, and equipment meta
@@ -112,8 +113,8 @@ To enable authentication with Path of Exile:
 - ✅ **Enhanced Character Insights**: Comprehensive 5-tab character analysis system
 - ✅ **Data-Driven Features**: Community Analytics with real-time insights
 
-### 🚧 Phase 4: Advanced Calculations (PLANNED)
-- [ ] **Minion DPS Calculator**: Calculate summon/totem DPS (high priority)
+### 🚧 Phase 4: Advanced Calculations (IN PROGRESS)
+- ✅ **Minion DPS Calculator**: Calculate summon/totem DPS with spirit optimization
 - [ ] **DoT DPS Calculator**: Damage over time effects (ignite, poison, bleed)
 - [ ] **Effective HP Calculator**: Total EHP with all mitigation layers
 - [ ] **Status Effect Calculator**: Ailment effectiveness, duration, stacking

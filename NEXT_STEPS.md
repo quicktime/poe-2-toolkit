@@ -28,11 +28,13 @@
 *Priority: Fill critical calculation gaps and add progression planning*
 
 ### 4.1 Advanced DPS Calculations (HIGH PRIORITY)
-- [ ] **Minion DPS Calculator**: Calculate summon/totem DPS with spirit costs
-  - Support for all minion types: zombies, skeletons, totems, spirits
-  - Minion stat scaling with player stats and support gems
-  - Multi-minion DPS aggregation and efficiency analysis
-  - Spirit reservation optimization for minion builds
+- ✅ **Minion DPS Calculator**: Calculate summon/totem DPS with spirit costs (COMPLETE)
+  - ✅ Support for all minion types: zombies, skeletons, totems, spirits
+  - ✅ Minion stat scaling with player stats and support gems
+  - ✅ Multi-minion DPS aggregation and efficiency analysis
+  - ✅ Spirit reservation optimization for minion builds
+  - ✅ Passive tree modifier extraction for minion stats
+  - ✅ Integration with main DPS calculator
 
 - [ ] **DoT DPS Calculator**: Damage over time mechanics
   - Ignite, poison, bleed, and other ailment DPS calculations
