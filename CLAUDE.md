@@ -160,6 +160,28 @@ The project follows a 4-phase implementation plan:
 - Combo points provide scaling damage bonuses
 - Baseline ~30% more damage per combo point (varies by skill)
 
+#### Spirit System (v0.3 The Third Edict)
+- Separate resource from mana for persistent effects (auras, minions, totems)
+- Base Spirit: 0 (gain through quests, items)
+- Campaign provides +100 Spirit total
+- Key Spirit Costs in v0.3:
+  - Skeletal Arsonist: 39-90 Spirit
+  - Cast on Elemental Ailment: 100 Spirit
+  - Time of Need: 30 Spirit
+  - Totems (with Ancestral Bond): 75 Spirit each
+- Spirit sources: Sceptres (100), Solar Amulets (+15), body armor, Soul Core of Azcapa (+15)
+
+#### Skill Gem Changes (v0.3)
+- **Late-game scaling improved**: ~5% more damage at level 20, ~20% more at level 30
+- **Support gem system**: Can now use multiple copies of same support (previously limited to 1)
+- **Support tiers**: 5 tiers instead of 3
+- **Shock duration**: Increased to 8 seconds (from 4)
+- **Area of Effect**: All sources reduced by ~25%
+- Notable skill changes:
+  - Lightning Conduit: Massive damage buff (~90% increase)
+  - Eye of Winter: 900% more damage on first hit per enemy
+  - Perfect Strike: Reduced to 470-1029% attack damage (from 598-1310%)
+
 ## Important Implementation Notes
 
 - All calculations use Web Workers to prevent UI blocking

@@ -96,7 +96,7 @@ class PoE2MinionDPSCalculator {
           criticalMultiplier: 190, // PoE 2: 100% base - 10% penalty
           hitChance: 80,
           level: 1,
-          spiritCost: 35,
+          spiritCost: 50, // v0.3: Skeletal Arsonist 39-90 range, using mid value
           minionCount: 1
         },
         scalingType: 'spell',
