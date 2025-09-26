@@ -555,31 +555,67 @@ export class POE2ScoutProvider implements IMarketDataProvider {
   }
   
   /**
-   * Get currency exchange rates
+   * Get currency exchange rates using the ACTUAL POE2Scout API endpoint
    */
   async getCurrencyRates(league: string): Promise<CurrencyRates> {
     try {
-      const response = await this.fetchWithRateLimit(`${this.baseUrl}/currency-rates?league=${encodeURIComponent(league)}`);
+      // Use the correct endpoint we discovered: /currencyExchange/SnapshotPairs
+      const response = await this.fetchWithRateLimit(
+        `${this.baseUrl}/currencyExchange/SnapshotPairs?league=${encodeURIComponent(league)}`
+      );
       
       if (!response.ok) {
         throw new Error(`POE2Scout API error: ${response.status} ${response.statusText}`);
       }
       
-      const data = await response.json();
+      const pairs: any[] = await response.json();
+      
+      // Build exchange rate map from the pairs data
+      const rates: Record<string, Record<string, number>> = {};
+      
+      // Process all currency pairs
+      for (const pair of pairs) {
+        const curr1 = pair.CurrencyOne.apiId;
+        const curr2 = pair.CurrencyTwo.apiId;
+        
+        // Initialize if needed
+        if (!rates[curr1]) rates[curr1] = {};
+        if (!rates[curr2]) rates[curr2] = {};
+        
+        // CORRECTED: The RelativePrice tells you the exchange rate
+        // CurrencyOneData.RelativePrice = how many curr2 for 1 curr1
+        // CurrencyTwoData.RelativePrice = how many curr1 for 1 curr2
+        const curr1ToCurr2 = parseFloat(pair.CurrencyOneData.RelativePrice) || 0;
+        const curr2ToCurr1 = parseFloat(pair.CurrencyTwoData.RelativePrice) || 0;
+        
+        if (curr1ToCurr2 > 0) {
+          rates[curr1][curr2] = curr1ToCurr2;
+        }
+        if (curr2ToCurr1 > 0) {
+          rates[curr2][curr1] = curr2ToCurr1;
+        }
+      }
+      
+      // Ensure self-rates
+      for (const currency of Object.keys(rates)) {
+        rates[currency][currency] = 1;
+      }
       
       return {
         league,
-        rates: data.rates || {},
-        lastUpdated: new Date(data.lastUpdated || Date.now())
+        rates,
+        lastUpdated: new Date()
       };
     } catch (error) {
-      // If currency rates endpoint doesn't exist, return basic rates
-      console.warn('POE2Scout currency rates not available:', error);
+      // Fallback with ACTUAL rates from POE2Scout (Rise of the Abyssal)
+      // CRITICAL: In PoE 2, Chaos > Exalted (opposite of PoE 1!)
+      console.warn('POE2Scout currency rates error, using fallback:', error);
       return {
         league,
         rates: {
-          chaos: { chaos: 1, divine: 0.005 },
-          divine: { chaos: 200, divine: 1 }
+          exalted: { exalted: 1, divine: 0.00263, chaos: 0.0832 }, // 1 exalt = 0.083 chaos
+          divine: { exalted: 380.31, divine: 1, chaos: 31.67 }, // 1 divine = 380 exalted
+          chaos: { exalted: 12.01, divine: 0.0316, chaos: 1 } // 1 CHAOS = 12 EXALTED!!!
         },
         lastUpdated: new Date()
       };
