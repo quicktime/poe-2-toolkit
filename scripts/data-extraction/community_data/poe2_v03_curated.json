@@ -1,0 +1,81 @@
+{
+  "spiritCosts": {
+    "Skeletal Arsonist": {
+      "min": 39,
+      "max": 90
+    },
+    "Skeletal Warrior": {
+      "min": 30,
+      "max": 70
+    },
+    "Zombie": {
+      "min": 40,
+      "max": 80
+    },
+    "Cast on Elemental Ailment": 100,
+    "Time of Need": 30,
+    "Totem (with Ancestral Bond)": 75,
+    "Clarity": 25,
+    "Determination": 50,
+    "Grace": 50,
+    "Discipline": 35
+  },
+  "damageFormulas": {
+    "hitChance": "AA / (AA + (DE/4)^0.9)",
+    "critDamageBonus": 100,
+    "bleeding": {
+      "magnitude": 0.14,
+      "duration": 5
+    },
+    "ignite": {
+      "magnitude": 0.2,
+      "duration": 4
+    },
+    "poison": {
+      "magnitude": 0.3,
+      "duration": 2
+    },
+    "shockDuration": 8,
+    "armorFormula": "Armor / (Armor + 10 * Damage)"
+  },
+  "skillScaling": {
+    "lateGameBonus": {
+      "level20": 1.05,
+      "level30": 1.2
+    },
+    "supportGemTiers": 5,
+    "areaOfEffectReduction": 0.75
+  },
+  "weaponBases": {
+    "Rusted Sword": {
+      "physMin": 6,
+      "physMax": 11,
+      "aps": 1.45
+    },
+    "Copper Kris": {
+      "physMin": 7,
+      "physMax": 28,
+      "aps": 1.2
+    },
+    "Crude Bow": {
+      "physMin": 5,
+      "physMax": 13,
+      "aps": 1.4
+    },
+    "Driftwood Club": {
+      "physMin": 8,
+      "physMax": 12,
+      "aps": 1.25
+    },
+    "Driftwood Wand": {
+      "physMin": 4,
+      "physMax": 12,
+      "aps": 1.4
+    },
+    "Rusted Hatchet": {
+      "physMin": 7,
+      "physMax": 10,
+      "aps": 1.5
+    }
+  }
+}
