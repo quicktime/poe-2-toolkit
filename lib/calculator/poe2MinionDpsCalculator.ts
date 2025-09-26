@@ -61,7 +61,7 @@ class PoE2MinionDPSCalculator {
           attackSpeed: 1.2,
           accuracy: 1000,
           criticalChance: 5,
-          criticalMultiplier: 150,
+          criticalMultiplier: 200, // PoE 2 base critical damage bonus is 100%
           hitChance: 85,
           level: 1,
           spiritCost: 25,
@@ -77,7 +77,7 @@ class PoE2MinionDPSCalculator {
           attackSpeed: 0.8,
           accuracy: 1200,
           criticalChance: 8,
-          criticalMultiplier: 160,
+          criticalMultiplier: 210, // PoE 2: 100% base + 10% bonus
           hitChance: 90,
           level: 1,
           spiritCost: 30,
@@ -93,7 +93,7 @@ class PoE2MinionDPSCalculator {
           attackSpeed: 0.6,
           accuracy: 1000,
           criticalChance: 6,
-          criticalMultiplier: 140,
+          criticalMultiplier: 190, // PoE 2: 100% base - 10% penalty
           hitChance: 80,
           level: 1,
           spiritCost: 35,
@@ -109,7 +109,7 @@ class PoE2MinionDPSCalculator {
           attackSpeed: 1.0,
           accuracy: 900,
           criticalChance: 4,
-          criticalMultiplier: 130,
+          criticalMultiplier: 180, // PoE 2: 100% base - 20% penalty
           hitChance: 75,
           level: 1,
           spiritCost: 40,
@@ -125,7 +125,7 @@ class PoE2MinionDPSCalculator {
           attackSpeed: 2.0,
           accuracy: 1100,
           criticalChance: 10,
-          criticalMultiplier: 170,
+          criticalMultiplier: 220, // PoE 2: 100% base + 20% bonus
           hitChance: 85,
           level: 1,
           spiritCost: 50,
@@ -143,7 +143,7 @@ class PoE2MinionDPSCalculator {
           attackSpeed: 1.0,
           accuracy: 1000,
           criticalChance: 5,
-          criticalMultiplier: 150,
+          criticalMultiplier: 200, // PoE 2 base critical damage bonus is 100%
           hitChance: 85,
           level: 1,
           spiritCost: 30,

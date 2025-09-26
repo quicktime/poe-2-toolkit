@@ -281,17 +281,25 @@ export class PoE2DPSCalculator {
 
   /**
    * PoE 2 Accurate Hit Chance Calculation
-   * Formula: Hit Chance = Accuracy / (Accuracy + Evasion) * 100
+   * Correct Formula: Hit Chance = AA / (AA + (DE/4)^0.9)
+   * Where AA = Attacker's Accuracy, DE = Defender's Evasion
+   * Source: Official PoE 2 mechanics documentation
    */
   private calculatePoE2HitChance(accuracy: number, evasion: number): number {
     if (evasion <= 0) return 100;
-    const hitChance = (accuracy / (accuracy + evasion)) * 100;
-    return Math.min(100, Math.max(5, hitChance)); // Minimum 5% hit chance
+
+    // Correct PoE 2 formula
+    const modifiedEvasion = Math.pow(evasion / 4, 0.9);
+    const hitChance = (accuracy / (accuracy + modifiedEvasion)) * 100;
+
+    // Hit chance is always at least 5% and at most 100%
+    return Math.min(100, Math.max(5, hitChance));
   }
 
   /**
    * PoE 2 Critical Strike System
-   * Base crit is multiplicative with increased crit chance
+   * Base Critical Damage Bonus is 100% (not 150% multiplier like PoE 1)
+   * Two types of scaling: "increased" (multiplicative) and "added" (additive)
    */
   private calculatePoE2Crits(
     weapon: PoE2WeaponStats,
@@ -304,13 +312,26 @@ export class PoE2DPSCalculator {
     // Apply increased critical strike chance
     const finalCritChance = baseCrit * (1 + stats.increasedCritChance / 100);
 
-    // Critical strike multiplier
-    const baseCritMulti = weapon.criticalStrikeMultiplier + weapon.localCritMultiplier;
-    const finalCritMulti = baseCritMulti + stats.addedCritMultiplier;
+    // PoE 2 Critical Damage Bonus calculation
+    // Base is 100% (deals 100% extra damage, so 200% total)
+    const baseCritBonus = 100;
+
+    // Added critical damage bonus (flat additions)
+    const addedCritBonus = (weapon.localCritMultiplier || 0) + (stats.addedCritMultiplier || 0);
+
+    // Total base critical bonus
+    const totalBaseCritBonus = baseCritBonus + addedCritBonus;
+
+    // Apply increased critical damage bonus (multiplicative with base)
+    const increasedCritDamage = stats.increasedCriticalDamageBonus || 0;
+    const finalCritBonus = totalBaseCritBonus * (1 + increasedCritDamage / 100);
+
+    // Convert to multiplier format (100% bonus = 200% multiplier)
+    const finalCritMultiplier = 100 + finalCritBonus;
 
     return {
       critChance: Math.min(100, finalCritChance),
-      critMultiplier: finalCritMulti
+      critMultiplier: finalCritMultiplier
     };
   }
 
@@ -379,7 +400,7 @@ export class PoE2DPSCalculator {
       physicalDamage: { min: 0, max: 0, average: 0 },
       attacksPerSecond: 1.0,
       criticalStrikeChance: 5,
-      criticalStrikeMultiplier: 150,
+      criticalStrikeMultiplier: 200, // PoE 2 base is 100% bonus = 200% total
       accuracy: 100,
       weaponType: this.determineWeaponType(item.typeLine),
       weaponClass: item.typeLine || 'Unknown',
@@ -917,7 +938,7 @@ export class PoE2DPSCalculator {
       physicalDamage: { min: 2, max: 8, average: 5 },
       attacksPerSecond: 1.2,
       criticalStrikeChance: 5,
-      criticalStrikeMultiplier: 150,
+      criticalStrikeMultiplier: 200, // PoE 2 base is 100% bonus = 200% total
       accuracy: 100,
       weaponType: 'one_hand',
       weaponClass: 'Unarmed',
