@@ -627,7 +627,8 @@ export class POE2ScoutProvider implements IMarketDataProvider {
    */
   async isAvailable(): Promise<boolean> {
     try {
-      const response = await this.fetchWithRateLimit(`${this.baseUrl}/health`, {
+      // POE2Scout doesn't have a /health endpoint, just check the base API
+      const response = await this.fetchWithRateLimit(`${this.baseUrl}/`, {
         method: 'GET'
       });
       return response.ok;

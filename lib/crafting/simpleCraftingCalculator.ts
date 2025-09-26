@@ -88,8 +88,22 @@ export class SimpleCraftingCalculator {
       console.log(`Updated prices for ${this.priceCache.size} currencies`);
       
     } catch (error) {
-      console.error('Failed to update prices:', error);
-      // Use whatever cache we have
+      console.error('Failed to update prices, using fallback values:', error);
+      // Use fallback PoE 2 prices in exalted orbs
+      this.priceCache.set('perfect-alchemy-orb', 50);
+      this.priceCache.set('perfect-chaos-orb', 40);
+      this.priceCache.set('perfect-exalted-orb', 100);
+      this.priceCache.set('greater-alchemy-orb', 10);
+      this.priceCache.set('greater-chaos-orb', 8);
+      this.priceCache.set('greater-exalted-orb', 20);
+      this.priceCache.set('alchemy-orb', 0.1);
+      this.priceCache.set('chaos-orb', 0.5);
+      this.priceCache.set('exalted-orb', 1);
+      this.priceCache.set('regal-orb', 0.3);
+      this.priceCache.set('divine-orb', 50);
+      this.priceCache.set('annulment-orb', 5);
+      this.lastUpdate = Date.now();
+      console.log('Using fallback prices for Path of Exile 2 currencies');
     }
   }
   

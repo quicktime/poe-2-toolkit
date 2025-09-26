@@ -22,7 +22,10 @@
       "Bash(git pull:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "WebFetch(domain:www.pathofexile.com)"
+      "WebFetch(domain:www.pathofexile.com)",
+      "Bash(git fetch:*)",
+      "Bash(git merge:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []
