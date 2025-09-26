@@ -2,12 +2,15 @@
 
 import { useState } from 'react';
 import { CraftingInterface } from '@/components/crafting/CraftingInterface';
+import { CraftingInstructions } from '@/components/crafting/CraftingInstructions';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Hammer, TrendingUp, BookOpen } from 'lucide-react';
+import { Hammer, TrendingUp, BookOpen, GraduationCap } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function CraftingPage() {
   const [activeTab, setActiveTab] = useState('craft');
+  const [selectedMethod, setSelectedMethod] = useState<string>('alchemy');
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -15,16 +18,20 @@ export default function CraftingPage() {
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-2">PoE 2 Crafting Workshop</h1>
         <p className="text-muted-foreground">
-          Analyze crafting costs, compare with market prices, and make informed decisions
+          Analyze crafting costs, compare with market prices, and learn crafting techniques
         </p>
       </div>
 
       {/* Main Content */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3 max-w-md">
+        <TabsList className="grid w-full grid-cols-4 max-w-lg">
           <TabsTrigger value="craft" className="flex items-center gap-2">
             <Hammer className="h-4 w-4" />
             Craft
+          </TabsTrigger>
+          <TabsTrigger value="instructions" className="flex items-center gap-2">
+            <GraduationCap className="h-4 w-4" />
+            How To
           </TabsTrigger>
           <TabsTrigger value="analyze" className="flex items-center gap-2">
             <TrendingUp className="h-4 w-4" />
@@ -38,6 +45,33 @@ export default function CraftingPage() {
 
         <TabsContent value="craft" className="space-y-6">
           <CraftingInterface />
+        </TabsContent>
+
+        <TabsContent value="instructions" className="space-y-6">
+          <div className="space-y-4">
+            <Card className="p-6">
+              <h2 className="text-xl font-semibold mb-4">Select Crafting Method</h2>
+              <Select value={selectedMethod} onValueChange={setSelectedMethod}>
+                <SelectTrigger className="w-full max-w-md">
+                  <SelectValue placeholder="Choose a crafting method to learn" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="alchemy">Alchemy Crafting - Transform white to rare</SelectItem>
+                  <SelectItem value="chaos">Chaos Spamming - Swap modifiers</SelectItem>
+                  <SelectItem value="exalted">Exalted Crafting - Add modifiers</SelectItem>
+                  <SelectItem value="essence">Essence Crafting - Guaranteed mods</SelectItem>
+                  <SelectItem value="regal">Regal Crafting - Upgrade magic to rare</SelectItem>
+                  <SelectItem value="metacraft">Metacrafting - Advanced techniques</SelectItem>
+                  <SelectItem value="annulment">Annulment - Remove modifiers</SelectItem>
+                  <SelectItem value="fossil">Fossil Crafting - Weighted mods</SelectItem>
+                  <SelectItem value="beast">Beastcrafting - Special effects</SelectItem>
+                  <SelectItem value="harvest">Harvest Crafting - Targeted changes</SelectItem>
+                  <SelectItem value="veiled">Veiled Crafting - Syndicate mods</SelectItem>
+                </SelectContent>
+              </Select>
+            </Card>
+            <CraftingInstructions selectedMethod={selectedMethod} />
+          </div>
         </TabsContent>
 
         <TabsContent value="analyze" className="space-y-6">

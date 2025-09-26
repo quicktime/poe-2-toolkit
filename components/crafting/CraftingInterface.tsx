@@ -160,7 +160,10 @@ export function CraftingInterface() {
 
       {/* Results */}
       {analysis && !loading && (
-        <CraftingResults analysis={analysis} />
+        <CraftingResults
+          analysis={analysis}
+          request={craftingRequest}
+        />
       )}
     </div>
   );

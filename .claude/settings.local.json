@@ -25,7 +25,8 @@
       "WebFetch(domain:www.pathofexile.com)",
       "Bash(git fetch:*)",
       "Bash(git merge:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(tasklist)"
     ],
     "deny": [],
     "ask": []

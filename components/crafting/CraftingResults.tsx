@@ -18,13 +18,15 @@ import {
   Gem,
   Coins
 } from 'lucide-react';
-import { CraftingAnalysis } from './CraftingInterface';
+import { CraftingAnalysis, CraftingRequest } from './CraftingInterface';
+import { CraftingStrategy } from './CraftingStrategy';
 
 interface CraftingResultsProps {
   analysis: CraftingAnalysis;
+  request: CraftingRequest;
 }
 
-export function CraftingResults({ analysis }: CraftingResultsProps) {
+export function CraftingResults({ analysis, request }: CraftingResultsProps) {
   const formatNumber = (num: number) => {
     return new Intl.NumberFormat('en-US', {
       maximumFractionDigits: 0
@@ -127,11 +129,16 @@ export function CraftingResults({ analysis }: CraftingResultsProps) {
       </Card>
 
       {/* Crafting Analysis Tabs */}
-      <Tabs defaultValue="comparison" className="w-full">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="comparison">Cost Comparison</TabsTrigger>
-          <TabsTrigger value="steps">Crafting Steps</TabsTrigger>
+      <Tabs defaultValue="strategy" className="w-full">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="strategy">📋 Your Crafting Steps</TabsTrigger>
+          <TabsTrigger value="comparison">💰 Cost Analysis</TabsTrigger>
+          <TabsTrigger value="steps">📖 Generic Guide</TabsTrigger>
         </TabsList>
+
+        <TabsContent value="strategy" className="space-y-4">
+          <CraftingStrategy request={request} analysis={analysis} />
+        </TabsContent>
 
         <TabsContent value="comparison" className="space-y-4">
           {/* Perfect Tier */}
