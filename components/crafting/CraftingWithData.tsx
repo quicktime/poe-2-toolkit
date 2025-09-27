@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import { marketService } from '@/lib/market/marketService';
+import type { CurrencyRates } from '@/types/market';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -67,6 +69,11 @@ export function CraftingWithData() {
   const [baseItems, setBaseItems] = useState<BaseItem[]>([]);
   const [currencyItems, setCurrencyItems] = useState<CurrencyItem[]>([]);
 
+  // Market data
+  const [currencyRates, setCurrencyRates] = useState<CurrencyRates | null>(null);
+  const [loadingRates, setLoadingRates] = useState(false);
+  const [league, setLeague] = useState('Standard');
+
   // Crafting state
   const [itemRarity, setItemRarity] = useState<'normal' | 'magic' | 'rare'>('normal');
   const [itemMods, setItemMods] = useState<string[]>([]);
@@ -76,7 +83,15 @@ export function CraftingWithData() {
   // Load data on mount
   useEffect(() => {
     loadData();
+    fetchCurrencyRates();
   }, []);
+
+  // Fetch currency rates when league changes
+  useEffect(() => {
+    if (league) {
+      fetchCurrencyRates();
+    }
+  }, [league]);
 
   const loadData = async () => {
     setLoading(true);
@@ -109,6 +124,19 @@ export function CraftingWithData() {
       console.error('Error loading data:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchCurrencyRates = async () => {
+    setLoadingRates(true);
+    try {
+      const rates = await marketService.getCurrencyRates(league);
+      setCurrencyRates(rates);
+      console.log('Fetched currency rates:', rates);
+    } catch (error) {
+      console.error('Error fetching currency rates:', error);
+    } finally {
+      setLoadingRates(false);
     }
   };
 
@@ -289,19 +317,58 @@ export function CraftingWithData() {
     });
   };
 
-  // Get currency value in exalted orbs (PoE 2 primary currency)
+  // Get currency value in exalted orbs using real-time market data
   const getCurrencyValue = (currency: CurrencyItem): number => {
-    const values: Record<string, number> = {
+    // Try to get real-time market rate first
+    if (currencyRates && currencyRates.rates) {
+      // Map currency names to market currency types
+      const currencyTypeMap: Record<string, string> = {
+        'Orb of Transmutation': 'transmutation',
+        'Orb of Augmentation': 'augmentation',
+        'Orb of Alchemy': 'alchemy',
+        'Chaos Orb': 'chaos',
+        'Regal Orb': 'regal',
+        'Divine Orb': 'divine',
+        'Exalted Orb': 'exalted',
+        'Orb of Annulment': 'annulment',
+        'Greater Orb of Alchemy': 'alchemy', // Map greater versions
+        'Perfect Orb of Alchemy': 'alchemy',
+        'Greater Exalted Orb': 'exalted',
+        'Perfect Exalted Orb': 'exalted'
+      };
+
+      const currencyType = currencyTypeMap[currency.name];
+      if (currencyType && currencyRates.rates[currencyType]) {
+        // Get the exchange rate to exalted orbs
+        const rateToExalted = currencyRates.rates[currencyType]['exalted'];
+        if (rateToExalted) {
+          // Adjust for greater/perfect tiers
+          let multiplier = 1;
+          if (currency.name.includes('Greater')) multiplier = 3;
+          if (currency.name.includes('Perfect')) multiplier = 10;
+
+          return (1 / rateToExalted) * multiplier; // Convert rate to exalted value
+        }
+      }
+    }
+
+    // Fallback to hardcoded values if market data unavailable
+    const fallbackValues: Record<string, number> = {
       'Orb of Transmutation': 0.001,
       'Orb of Augmentation': 0.002,
       'Orb of Alchemy': 0.005,
-      'Chaos Orb': 0.01,  // Chaos is worth much less in PoE 2
+      'Chaos Orb': 0.01,
       'Regal Orb': 0.02,
       'Divine Orb': 1.5,
-      'Exalted Orb': 1,  // Base currency in PoE 2
-      'Orb of Annulment': 0.05
+      'Exalted Orb': 1,
+      'Orb of Annulment': 0.05,
+      'Greater Orb of Alchemy': 0.015,
+      'Perfect Orb of Alchemy': 0.05,
+      'Greater Exalted Orb': 3,
+      'Perfect Exalted Orb': 10
     };
-    return values[currency.name] || 0.005;
+
+    return fallbackValues[currency.name] || 0.005;
   };
 
   // Reset item

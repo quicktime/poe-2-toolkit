@@ -67,11 +67,30 @@ export class CraftingPathCalculator {
   private desiredMods: DesiredMod[];
   private itemLevel: number;
   private baseItem: any;
+  private customPrices: { [key: string]: number };
 
-  constructor(desiredMods: DesiredMod[], itemLevel: number, baseItem?: any) {
+  constructor(
+    desiredMods: DesiredMod[],
+    itemLevel: number,
+    baseItem?: any,
+    customPrices?: { [key: string]: number }
+  ) {
     this.desiredMods = desiredMods;
     this.itemLevel = itemLevel;
     this.baseItem = baseItem;
+    this.customPrices = customPrices || {};
+  }
+
+  /**
+   * Get currency price with custom prices override
+   */
+  private getCurrencyPrice(currencyName: string): number {
+    // Check custom prices first (from real-time market data)
+    if (this.customPrices[currencyName] !== undefined) {
+      return this.customPrices[currencyName];
+    }
+    // Fall back to default prices
+    return CURRENCY_PRICES[currencyName] || 0.01;
   }
 
   /**
@@ -98,13 +117,14 @@ export class CraftingPathCalculator {
     if (essenceMods.length > 0) {
       // Essence crafting strategy
       const essenceTier = this.determineBudgetEssenceTier();
-      const essencePrice = CURRENCY_PRICES[`Essence (${essenceTier} Tier)`];
+      const essenceCurrency = `Essence (${essenceTier} Tier)`;
+      const essencePrice = this.getCurrencyPrice(essenceCurrency);
       const successRate = this.calculateEssenceSuccessRate(essenceMods);
       const expectedAttempts = Math.ceil(1 / successRate);
 
       steps.push({
         method: 'essence_spam',
-        currency: `${essenceTier} Tier Essence`,
+        currency: essenceCurrency,
         cost: essencePrice,
         successRate,
         expectedAttempts,
@@ -122,10 +142,10 @@ export class CraftingPathCalculator {
       steps.push({
         method: 'chaos_spam',
         currency: 'Chaos Orb',
-        cost: CURRENCY_PRICES['Chaos Orb'],
+        cost: this.getCurrencyPrice('Chaos Orb'),
         successRate: chaosSuccessRate,
         expectedAttempts,
-        expectedCost: expectedAttempts * CURRENCY_PRICES['Chaos Orb'],
+        expectedCost: expectedAttempts * this.getCurrencyPrice('Chaos Orb'),
         description: 'Spam Chaos Orbs to swap modifiers (PoE 2 mechanic)',
         risks: ['Very RNG dependent', 'May take hundreds of attempts', 'Chaos only swaps one mod in PoE 2'],
       });
@@ -139,10 +159,10 @@ export class CraftingPathCalculator {
       steps.push({
         method: 'divine',
         currency: 'Divine Orb',
-        cost: CURRENCY_PRICES['Divine Orb'],
+        cost: this.getCurrencyPrice('Divine Orb'),
         successRate: 0.5,
         expectedAttempts: divineCount,
-        expectedCost: divineCount * CURRENCY_PRICES['Divine Orb'],
+        expectedCost: divineCount * this.getCurrencyPrice('Divine Orb'),
         description: 'Use Divine Orbs to improve mod values',
         risks: ['May not achieve perfect rolls'],
       });
@@ -174,10 +194,10 @@ export class CraftingPathCalculator {
     steps.push({
       method: 'greater_alchemy',
       currency: 'Greater Orb of Alchemy',
-      cost: CURRENCY_PRICES['Greater Orb of Alchemy'],
+      cost: this.getCurrencyPrice('Greater Orb of Alchemy'),
       successRate: 0.15,
       expectedAttempts: 7,
-      expectedCost: 7 * CURRENCY_PRICES['Greater Orb of Alchemy'],
+      expectedCost: 7 * this.getCurrencyPrice('Greater Orb of Alchemy'),
       description: 'Use Greater Alchemy Orbs for better tier modifiers',
       risks: ['Still RNG dependent', 'More expensive than regular alchemy'],
     });
@@ -195,10 +215,10 @@ export class CraftingPathCalculator {
       steps.push({
         method: 'targeted_exalt',
         currency: 'Exalted Orb',
-        cost: CURRENCY_PRICES['Exalted Orb'],
+        cost: this.getCurrencyPrice('Exalted Orb'),
         successRate: 0.3,
         expectedAttempts: exaltsNeeded,
-        expectedCost: exaltsNeeded * CURRENCY_PRICES['Exalted Orb'],
+        expectedCost: exaltsNeeded * this.getCurrencyPrice('Exalted Orb'),
         description: 'Use Exalted Orbs to add missing modifiers',
         risks: ['May add unwanted mods', 'Limited control over outcomes'],
       });
@@ -210,20 +230,20 @@ export class CraftingPathCalculator {
     steps.push({
       method: 'targeted_annul',
       currency: 'Greater Orb of Annulment',
-      cost: CURRENCY_PRICES['Greater Orb of Annulment'],
+      cost: this.getCurrencyPrice('Greater Orb of Annulment'),
       successRate: 0.5,
       expectedAttempts: 2,
-      expectedCost: 2 * CURRENCY_PRICES['Greater Orb of Annulment'],
+      expectedCost: 2 * this.getCurrencyPrice('Greater Orb of Annulment'),
       description: 'Remove unwanted modifiers with Greater Annulment',
       risks: ['May remove desired mods', 'Can brick the item'],
       alternatives: [
         {
           method: 'orb_of_conflict',
           currency: 'Orb of Conflict',
-          cost: CURRENCY_PRICES['Orb of Conflict'],
+          cost: this.getCurrencyPrice('Orb of Conflict'),
           successRate: 0.5,
           expectedAttempts: 3,
-          expectedCost: 3 * CURRENCY_PRICES['Orb of Conflict'],
+          expectedCost: 3 * this.getCurrencyPrice('Orb of Conflict'),
           description: 'Use Orb of Conflict to upgrade mod tiers',
           risks: ['Can downgrade other mods'],
         }
@@ -271,10 +291,10 @@ export class CraftingPathCalculator {
     steps.push({
       method: 'perfect_alchemy',
       currency: 'Perfect Orb of Alchemy',
-      cost: CURRENCY_PRICES['Perfect Orb of Alchemy'],
+      cost: this.getCurrencyPrice('Perfect Orb of Alchemy'),
       successRate: 0.4,
       expectedAttempts: 3,
-      expectedCost: 3 * CURRENCY_PRICES['Perfect Orb of Alchemy'],
+      expectedCost: 3 * this.getCurrencyPrice('Perfect Orb of Alchemy'),
       description: 'Use Perfect Alchemy for guaranteed T1-T2 modifiers',
       risks: ['Very expensive', 'Still need correct mod types'],
     });
@@ -286,10 +306,10 @@ export class CraftingPathCalculator {
       steps.push({
         method: 'elevate',
         currency: 'Orb of Dominance',
-        cost: CURRENCY_PRICES['Orb of Dominance'],
+        cost: this.getCurrencyPrice('Orb of Dominance'),
         successRate: 0.5,
         expectedAttempts: 2,
-        expectedCost: 2 * CURRENCY_PRICES['Orb of Dominance'],
+        expectedCost: 2 * this.getCurrencyPrice('Orb of Dominance'),
         description: 'Elevate key modifiers to elevated tier',
         risks: ['Can remove other influenced mods'],
       });
@@ -303,10 +323,10 @@ export class CraftingPathCalculator {
       steps.push({
         method: 'perfect_exalt',
         currency: 'Perfect Exalted Orb',
-        cost: CURRENCY_PRICES['Perfect Exalted Orb'],
+        cost: this.getCurrencyPrice('Perfect Exalted Orb'),
         successRate: 0.6,
         expectedAttempts: perfectExaltsNeeded,
-        expectedCost: perfectExaltsNeeded * CURRENCY_PRICES['Perfect Exalted Orb'],
+        expectedCost: perfectExaltsNeeded * this.getCurrencyPrice('Perfect Exalted Orb'),
         description: 'Add T1 modifiers with Perfect Exalted Orbs',
         risks: ['Extremely expensive', 'Still RNG for mod type'],
       });
@@ -319,10 +339,10 @@ export class CraftingPathCalculator {
       steps.push({
         method: 'veiled',
         currency: 'Veiled Orb',
-        cost: CURRENCY_PRICES['Veiled Orb'],
+        cost: this.getCurrencyPrice('Veiled Orb'),
         successRate: 0.4,
         expectedAttempts: 2,
-        expectedCost: 2 * CURRENCY_PRICES['Veiled Orb'],
+        expectedCost: 2 * this.getCurrencyPrice('Veiled Orb'),
         description: 'Add veiled modifiers for unique effects',
         risks: ['Need to unveil correctly', 'Limited options'],
       });
@@ -334,10 +354,10 @@ export class CraftingPathCalculator {
     steps.push({
       method: 'sacred',
       currency: 'Sacred Orb',
-      cost: CURRENCY_PRICES['Sacred Orb'],
+      cost: this.getCurrencyPrice('Sacred Orb'),
       successRate: 0.1,
       expectedAttempts: 5,
-      expectedCost: 5 * CURRENCY_PRICES['Sacred Orb'],
+      expectedCost: 5 * this.getCurrencyPrice('Sacred Orb'),
       description: 'Perfect the base item percentile with Sacred Orbs',
       risks: ['Extremely expensive', 'Minimal impact'],
     });
@@ -474,8 +494,8 @@ export class CraftingPathCalculator {
    */
   optimizeForMarket(marketPrices?: { [key: string]: number }): CraftingPath {
     if (marketPrices) {
-      // Update currency prices with market data
-      Object.assign(CURRENCY_PRICES, marketPrices);
+      // Update custom prices with market data
+      this.customPrices = { ...this.customPrices, ...marketPrices };
     }
 
     const paths = this.calculatePaths();
