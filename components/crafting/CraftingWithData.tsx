@@ -289,19 +289,19 @@ export function CraftingWithData() {
     });
   };
 
-  // Get currency value in chaos
+  // Get currency value in exalted orbs (PoE 2 primary currency)
   const getCurrencyValue = (currency: CurrencyItem): number => {
     const values: Record<string, number> = {
-      'Orb of Transmutation': 0.1,
-      'Orb of Augmentation': 0.2,
-      'Orb of Alchemy': 0.5,
-      'Chaos Orb': 1,
-      'Regal Orb': 2,
-      'Divine Orb': 150,
-      'Exalted Orb': 100,
-      'Orb of Annulment': 5
+      'Orb of Transmutation': 0.001,
+      'Orb of Augmentation': 0.002,
+      'Orb of Alchemy': 0.005,
+      'Chaos Orb': 0.01,  // Chaos is worth much less in PoE 2
+      'Regal Orb': 0.02,
+      'Divine Orb': 1.5,
+      'Exalted Orb': 1,  // Base currency in PoE 2
+      'Orb of Annulment': 0.05
     };
-    return values[currency.name] || 0.5;
+    return values[currency.name] || 0.005;
   };
 
   // Reset item
@@ -492,7 +492,7 @@ export function CraftingWithData() {
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
               <span>Total Cost:</span>
-              <span className="font-semibold">{totalCost.toFixed(1)} chaos</span>
+              <span className="font-semibold">{totalCost.toFixed(3)} exalted</span>
             </div>
           </div>
         </CardContent>
@@ -523,7 +523,7 @@ export function CraftingWithData() {
                     <p className="text-xs text-muted-foreground">{step.result}</p>
                   </div>
                   <Badge variant="outline" className="text-xs">
-                    {getCurrencyValue(step.currency)} chaos
+                    {getCurrencyValue(step.currency)} exalted
                   </Badge>
                 </div>
               ))}

@@ -41,6 +41,8 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { getModsForItem, weaponPrefixes, weaponSuffixes, armourPrefixes, armourSuffixes, jewelryMods } from '@/lib/data/crafting-mods';
+import { CraftingPathDisplay } from './CraftingPathDisplay';
+import type { DesiredMod } from '@/lib/crafting/pathCalculator';
 
 const supabase = createClient();
 
@@ -91,6 +93,7 @@ export function ModPoolExplorer({ selectedItem, onModSelect, onApplyMods }: ModP
   const [selectedMods, setSelectedMods] = useState<ItemMod[]>([]);
   const [dbMods, setDbMods] = useState<ItemMod[]>([]);
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
+  const [showCraftingPath, setShowCraftingPath] = useState(false);
 
   // Load mods from database when item changes
   useEffect(() => {
@@ -382,6 +385,31 @@ export function ModPoolExplorer({ selectedItem, onModSelect, onApplyMods }: ModP
 
         <Separator />
 
+        {/* Crafting Path Display */}
+        {showCraftingPath && selectedMods.length > 0 && (
+          <>
+            <CraftingPathDisplay
+              desiredMods={selectedMods.map(mod => ({
+                id: mod.id,
+                name: mod.name || formatModText(mod),
+                type: mod.mod_type as 'prefix' | 'suffix',
+                tier: mod.tier || 3,
+                weight: mod.weight || mod.spawn_weight || 100,
+                requiredLevel: mod.required_level || mod.requiredLevel || itemLevel,
+                stat: mod.stat,
+                values: mod.values
+              } as DesiredMod))}
+              itemLevel={itemLevel}
+              baseItem={selectedItem}
+              onSelectPath={(path) => {
+                console.log('Selected crafting path:', path);
+                // You can handle the selected path here
+              }}
+            />
+            <Separator />
+          </>
+        )}
+
         {/* Selected Mods Summary */}
         {selectedMods.length > 0 && (
           <>
@@ -409,15 +437,26 @@ export function ModPoolExplorer({ selectedItem, onModSelect, onApplyMods }: ModP
                   </Badge>
                 ))}
               </div>
-              <Button
-                size="sm"
-                className="w-full"
-                onClick={() => onApplyMods && onApplyMods(selectedMods)}
-                disabled={selectedMods.length === 0}
-              >
-                <Sparkles className="h-4 w-4 mr-2" />
-                Apply Selected Mods
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  size="sm"
+                  className="flex-1"
+                  onClick={() => onApplyMods && onApplyMods(selectedMods)}
+                  disabled={selectedMods.length === 0}
+                >
+                  <Sparkles className="h-4 w-4 mr-2" />
+                  Apply Selected Mods
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setShowCraftingPath(!showCraftingPath)}
+                  disabled={selectedMods.length === 0}
+                >
+                  <Target className="h-4 w-4 mr-2" />
+                  {showCraftingPath ? 'Hide' : 'Show'} Path
+                </Button>
+              </div>
             </div>
             <Separator />
           </>
