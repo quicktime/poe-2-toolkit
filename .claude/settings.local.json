@@ -26,7 +26,10 @@
       "Bash(git fetch:*)",
       "Bash(git merge:*)",
       "Bash(git stash:*)",
-      "Bash(tasklist)"
+      "Bash(tasklist)",
+      "Bash(test:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

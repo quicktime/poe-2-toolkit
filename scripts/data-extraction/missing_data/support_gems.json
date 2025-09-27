@@ -1,0 +1,100 @@
+{
+  "Elemental Focus": {
+    "spirit": 30,
+    "multiplier": 1.49,
+    "tags": [
+      "elemental",
+      "damage"
+    ]
+  },
+  "Controlled Destruction": {
+    "spirit": 30,
+    "multiplier": 1.44,
+    "tags": [
+      "spell",
+      "damage"
+    ]
+  },
+  "Brutality": {
+    "spirit": 30,
+    "multiplier": 1.59,
+    "tags": [
+      "physical",
+      "damage"
+    ]
+  },
+  "Spell Echo": {
+    "spirit": 40,
+    "tags": [
+      "spell",
+      "cast_speed"
+    ]
+  },
+  "Multistrike": {
+    "spirit": 40,
+    "tags": [
+      "attack",
+      "melee"
+    ]
+  },
+  "Chain": {
+    "spirit": 35,
+    "chains": 2,
+    "tags": [
+      "projectile",
+      "chaining"
+    ]
+  },
+  "Fork": {
+    "spirit": 25,
+    "tags": [
+      "projectile",
+      "forking"
+    ]
+  },
+  "Fortify": {
+    "spirit": 20,
+    "damageReduction": 20,
+    "tags": [
+      "melee",
+      "defense"
+    ]
+  },
+  "Life Leech": {
+    "spirit": 15,
+    "leechPercent": 2,
+    "tags": [
+      "attack",
+      "life"
+    ]
+  },
+  "Life Gain on Hit": {
+    "spirit": 15,
+    "lifePerHit": 20,
+    "tags": [
+      "attack",
+      "life"
+    ]
+  },
+  "Cast on Critical Strike": {
+    "spirit": 100,
+    "tags": [
+      "trigger",
+      "critical"
+    ]
+  },
+  "Cast when Damage Taken": {
+    "spirit": 50,
+    "tags": [
+      "trigger",
+      "defensive"
+    ]
+  },
+  "Cast on Melee Kill": {
+    "spirit": 30,
+    "tags": [
+      "trigger",
+      "melee"
+    ]
+  }
+}

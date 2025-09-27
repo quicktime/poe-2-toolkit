@@ -1,0 +1,26 @@
+{
+  "Warrior": [
+    "Titan",
+    "Warbringer"
+  ],
+  "Ranger": [
+    "Deadeye",
+    "Pathfinder"
+  ],
+  "Witch": [
+    "Blood Mage",
+    "Infernalist"
+  ],
+  "Monk": [
+    "Invoker",
+    "Acolyte of Chayula"
+  ],
+  "Mercenary": [
+    "Witchhunter",
+    "Gemling Legionnaire"
+  ],
+  "Sorceress": [
+    "Stormweaver",
+    "Chronomancer"
+  ]
+}

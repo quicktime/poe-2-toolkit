@@ -1,0 +1,68 @@
+{
+  "orbs": {
+    "Orb of Transmutation": {
+      "effect": "Upgrades a normal item to a magic item",
+      "tier": "common",
+      "dropLevel": 1
+    },
+    "Orb of Augmentation": {
+      "effect": "Adds a new modifier to a magic item",
+      "tier": "common",
+      "dropLevel": 1
+    },
+    "Orb of Alchemy": {
+      "effect": "Upgrades a normal item to a rare item",
+      "tier": "uncommon",
+      "dropLevel": 2
+    },
+    "Orb of Chance": {
+      "effect": "Upgrades a normal item to a random rarity",
+      "tier": "uncommon",
+      "dropLevel": 1
+    },
+    "Exalted Orb": {
+      "effect": "Adds a new modifier to a rare item",
+      "tier": "very_rare",
+      "dropLevel": 35
+    },
+    "Chaos Orb": {
+      "effect": "Rerolls all modifiers on a rare item",
+      "tier": "rare",
+      "dropLevel": 12
+    },
+    "Divine Orb": {
+      "effect": "Rerolls the numeric values of all modifiers on an item",
+      "tier": "very_rare",
+      "dropLevel": 35
+    },
+    "Regal Orb": {
+      "effect": "Upgrades a magic item to a rare item",
+      "tier": "uncommon",
+      "dropLevel": 12
+    },
+    "Orb of Annulment": {
+      "effect": "Removes a random modifier from an item",
+      "tier": "rare",
+      "dropLevel": 50
+    },
+    "Greater Essence": {
+      "effect": "Guarantees one modifier when crafting",
+      "tier": "uncommon",
+      "dropLevel": 30
+    }
+  },
+  "shards": {
+    "Transmutation Shard": {
+      "makes": "Orb of Transmutation",
+      "required": 20
+    },
+    "Alchemy Shard": {
+      "makes": "Orb of Alchemy",
+      "required": 20
+    },
+    "Chaos Shard": {
+      "makes": "Chaos Orb",
+      "required": 20
+    }
+  }
+}

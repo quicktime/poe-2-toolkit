@@ -1,0 +1,65 @@
+{
+  "regions": [
+    "The Dreadlands",
+    "The Burning Wastes",
+    "The Frozen Peaks",
+    "The Sunken City",
+    "The Ancient Groves"
+  ],
+  "mechanics": {
+    "Delirium": {
+      "description": "Mist that intensifies combat",
+      "rewards": [
+        "Cluster Jewels",
+        "Simulacrum Splinters"
+      ]
+    },
+    "Breach": {
+      "description": "Tears in reality with waves of enemies",
+      "rewards": [
+        "Breach Rings",
+        "Breachstones"
+      ]
+    },
+    "Expedition": {
+      "description": "Archaeological dig sites with explosive combat",
+      "rewards": [
+        "Logbooks",
+        "Artifacts"
+      ]
+    },
+    "Ritual": {
+      "description": "Arena combat with deferred rewards",
+      "rewards": [
+        "Tribute",
+        "Ritual Base Types"
+      ]
+    }
+  },
+  "bossContent": {
+    "The Shaper": {
+      "level": 84,
+      "location": "Shaper's Realm",
+      "drops": [
+        "Shaper Influenced Items",
+        "Fragments"
+      ]
+    },
+    "The Elder": {
+      "level": 84,
+      "location": "The Elder's Domain",
+      "drops": [
+        "Elder Influenced Items",
+        "Watchers Eye"
+      ]
+    },
+    "The Maven": {
+      "level": 85,
+      "location": "The Maven's Crucible",
+      "drops": [
+        "Elevated Modifiers",
+        "Maven's Orb"
+      ]
+    }
+  }
+}

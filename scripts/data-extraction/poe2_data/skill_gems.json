@@ -1,0 +1,45 @@
+{
+  "Fireball": {
+    "tags": [
+      "spell",
+      "fire",
+      "projectile"
+    ],
+    "spirit": 0,
+    "damage": "100%"
+  },
+  "Freezing Pulse": {
+    "tags": [
+      "spell",
+      "cold",
+      "projectile"
+    ],
+    "spirit": 0,
+    "damage": "100%"
+  },
+  "Lightning Strike": {
+    "tags": [
+      "attack",
+      "lightning",
+      "projectile"
+    ],
+    "spirit": 0,
+    "damage": "100%"
+  },
+  "Raise Zombie": {
+    "tags": [
+      "spell",
+      "minion"
+    ],
+    "spirit": 40,
+    "damage": "minion"
+  },
+  "Summon Skeletons": {
+    "tags": [
+      "spell",
+      "minion"
+    ],
+    "spirit": 30,
+    "damage": "minion"
+  }
+}

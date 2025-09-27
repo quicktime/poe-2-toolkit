@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Starforge",
+    "category": "weapons",
+    "base": "Infernal Sword",
+    "level": 67,
+    "mods": [
+      "300% increased Physical Damage",
+      "Adds 90-100 Physical Damage",
+      "6% increased Attack Speed",
+      "Your Physical Damage can Shock"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Rebuke of the Vaal",
+    "category": "weapons",
+    "base": "Vaal Blade",
+    "level": 64,
+    "mods": [
+      "Adds 19-28 Physical Damage",
+      "Adds 19-28 Fire Damage",
+      "Adds 19-28 Cold Damage",
+      "Adds 19-28 Lightning Damage",
+      "Adds 19-28 Chaos Damage"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Quill Rain",
+    "category": "weapons",
+    "base": "Short Bow",
+    "level": 5,
+    "mods": [
+      "100% increased Attack Speed",
+      "30% less Damage"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Windripper",
+    "category": "weapons",
+    "base": "Imperial Bow",
+    "level": 66,
+    "mods": [
+      "Adds 48-60 Cold Damage",
+      "Adds 1-85 Lightning Damage",
+      "15% increased Attack Speed",
+      "30% increased Critical Strike Chance",
+      "15% increased Quantity of Items Dropped by Slain Frozen Enemies"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "The Whispering Ice",
+    "category": "weapons",
+    "base": "Vile Staff",
+    "level": 33,
+    "mods": [
+      "18% increased Intelligence",
+      "1% increased Spell Damage per 10 Intelligence",
+      "Grants Level 1 Icestorm Skill"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Shavronne's Wrappings",
+    "category": "armour",
+    "base": "Occultist's Vestment",
+    "level": 62,
+    "mods": [
+      "140-200% increased Energy Shield",
+      "10-15% increased Lightning Resistance",
+      "Chaos Damage does not bypass Energy Shield"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Kaom's Heart",
+    "category": "armour",
+    "base": "Glorious Plate",
+    "level": 68,
+    "mods": [
+      "+500 to Maximum Life",
+      "Has no Sockets"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Crown of Eyes",
+    "category": "armour",
+    "base": "Hubris Circlet",
+    "level": 69,
+    "mods": [
+      "138-172% increased Energy Shield",
+      "+23-29% to Accuracy Rating",
+      "Increases and Reductions to Spell Damage also apply to Attack Damage"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Maligaro's Virtuosity",
+    "category": "armour",
+    "base": "Deerskin Gloves",
+    "level": 21,
+    "mods": [
+      "+2 to Level of Socketed Dexterity Gems",
+      "50% increased Critical Strike Chance",
+      "5% increased Attack Speed"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Seven-League Step",
+    "category": "armour",
+    "base": "Rawhide Boots",
+    "level": 1,
+    "mods": [
+      "50% increased Movement Speed"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "The Pandemonius",
+    "category": "accessories",
+    "base": "Jade Amulet",
+    "level": 64,
+    "mods": [
+      "20-30% increased Cold Damage",
+      "10-15% increased Attack Speed",
+      "Blind Chilled Enemies on Hit",
+      "Damage Penetrates 20% Cold Resistance against Chilled Enemies"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Ventor's Gamble",
+    "category": "accessories",
+    "base": "Gold Ring",
+    "level": 65,
+    "mods": [
+      "-10 to +10% increased Quantity of Items Found",
+      "-40 to +40% increased Rarity of Items Found",
+      "-25 to +50 to Life",
+      "-25 to +50% to Fire Resistance",
+      "-25 to +50% to Cold Resistance",
+      "-25 to +50% to Lightning Resistance"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Headhunter",
+    "category": "accessories",
+    "base": "Leather Belt",
+    "level": 40,
+    "mods": [
+      "25-40 to Maximum Life",
+      "40-55 to Strength",
+      "40-55 to Dexterity",
+      "When you Kill a Rare monster, you gain its Modifiers for 20 seconds"
+    ],
+    "source": "custom"
+  },
+  {
+    "name": "Watcher's Eye",
+    "category": "jewels",
+    "base": "Prismatic Jewel",
+    "level": 1,
+    "mods": [
+      "4-6% increased maximum Energy Shield",
+      "4-6% increased maximum Life",
+      "4-6% increased maximum Mana",
+      "2 or 3 additional modifiers while affected by Auras"
+    ],
+    "source": "custom"
+  }
+]

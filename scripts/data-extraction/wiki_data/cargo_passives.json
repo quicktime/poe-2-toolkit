@@ -1,0 +1,4502 @@
+[
+  {
+    "name": null,
+    "id": "atlas_start_node",
+    "stat text": null,
+    "connections": "atlas_path_9,atlas_path_8,atlas_boss_adjacent_maps_2,atlas_path_13,atlas_path_22,atlas_path_22",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": null,
+    "id": "ROOT",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "&lt;&lt;HRB31&gt;&gt;",
+    "id": "AscendancyCustomOccultist7",
+    "stat text": "30% increased Mana Recovery rate&lt;br&gt;30% increased Energy Shield Recovery rate",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Occultist"
+  },
+  {
+    "name": "&lt;&lt;HRB32&gt;&gt;",
+    "id": "AscendancyCustomOccultist8",
+    "stat text": "Grants Summon Visiting Harbinger of the Arcane Skill",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Occultist"
+  },
+  {
+    "name": "&lt;&lt;HRB33&gt;&gt;",
+    "id": "AscendancyCustomOccultist9",
+    "stat text": "Debuffs on you expire 30% faster&lt;br&gt;Buffs on you expire 30% slower",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Occultist"
+  },
+  {
+    "name": "&lt;&lt;HRB34&gt;&gt;",
+    "id": "AscendancyCustomOccultist10",
+    "stat text": "Grants Summon Visiting Harbinger of Focus Skill",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Occultist"
+  },
+  {
+    "name": "&lt;&lt;HRB35&gt;&gt;",
+    "id": "AscendancyCustomOccultist11",
+    "stat text": "40% increased Cooldown Recovery Rate",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Occultist"
+  },
+  {
+    "name": "&lt;&lt;HRB36&gt;&gt;",
+    "id": "AscendancyCustomOccultist12",
+    "stat text": "Grants Summon Visiting Harbinger of Time Skill",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Occultist"
+  },
+  {
+    "name": "&lt;&lt;HRB37&gt;&gt;",
+    "id": "AscendancyCustomOccultist15",
+    "stat text": "100% increased Area of Effect of Hex Skills&lt;br&gt;Temporal Chains has no Reservation if Cast as an Aura",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Occultist"
+  },
+  {
+    "name": "&lt;&lt;HRB38&gt;&gt;",
+    "id": "AscendancyCustomOccultist16",
+    "stat text": "Gain 10% of Maximum Life as Extra Maximum Energy Shield&lt;br&gt;Gain 20% of Maximum Mana as Extra Maximum Energy Shield&lt;br&gt;30% of Non-Chaos Damage taken bypasses Energy Shield",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Occultist"
+  },
+  {
+    "name": "A Noble Quest",
+    "id": "atlas_expedition_4193",
+    "stat text": "Expeditions in your Maps have 65% increased chance to be led by Dannig",
+    "connections": "atlas_expedition_4195",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Above the Clouds",
+    "id": "AscendancyCustomRaider4",
+    "stat text": "Aspect of the Avian also grants Avian's Might and Avian's Flight to nearby Allies&lt;br&gt;200% increased Aspect of the Avian Buff Effect",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Warden"
+  },
+  {
+    "name": "Absolution",
+    "id": "AscendancyCustomChampion12",
+    "stat text": "40% increased Effect of Non-Curse Auras from your Skills while you have a Linked Target&lt;br&gt;Curses are inflicted on you instead of Linked targets",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Abyss",
+    "id": "atlas_mastery_abyss_1",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss",
+    "id": "atlas_mastery_abyss_2",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss",
+    "id": "atlas_mastery_abyss_3",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss",
+    "id": "atlas_mastery_abyss_4",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss",
+    "id": "atlas_mastery_abyss_5",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss",
+    "id": "atlas_mastery_abyss_6",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Chance",
+    "id": "atlas_abyss_1_1",
+    "stat text": "Your Maps have +12% chance to contain an Abyss&lt;br&gt;Scarabs dropped in your Maps have 12% increased chance to be Abyss Scarabs",
+    "connections": "atlas_abyss_1_3,atlas_abyss_1_2,atlas_abyss_1_3",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Chance",
+    "id": "atlas_abyss_1_2",
+    "stat text": "Your Maps have +12% chance to contain an Abyss&lt;br&gt;Scarabs dropped in your Maps have 12% increased chance to be Abyss Scarabs",
+    "connections": "atlas_abyss_1_1,atlas_abyss_1_4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Chance",
+    "id": "atlas_abyss_1_4",
+    "stat text": "Your Maps have +12% chance to contain an Abyss&lt;br&gt;Scarabs dropped in your Maps have 12% increased chance to be Abyss Scarabs",
+    "connections": "atlas_abyss_1_2,atlas_path_27",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Chance",
+    "id": "atlas_abyss_3_2",
+    "stat text": "Your Maps have +8% chance to contain an Abyss&lt;br&gt;Scarabs dropped in your Maps have 8% increased chance to be Abyss Scarabs",
+    "connections": "atlas_abyss_3_4,atlas_path_90,atlas_abyss_3_1,atlas_abyss_3_4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Chance",
+    "id": "atlas_abyss_4175_",
+    "stat text": "Your Maps have +8% chance to contain an Abyss&lt;br&gt;Scarabs dropped in your Maps have 8% increased chance to be Abyss Scarabs",
+    "connections": "atlas_abyss_4176,atlas_mod_effect_5,atlas_abyss_4176",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Chance",
+    "id": "atlas_abyss_4176",
+    "stat text": "Your Maps have +8% chance to contain an Abyss&lt;br&gt;Scarabs dropped in your Maps have 8% increased chance to be Abyss Scarabs",
+    "connections": "atlas_abyss_4177,atlas_abyss_4175_,atlas_abyss_4177",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Chance",
+    "id": "atlas_abyss_4177",
+    "stat text": "Your Maps have +8% chance to contain an Abyss&lt;br&gt;Scarabs dropped in your Maps have 8% increased chance to be Abyss Scarabs",
+    "connections": "atlas_abyss_4171,atlas_abyss_4176",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Chance",
+    "id": "atlas_abyss_4_4",
+    "stat text": "Your Maps have +8% chance to contain an Abyss&lt;br&gt;Scarabs dropped in your Maps have 8% increased chance to be Abyss Scarabs",
+    "connections": "atlas_abyss_4_6,atlas_map_drops_5,atlas_abyss_4_1,atlas_abyss_4_6",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Magic Monster Chance",
+    "id": "atlas_abyss_4183",
+    "stat text": "Abyss Cracks in your Maps have 3% chance to spawn all Monsters as at least Magic&lt;br&gt;Abyss Pits in your Maps have 3% chance to spawn all Monsters as at least Magic",
+    "connections": "atlas_abyss_4186,atlas_abyss_4170,atlas_abyss_4186",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Magic Monster Chance",
+    "id": "atlas_abyss_4186",
+    "stat text": "Abyss Cracks in your Maps have 3% chance to spawn all Monsters as at least Magic&lt;br&gt;Abyss Pits in your Maps have 3% chance to spawn all Monsters as at least Magic",
+    "connections": "atlas_abyss_4188,atlas_abyss_4183,atlas_abyss_4188",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Magic Monster Chance",
+    "id": "atlas_abyss_4188",
+    "stat text": "Abyss Cracks in your Maps have 3% chance to spawn all Monsters as at least Magic&lt;br&gt;Abyss Pits in your Maps have 3% chance to spawn all Monsters as at least Magic",
+    "connections": "atlas_abyss_4173,atlas_abyss_4186,atlas_abyss_4173",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Monster Count",
+    "id": "atlas_abyss_4185",
+    "stat text": "Abysses in your Maps spawn 5% increased Monsters",
+    "connections": "atlas_abyss_4187,atlas_abyss_4187,atlas_abyss_4189",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Monster Count",
+    "id": "atlas_abyss_4187",
+    "stat text": "Abysses in your Maps spawn 5% increased Monsters",
+    "connections": "atlas_abyss_4174,atlas_abyss_4185",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Monster Count",
+    "id": "atlas_abyss_4189",
+    "stat text": "Abysses in your Maps spawn 5% increased Monsters",
+    "connections": "atlas_abyss_4185,atlas_map_drops_18,atlas_map_drops_18",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Monsters and Experience",
+    "id": "atlas_abyss_3_4",
+    "stat text": "Abysses in your Maps spawn 5% increased Monsters&lt;br&gt;Abyss Monsters in your Maps grant 10% increased Experience",
+    "connections": "atlas_abyss_1_7,atlas_abyss_3_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Pits Rare Monster Chance",
+    "id": "atlas_abyss_4181",
+    "stat text": "Abyss Pits in your Maps have 3% chance to spawn 5 additional Rare Monsters",
+    "connections": "atlas_abyss_4182,atlas_abyss_4184",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Pits Rare Monster Chance",
+    "id": "atlas_abyss_4182",
+    "stat text": "Abyss Pits in your Maps have 3% chance to spawn 5 additional Rare Monsters",
+    "connections": "atlas_abyss_4170,atlas_abyss_4181,atlas_abyss_4170",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Pits Rare Monster Chance",
+    "id": "atlas_abyss_4184",
+    "stat text": "Abyss Pits in your Maps have 3% chance to spawn 5 additional Rare Monsters",
+    "connections": "atlas_abyss_4181,atlas_abyss_4172",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Swarming Reaction Chance",
+    "id": "atlas_abyss_4178",
+    "stat text": "Abyss Cracks in your Maps have 3% chance to spawn 100% increased Monsters&lt;br&gt;Abyss Pits in your Maps have 3% chance to spawn 100% increased Monsters",
+    "connections": "atlas_abyss_4179,atlas_abyss_4171,atlas_abyss_4179",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Swarming Reaction Chance",
+    "id": "atlas_abyss_4179",
+    "stat text": "Abyss Cracks in your Maps have 3% chance to spawn 100% increased Monsters&lt;br&gt;Abyss Pits in your Maps have 3% chance to spawn 100% increased Monsters",
+    "connections": "atlas_abyss_4180,atlas_abyss_4178",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyss Swarming Reaction Chance",
+    "id": "atlas_abyss_4180",
+    "stat text": "Abyss Cracks in your Maps have 3% chance to spawn 100% increased Monsters&lt;br&gt;Abyss Pits in your Maps have 3% chance to spawn 100% increased Monsters",
+    "connections": "atlas_abyss_4172,atlas_abyss_4179",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Army",
+    "id": "atlas_abyss_1_7",
+    "stat text": "Abysses in your Maps spawn 50% increased Monsters&lt;br&gt;Abyss Monsters in your Maps grant 50% increased Experience",
+    "connections": "atlas_abyss_3_4",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Depths Chance",
+    "id": "atlas_abyss_4_5",
+    "stat text": "Abysses in your Maps have 10% increased chance to lead to an Abyssal Depths",
+    "connections": "atlas_abyss_4_7,atlas_abyss_4_6,atlas_abyss_4_7",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Depths Chance",
+    "id": "atlas_abyss_4_6",
+    "stat text": "Abysses in your Maps have 10% increased chance to lead to an Abyssal Depths",
+    "connections": "atlas_abyss_4_5,atlas_abyss_4_4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Depths Chance and Stygian Spire Chance",
+    "id": "atlas_abyss_2_2",
+    "stat text": "Abysses in your Maps that do not lead to an Abyssal Depths have 5% increased chance to lead to a Stygian Spire&lt;br&gt;Abysses in your Maps have 5% increased chance to lead to an Abyssal Depths",
+    "connections": "atlas_abyss_2_3,atlas_abyss_2_3,atlas_abyss_4_7",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Depths Chance and Stygian Spire Chance",
+    "id": "atlas_abyss_2_3",
+    "stat text": "Abysses in your Maps that do not lead to an Abyssal Depths have 5% increased chance to lead to a Stygian Spire&lt;br&gt;Abysses in your Maps have 5% increased chance to lead to an Abyssal Depths",
+    "connections": "atlas_abyss_4_3,atlas_abyss_2_2,atlas_abyss_4_3",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Depths Item Quantity",
+    "id": "atlas_abyss_2_1",
+    "stat text": "10% increased Quantity of Items dropped in Abyssal Depths in your Maps",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Jewel Chance",
+    "id": "atlas_abyss_1_5",
+    "stat text": "Abyssal Troves and Stygian Spires in your Maps have 10% increased chance to contain or drop an Abyss Jewel",
+    "connections": "atlas_abyss_1_8,atlas_mod_effect_8_,atlas_abyss_1_8,atlas_mod_effect_8_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Jewel Chance",
+    "id": "atlas_abyss_1_6",
+    "stat text": "Abyssal Troves and Stygian Spires in your Maps have 10% increased chance to contain or drop an Abyss Jewel",
+    "connections": "atlas_abyss_3_5,atlas_abyss_1_8,atlas_abyss_3_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Abyssal Jewel Chance",
+    "id": "atlas_abyss_1_8",
+    "stat text": "Abyssal Troves and Stygian Spires in your Maps have 10% increased chance to contain or drop an Abyss Jewel",
+    "connections": "atlas_abyss_1_6,atlas_abyss_1_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy",
+    "id": "accuracy1144",
+    "stat text": "6% increased Global Accuracy Rating&lt;br&gt;+20 to Accuracy Rating",
+    "connections": "versatility1146,strong_arm118,versatility1146",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy",
+    "id": "accuracy1145",
+    "stat text": "6% increased Global Accuracy Rating&lt;br&gt;+20 to Accuracy Rating",
+    "connections": "troll's_blood203,versatility1146,troll's_blood203",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy",
+    "id": "accuracy_rating2345",
+    "stat text": "12% increased Global Accuracy Rating",
+    "connections": "accuracy_rating2346,attack_speed1279,accuracy_rating2346",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy",
+    "id": "accuracy_rating2346",
+    "stat text": "12% increased Global Accuracy Rating",
+    "connections": "accuracy_rating2347,accuracy_rating2345,accuracy_rating2347",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy",
+    "id": "accuracy_rating2347",
+    "stat text": "12% increased Global Accuracy Rating",
+    "connections": "accuracy_rating2346",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy",
+    "id": "projectile_damage1130",
+    "stat text": "12% increased Global Accuracy Rating",
+    "connections": "projectile_damage1131,fury_bolts1132,projectile_damage1131",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Attack Damage",
+    "id": "melee_damage618",
+    "stat text": "8% increased Attack Damage&lt;br&gt;8% increased Global Accuracy Rating",
+    "connections": "finesse993,melee_attack_speed1484",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Attack Damage",
+    "id": "melee_damage619",
+    "stat text": "8% increased Attack Damage&lt;br&gt;8% increased Global Accuracy Rating",
+    "connections": "melee_attack_speed1484,evasion685",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Attack Speed",
+    "id": "accuracy582",
+    "stat text": "10% increased Global Accuracy Rating&lt;br&gt;4% increased Attack Speed",
+    "connections": "accuracy589,dexterity864,accuracy589,dexterity864",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Attack Speed",
+    "id": "accuracy589",
+    "stat text": "10% increased Global Accuracy Rating&lt;br&gt;4% increased Attack Speed",
+    "connections": "accuracy582,deadeye590",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Critical Strike Chance",
+    "id": "accuracy198",
+    "stat text": "12% increased Global Accuracy Rating&lt;br&gt;12% increased Critical Strike Chance",
+    "connections": "accuracy200,eagle_eye199",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Critical Strike Chance",
+    "id": "accuracy200",
+    "stat text": "12% increased Global Accuracy Rating&lt;br&gt;12% increased Critical Strike Chance",
+    "connections": "accuracy198,strength777",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Critical Strike Chance",
+    "id": "accuracy586",
+    "stat text": "10% increased Global Accuracy Rating&lt;br&gt;15% increased Critical Strike Chance",
+    "connections": "deadeye588,accuracy587,deadeye588",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Critical Strike Chance",
+    "id": "accuracy587",
+    "stat text": "10% increased Global Accuracy Rating&lt;br&gt;15% increased Critical Strike Chance",
+    "connections": "accuracy586,dexterity867",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Elemental Resistances",
+    "id": "accuracy583",
+    "stat text": "10% increased Global Accuracy Rating&lt;br&gt;+4% to all Elemental Resistances",
+    "connections": "dexterity854,accuracy584",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy and Elemental Resistances",
+    "id": "accuracy584",
+    "stat text": "10% increased Global Accuracy Rating&lt;br&gt;+4% to all Elemental Resistances",
+    "connections": "accuracy583,deadeye585,deadeye585",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy Mastery",
+    "id": "mastery_accuracy1",
+    "stat text": null,
+    "connections": "deadeye585",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy Mastery",
+    "id": "mastery_accuracy2",
+    "stat text": null,
+    "connections": "deadeye588",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy Mastery",
+    "id": "mastery_accuracy3",
+    "stat text": null,
+    "connections": "deadeye590",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Accuracy Mastery",
+    "id": "mastery_accuracy4",
+    "stat text": null,
+    "connections": "eagle_eye199",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Acrimony",
+    "id": "physical_reflect_notable_2799",
+    "stat text": "+15% to Damage over Time Multiplier",
+    "connections": "mastery_damageovertime264,physical_reflect_2797",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Acrobatics",
+    "id": "acrobatics1136",
+    "stat text": "Modifiers to Chance to Suppress Spell Damage instead apply to Chance to Dodge Spell Hits at 50% of their value&lt;br /&gt;Maximum Chance to Dodge Spell Hits is 75%",
+    "connections": "dexterity866",
+    "is keystone": "1",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Acrobatics Improvement",
+    "id": "acrobatics_improvement1190",
+    "stat text": "1% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Acrobatics Improvement",
+    "id": "acrobatics_improvement1192",
+    "stat text": "1% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Acrobatics Improvement",
+    "id": "acrobatics_improvement1193",
+    "stat text": "1% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Acuity",
+    "id": "deadeye590",
+    "stat text": "20% increased Global Accuracy Rating&lt;br&gt;6% increased Attack Speed&lt;br&gt;+100 to Accuracy Rating",
+    "connections": "accuracy589,mastery_accuracy3,mastery_accuracy3",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adamant",
+    "id": "armour_guards_notable_2380",
+    "stat text": "25% increased Armour&lt;br&gt;Remove Bleeding when you use a Guard Skill&lt;br&gt;Remove Corrupted Blood when you use a Guard Skill&lt;br&gt;Guard Skills have 25% increased Duration",
+    "connections": "mastery_armour11,armour_guards_2379,mastery_armour11",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adaptive Steel",
+    "id": "blight_special_notable20",
+    "stat text": "5% chance to Defend with double your Armour for each&lt;br /&gt;time you've been Hit by an Enemy Recently, up to 30%",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adder's Touch",
+    "id": "adder's_touch443",
+    "stat text": "Critical Strikes with Daggers Poison the Enemy&lt;br&gt;+25% to Damage over Time Multiplier for Poison from Critical Strikes",
+    "connections": "dagger_poison2530,mastery_dagger79,dagger_poison2529,dagger_poison2530,mastery_dagger79",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Blight Chest Chance",
+    "id": "atlas_blight_1_5",
+    "stat text": "Lanes of Blight Encounters in your Maps have 10% chance for an additional Reward Chest",
+    "connections": "atlas_blight_1_7,atlas_blight_1_6,atlas_blight_1_7",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Blight Chest Chance",
+    "id": "atlas_blight_1_6",
+    "stat text": "Lanes of Blight Encounters in your Maps have 10% chance for an additional Reward Chest",
+    "connections": "atlas_blight_1_5,atlas_blight_1_1",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Delirium Reward Chance",
+    "id": "atlas_delirium_2_3",
+    "stat text": "Delirium Encounters in your Maps have 4% chance to generate an additional Reward type",
+    "connections": "atlas_delirium_4_3,atlas_delirium_4_2,atlas_delirium_4_3",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Delirium Reward Chance",
+    "id": "atlas_delirium_4_2",
+    "stat text": "Delirium Encounters in your Maps have 4% chance to generate an additional Reward type",
+    "connections": "atlas_delirium_2_3,atlas_delirium_3_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Delirium Reward Chance",
+    "id": "atlas_delirium_4_3",
+    "stat text": "Delirium Encounters in your Maps have 4% chance to generate an additional Reward type",
+    "connections": "atlas_delirium_4_4,atlas_delirium_2_3,atlas_delirium_4_4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Exile Spawn Chance",
+    "id": "atlas_anarchy_2_1",
+    "stat text": "Your Maps have a 25% chance to contain an additional Rogue Exile",
+    "connections": "atlas_anarchy_2_3,atlas_anarchy_2_5,atlas_anarchy_2_3,atlas_anarchy_2_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Exile Spawn Chance",
+    "id": "atlas_anarchy_2_2__",
+    "stat text": "Your Maps have a 25% chance to contain an additional Rogue Exile",
+    "connections": "atlas_anarchy_2_4,atlas_anarchy_2_3,atlas_anarchy_2_4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Exile Spawn Chance",
+    "id": "atlas_anarchy_2_3",
+    "stat text": "Your Maps have a 25% chance to contain an additional Rogue Exile",
+    "connections": "atlas_anarchy_2_2__,atlas_anarchy_2_1",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Exile Spawn Chance",
+    "id": "atlas_anarchy_2_5",
+    "stat text": "Your Maps have a 25% chance to contain an additional Rogue Exile",
+    "connections": "atlas_path_2,atlas_anarchy_2_1",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Chance",
+    "id": "atlas_harbinger_2_2",
+    "stat text": "Your Maps have a 5% chance to contain an additional Harbinger",
+    "connections": "atlas_boss_adjacent_maps_10,atlas_harbinger_2_4,atlas_harbinger_2_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Chance",
+    "id": "atlas_harbinger_2_3",
+    "stat text": "Your Maps have a 5% chance to contain an additional Harbinger",
+    "connections": "atlas_path_35,atlas_harbinger_2_5,atlas_harbinger_2_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Chance",
+    "id": "atlas_harbinger_2_5",
+    "stat text": "Your Maps have a 5% chance to contain an additional Harbinger",
+    "connections": "atlas_harbinger_2_2,atlas_harbinger_2_3",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Chance",
+    "id": "atlas_harbinger_3_1",
+    "stat text": "Your Maps have a 5% chance to contain an additional Harbinger",
+    "connections": "atlas_harbinger_3_6,atlas_map_drops_4,atlas_harbinger_3_5,atlas_harbinger_3_6",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Chance",
+    "id": "atlas_harbinger_3_2",
+    "stat text": "Your Maps have a 5% chance to contain an additional Harbinger",
+    "connections": "atlas_harbinger_3_4,atlas_harbinger_3_4,atlas_harbinger_3_6",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Chance",
+    "id": "atlas_harbinger_3_6",
+    "stat text": "Your Maps have a 5% chance to contain an additional Harbinger",
+    "connections": "atlas_harbinger_3_2,atlas_harbinger_3_1",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Shards",
+    "id": "atlas_harbinger_1_1",
+    "stat text": "Harbingers in your Maps have 20% chance to drop an additional Stack of Currency Shards",
+    "connections": "atlas_path_28,atlas_harbinger_1_2_,atlas_harbinger_1_2_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Shards",
+    "id": "atlas_harbinger_1_2_",
+    "stat text": "Harbingers in your Maps have 20% chance to drop an additional Stack of Currency Shards",
+    "connections": "atlas_path_21,atlas_harbinger_1_4,atlas_harbinger_1_1,atlas_harbinger_1_4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Shards",
+    "id": "atlas_harbinger_1_4",
+    "stat text": "Harbingers in your Maps have 20% chance to drop an additional Stack of Currency Shards",
+    "connections": "atlas_harbinger_1_3,atlas_harbinger_1_2_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Shards",
+    "id": "atlas_harbinger_3_3",
+    "stat text": "Harbingers in your Maps have 20% chance to drop an additional Stack of Currency Shards",
+    "connections": "atlas_harbinger_3_5,atlas_harbinger_3_4,atlas_harbinger_3_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Harbinger Shards",
+    "id": "atlas_harbinger_3_5",
+    "stat text": "Harbingers in your Maps have 20% chance to drop an additional Stack of Currency Shards",
+    "connections": "atlas_harbinger_3_1,atlas_harbinger_3_3",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Lifeforce from Harvest",
+    "id": "atlas_harvest_2_3",
+    "stat text": "Harvest Monsters in your Maps drop 3% increased Quantity of Lifeforce",
+    "connections": "atlas_harvest_2_4,atlas_harvest_2_4,atlas_harvest_4_1",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Lifeforce from Harvest",
+    "id": "atlas_harvest_2_4",
+    "stat text": "Harvest Monsters in your Maps drop 3% increased Quantity of Lifeforce",
+    "connections": "atlas_harvest_2_3,atlas_harvest_3_4__",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Lifeforce from Harvest",
+    "id": "atlas_harvest_4220",
+    "stat text": "Harvest Monsters in your Maps drop 3% increased Quantity of Lifeforce",
+    "connections": "atlas_harvest_4225,atlas_harvest_4222,atlas_harvest_4225",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Lifeforce from Harvest",
+    "id": "atlas_harvest_4222",
+    "stat text": "Harvest Monsters in your Maps drop 3% increased Quantity of Lifeforce",
+    "connections": "atlas_harvest_4220,atlas_harvest_4218,atlas_path_83",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Lifeforce from Harvest",
+    "id": "atlas_harvest_4225",
+    "stat text": "Harvest Monsters in your Maps drop 3% increased Quantity of Lifeforce",
+    "connections": "atlas_harvest_4212,atlas_harvest_4220",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Lifeforce from Harvest",
+    "id": "atlas_harvest_4_1",
+    "stat text": "Harvest Monsters in your Maps drop 3% increased Quantity of Lifeforce",
+    "connections": "atlas_harvest_2_3,atlas_path_21,atlas_harvest_3_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Smuggler's Cache Chance",
+    "id": "atlas_heist_3_1",
+    "stat text": "Your Maps that contain Smuggler's Caches have a 10% chance to contain an additional Smuggler's Cache",
+    "connections": "atlas_heist_3_4,atlas_mod_effect_2,atlas_heist_3_4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Smuggler's Cache Chance",
+    "id": "atlas_heist_3_2",
+    "stat text": "Your Maps that contain Smuggler's Caches have a 10% chance to contain an additional Smuggler's Cache",
+    "connections": "atlas_heist_3_3,atlas_heist_3_4,atlas_heist_3_3,atlas_heist_3_4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Additional Smuggler's Cache Chance",
+    "id": "atlas_heist_3_4",
+    "stat text": "Your Maps that contain Smuggler's Caches have a 10% chance to contain an additional Smuggler's Cache",
+    "connections": "atlas_heist_3_1,atlas_heist_3_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Animosity",
+    "id": "reduced_proj_speed_notable2739",
+    "stat text": "10% reduced Projectile Speed&lt;br&gt;Projectiles deal 40% increased Damage with Hits to targets at the start&lt;br /&gt;of their movement, reducing to 0% as they travel farther",
+    "connections": "mastery_projectile202,reduced_proj_speed2738",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_boss_adjacent_maps_1",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_boss_adjacent_maps_8,atlas_heist_1_5,atlas_path_23_,atlas_boss_adjacent_maps_8,atlas_domination_1_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_boss_adjacent_maps_2",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_essence_1_1,atlas_path_23_,atlas_start_node,atlas_strongbox_1_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_boss_adjacent_maps_8",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_37,atlas_boss_adjacent_maps_1,atlas_kirac_1_10,atlas_zana_1_11,atlas_path_38",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_1",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_blight_3_2,atlas_bestiary_5_1,atlas_settlers_4_1,atlas_path_19,atlas_path_20",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_10",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_18,atlas_path_19,atlas_path_18",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_11",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_12",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_24_,atlas_path_22,atlas_path_22,atlas_path_24_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_13",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_delve_5_2,atlas_strongbox_1_3,atlas_start_node,atlas_strongbox_1_3,atlas_delve_5_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_14",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_27,atlas_expedition_4200,atlas_legion_1_1,atlas_expedition_4200,atlas_path_26",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_15",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_2,atlas_heist_4346,atlas_ultimatum_4570,atlas_ultimatum_4570,atlas_path_18",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_16",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_25_,atlas_path_24_,atlas_keystone_monsterlife_1,atlas_path_25_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_17",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_map_drops_1,atlas_torment_3_1__,atlas_map_tier_2_1,atlas_path_18",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_18",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_30,atlas_path_17,atlas_path_15,atlas_delirium_1_1,atlas_path_10,atlas_path_17,atlas_path_6,atlas_path_30",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_19",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_10,atlas_path_1,atlas_keystone_monsterdamage_1,atlas_path_1",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_2",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_ritual_1_1,atlas_anarchy_2_5,atlas_bestiary_4_1,atlas_kirac_2_1,atlas_anarchy_2_5,atlas_blight_3_3_,atlas_path_15",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_20",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_1,atlas_path_9",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_21",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_harvest_4_1,atlas_path_38,atlas_domination_1_1,atlas_harvest_4_1,atlas_harbinger_1_2_,atlas_path_27",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_22",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_jun_5_3,atlas_start_node,atlas_path_12",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_23_",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_boss_adjacent_maps_1,atlas_boss_adjacent_maps_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_24_",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_jun_5_2,atlas_path_12,atlas_path_16,atlas_expedition_1_2,atlas_breach_1_1",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_25_",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_27,atlas_path_16",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_26",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_jun_2_2,atlas_breach_2_2,atlas_kirac_3_1,atlas_harvest_1_2,atlas_path_14,atlas_kirac_3_1,atlas_jun_2_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_27",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_21,atlas_path_28,atlas_path_5,atlas_path_25_,atlas_abyss_1_4,atlas_path_14",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_28",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_map_drops_20,atlas_delve_2_5,atlas_harbinger_1_1,atlas_path_27,atlas_map_tier_1_2_,atlas_delve_2_5",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_29",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_jun_2_3,atlas_path_3,atlas_legion_2_2,atlas_path_3,atlas_legion_2_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_3",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_map_drops_17_,atlas_path_29",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_30",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_ultimatum_4571,atlas_torment_3_2,atlas_path_18,atlas_path_37,atlas_heist_1_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_30_1",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_37",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_30,atlas_mod_effect_16__,atlas_boss_adjacent_maps_8",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_38",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_boss_adjacent_maps_8,atlas_scarab_8_1,atlas_scarab_8_1,atlas_path_21",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_4",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_7,atlas_map_drops_11,atlas_path_7",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_5",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_27,atlas_disable_league_7,atlas_disable_league_8,atlas_disable_league_10,atlas_disable_league_9,atlas_disable_league_6_,atlas_delve_5_1,atlas_path_27",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_6",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_path_18,atlas_disable_league_1_,atlas_disable_league_3,atlas_disable_league_2,atlas_disable_league_4,atlas_disable_league_5,atlas_alva_5_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_7",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_ultimatum_4590_,atlas_beyond_5_2,atlas_path_4,atlas_essence_4_1,atlas_bestiary_4_2,atlas_beyond_5_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_8",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_alva_5_1,atlas_essence_1_2,atlas_start_node",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adjacent Map Drop Chance",
+    "id": "atlas_path_9",
+    "stat text": "2% chance for one Monster in each of your Maps to drop an additional connected Map",
+    "connections": "atlas_bestiary_5_2_,atlas_path_20,atlas_start_node",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Admonisher",
+    "id": "warcry_notable1",
+    "stat text": "50% increased Warcry Speed&lt;br&gt;15% increased Damage for each time you've Warcried Recently",
+    "connections": "mastery_warcry253,warcry_speed2704",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Adrenaline",
+    "id": "affliction_notable_adrenaline",
+    "stat text": "8% increased maximum Life&lt;br&gt;6% increased Attack Speed while Leeching",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Advance Guard",
+    "id": "affliction_notable_advance_guard",
+    "stat text": "Attack Skills deal 30% increased Damage while holding a Shield&lt;br&gt;5% increased Movement Speed while holding a Shield&lt;br&gt;Ignore all Movement Penalties from Armour",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aerialist",
+    "id": "affliction_notable_aerialist",
+    "stat text": "+10% chance to Suppress Spell Damage&lt;br&gt;5% increased Dexterity",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aerodynamics",
+    "id": "affliction_notable_aerodynamics",
+    "stat text": "10% increased Projectile Damage&lt;br&gt;10% increased Projectile Speed&lt;br&gt;Projectiles Pierce an additional Target",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Agent of Destruction",
+    "id": "affliction_notable_agent_of_destruction",
+    "stat text": "25% increased Elemental Damage while affected by a Herald&lt;br&gt;10% chance to Freeze, Shock and Ignite while affected by a Herald",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aggravate Bleeding On Critical Strike Chance",
+    "id": "bleeding_node_2949",
+    "stat text": "25% chance to Aggravate Bleeding on targets you Critically Strike with Attacks",
+    "connections": "bleeding_node_2950,bleeding_node_2948,bleeding_node_2950",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aggravate Bleeding On Critical Strike Chance",
+    "id": "bleeding_node_2950",
+    "stat text": "25% chance to Aggravate Bleeding on targets you Critically Strike with Attacks",
+    "connections": "bleeding_notable_2952,bleeding_node_2949,bleeding_notable_2952",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aggressive Bastion",
+    "id": "shield_damage_block_notable2553_",
+    "stat text": "30% increased Physical Attack Damage while holding a Shield&lt;br&gt;+8% Chance to Block Attack Damage while holding a Shield&lt;br&gt;Attack Skills deal 30% increased Damage with Ailments while holding a Shield&lt;br&gt;10% chance to gain an Endurance Charge on Kill while holding a Shield",
+    "connections": "shield_damage_block2551,mastery_shield217,shield_damage_block2550",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aggressive Defence",
+    "id": "affliction_notable_aggressive_defence",
+    "stat text": "Fortifying Hits grant 60% increased Fortification&lt;br&gt;30% increased Fortification Duration&lt;br&gt;20% increased Damage with Attack Skills while Fortified",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Agility",
+    "id": "agility834",
+    "stat text": "+30 to Dexterity",
+    "connections": "intelligence886,intelligence886",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ailment Effect",
+    "id": "elemental_damage_and_ailment_effect_and_burning_damage2288",
+    "stat text": "20% increased Effect of Non-Damaging Ailments",
+    "connections": "templar_elemental_notable2289,elemental_damage1906,templar_elemental_notable2289",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Alacrity",
+    "id": "agility837",
+    "stat text": "+30 to Dexterity",
+    "connections": "intelligence892",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Alchemist",
+    "id": "affliction_notable_alchemist",
+    "stat text": "+20% to Cold Resistance&lt;br&gt;8% increased Attack and Cast Speed&lt;br&gt;20% increased Life Recovery from Flasks",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "All Hands",
+    "id": "atlas_keystone_random_master_missions",
+    "stat text": "Your Maps have +40% chance to contain a random Master encounter",
+    "connections": null,
+    "is keystone": "1",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "All That Glitters",
+    "id": "atlas_domination_3_3",
+    "stat text": "Shrines in your Maps have 10% chance to be a Covetous Shrine",
+    "connections": "atlas_domination_3_1",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Always Angry",
+    "id": "blight_special_notable21",
+    "stat text": "+8 to Minimum Rage",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Amber Infusion",
+    "id": "atlas_settlers_2_8",
+    "stat text": "100% increased chance for Ore Deposits found in your Maps to be Petrified Amber&lt;br&gt;Petrified Amber Ore Deposits in your Maps take 25% reduced Damage",
+    "connections": "atlas_settlers_2_3",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ambidexterity",
+    "id": "ambidexterity623",
+    "stat text": "60% increased Attack Damage with Main Hand while Dual Wielding&lt;br&gt;30% increased Attack Speed with Off Hand while Dual Wielding",
+    "connections": "dual_damage_speed1815,mastery_dualwield86,dual_damage_speed1815,mastery_dualwield86",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ambush and Assassinate",
+    "id": "AscendancyAssassin6",
+    "stat text": "+40% to Critical Strike Multiplier against Enemies that are on Full Life&lt;br&gt;100% more Critical Strike Chance against Enemies that are on Full Life&lt;br&gt;Critical Strikes have Culling Strike&lt;br&gt;15% more Damage with Hits and Ailments against Enemies that are on Low Life&lt;br&gt;100% more Critical Strike Chance against Enemies that are on Low Life",
+    "connections": "AscendancyAssassin5",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Assassin"
+  },
+  {
+    "name": "Amplified Artefacts",
+    "id": "atlas_scarab_9_3",
+    "stat text": "Rare Monsters in your Maps have 50% increased chance to drop Scarabs per Monster Modifier affecting them",
+    "connections": "atlas_scarab_9_2",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Amplified Energies",
+    "id": "atlas_essence_2_4",
+    "stat text": "Imprisoned Monsters in your Maps have at least 1 Essence at the highest possible tier",
+    "connections": "atlas_essence_2_2",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Amplify",
+    "id": "amplify379",
+    "stat text": "10% increased Area of Effect&lt;br&gt;20% increased Area Damage",
+    "connections": "area_damage_2224,area_of_effect_radius380,area_of_effect_radius382",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "An Honest Job",
+    "id": "atlas_necropolis_notable_1",
+    "stat text": "Gain Gravekeeper's Boon on collecting a Corpse in your Maps",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "an infinite pursuit",
+    "id": "AscendancyCustomDeadeye14",
+    "stat text": "Intelligence provides no inherent bonus to Maximum Mana&lt;br&gt;+1 to Maximum Mana per Dexterity",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Deadeye"
+  },
+  {
+    "name": "Ancestral Bond",
+    "id": "number_of_totems_allowed1269",
+    "stat text": "You can't deal Damage with Skills yourself&lt;br /&gt;+1 to maximum number of Summoned Totems",
+    "connections": "intelligence912",
+    "is keystone": "1",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancestral Defiance",
+    "id": "AscendancyCustomJuggernaut14_",
+    "stat text": "Gain 15% of Missing Unreserved Life before being Hit by an Enemy",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Ancestral Echo",
+    "id": "affliction_notable_ancestral_echo",
+    "stat text": "20% increased Totem Placement speed&lt;br&gt;10% increased Attack and Cast Speed if you've summoned a Totem Recently",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancestral Echo",
+    "id": "AscendancyCustomJuggernaut8",
+    "stat text": "Strike Skills also target the previous location they were used",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Ancestral Endurance",
+    "id": "AscendancyCustomJuggernaut13",
+    "stat text": "+3 to Maximum Endurance Charges",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Ancestral Fury",
+    "id": "AscendancyBerserker10",
+    "stat text": "Strike Skills also target the previous location they were used",
+    "connections": "AscendancyBerserker3",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Berserker"
+  },
+  {
+    "name": "Ancestral Guidance",
+    "id": "affliction_notable_ancestral_guidance",
+    "stat text": "Totems' Action Speed cannot be modified to below Base Value&lt;br&gt;Totems Regenerate 2% of Life per second",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancestral Inspiration",
+    "id": "affliction_notable_ancestral_inspiration",
+    "stat text": "Gain Arcane Surge when you Summon a Totem&lt;br&gt;Spells cast by Totems deal 25% increased Damage",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancestral Knowledge",
+    "id": "savant878",
+    "stat text": "+30 to Intelligence",
+    "connections": "strength1002",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancestral Might",
+    "id": "affliction_notable_ancestral_might",
+    "stat text": "15% increased Totem Life&lt;br&gt;30% increased Totem Duration&lt;br&gt;30% increased Totem Damage if you haven't Summoned a Totem in the past 2 seconds",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancestral Preservation",
+    "id": "affliction_notable_ancestral_preservation",
+    "stat text": "Totems have 15% additional Physical Damage Reduction&lt;br&gt;Totems gain +25% to Chaos Resistance&lt;br&gt;Totems gain +20% to all Elemental Resistances",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancestral Reach",
+    "id": "affliction_notable_ancestral_reach",
+    "stat text": "25% increased Totem Damage&lt;br&gt;25% increased Totem Placement speed&lt;br&gt;25% increased Totem Placement range",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancestral Reach",
+    "id": "AscendancyCustomJuggernaut7",
+    "stat text": "Non-Vaal Strike Skills target 1 additional nearby Enemy&lt;br&gt;Strike Skills which target additional Enemies can do so from 50% further away",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Ancestral Spirit",
+    "id": "AscendancyCustomJuggernaut10",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Ancient Conflict",
+    "id": "atlas_abyss_4174",
+    "stat text": "Abyssal Troves and Stygian Spires in your Maps have 3% chance to drop an Abyss Scarab",
+    "connections": "atlas_abyss_4187",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancient Decay",
+    "id": "atlas_expedition_4192",
+    "stat text": "Expedition Monsters in your Maps spawn with an additional 20% of Life missing",
+    "connections": "atlas_expedition_4202",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancient Hex",
+    "id": "vaal_notable_curse_1",
+    "stat text": "(7-10)% increased Effect of your Curses&lt;br&gt;Curse Skills have 20% increased Skill Effect Duration",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancient Writings",
+    "id": "atlas_expedition5",
+    "stat text": "Remnants in Areas have 40% chance to have an additional Suffix Modifier&lt;br&gt;Expeditions in Areas have +2 Remnants",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ancient Writings",
+    "id": "atlas_expedition_3_5",
+    "stat text": "Remnants in your Maps have 30% chance to have an additional Suffix Modifier&lt;br&gt;Expeditions in your Maps have +2 Remnants",
+    "connections": "atlas_expedition_3_4,atlas_expedition_3_2",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Animal Companion",
+    "id": "atlas_bestiary_1_3",
+    "stat text": "[DNT] Final Map Bosses in your Maps have 12% chance to drop&lt;br /&gt;an additional basic Bestiary Scarab",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Annihilation",
+    "id": "critical_strike_notable1641",
+    "stat text": "+15% to Critical Strike Multiplier for Spell Damage&lt;br&gt;50% increased Spell Critical Strike Chance",
+    "connections": "spell_critical_chance943,spell_critical_chance943",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Anointed Champion",
+    "id": "AscendancyCustomChampion10",
+    "stat text": "You have Consecrated Ground around you while stationary&lt;br&gt;Effects of Consecrated Ground you create Linger for 4 seconds",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Anointed Flesh",
+    "id": "ailmentres_notable2763",
+    "stat text": "+1% to all maximum Elemental Resistances&lt;br&gt;20% reduced Elemental Ailment Duration on you&lt;br&gt;20% reduced Effect of Chill and Shock on you",
+    "connections": "mastery_resistance260,ailmentres_cold2761,ailmentres_fire2760,ailmentres_lightning2762,mastery_resistance260",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Answered Appeals",
+    "id": "atlas_ritual_4254_",
+    "stat text": "Deferring Favours at Ritual Altars in your Maps costs 15% reduced Tribute&lt;br&gt;Favours Deferred at Ritual Altars in your Maps reappear 50% sooner&lt;br&gt;Unique Monsters slain at Ritual Altars in your Maps grant 100% more Tribute",
+    "connections": "atlas_ritual_4265_,atlas_ritual_4269",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Antifreeze",
+    "id": "affliction_notable_antifreeze",
+    "stat text": "+20% to Cold Resistance&lt;br&gt;30% chance to Avoid being Frozen&lt;br&gt;+1% to maximum Cold Resistance",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Antivenom",
+    "id": "affliction_notable_antivenom",
+    "stat text": "+23% to Chaos Resistance&lt;br&gt;30% chance to Avoid being Poisoned&lt;br&gt;+1% to maximum Chaos Resistance",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Apocalypse",
+    "id": "AscendancyCustomElementalist9",
+    "stat text": "+3 to Level of all Herald Skill Gems",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Elementalist"
+  },
+  {
+    "name": "Arbitrary Tenets",
+    "id": "atlas_keystone_ritual_variable_shop_prices",
+    "stat text": "Favours at Ritual Altars in your Maps randomly cost between 90% less and 80% more",
+    "connections": "atlas_ritual_4264",
+    "is keystone": "1",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Adept",
+    "id": "affliction_notable_arcane_adept",
+    "stat text": "Channelling Skills deal 20% increased Damage&lt;br&gt;5% increased Attack and Cast Speed while Channelling&lt;br&gt;Gain Arcane Surge after Channelling for 1 second",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Blessing",
+    "id": "AscendancyHeirophant14",
+    "stat text": "Gain Arcane Surge when you or your Totems Hit an Enemy with a Spell&lt;br&gt;Arcane Surge grants 20% more Spell Damage to you",
+    "connections": "AscendancyHeirophant13,AscendancyHeirophant1",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Hierophant"
+  },
+  {
+    "name": "Arcane Capacitor",
+    "id": "mana_arcane_surge_notable2590",
+    "stat text": "15% increased maximum Mana&lt;br&gt;10% chance to gain Arcane Surge when you Kill an Enemy&lt;br&gt;10% increased Effect of Arcane Surge on you per&lt;br /&gt;200 Mana spent Recently, up to 50%",
+    "connections": "mastery_mana160,mana_arcane_surge2588_,mana_arcane_surge2589,mastery_mana160",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Chemistry",
+    "id": "mana_flasks_notable1743",
+    "stat text": "15% increased maximum Mana&lt;br&gt;30% increased Mana Recovery from Flasks&lt;br&gt;Mana Flasks gain 1 Charge every 3 seconds",
+    "connections": "mastery_mana167,mana_flasks1740,mana_flasks1741,mastery_mana167",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Dual Wield Mastery",
+    "id": "dual_wield_spells_mastery2339",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Dual Wield Mastery",
+    "id": "dual_wield_spells_mastery2340",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Expanse",
+    "id": "area_of_effect_notable2331",
+    "stat text": "Spell Skills have 20% increased Area of Effect",
+    "connections": "mastery_caster42,area_of_effect2330,mastery_caster42",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Focus",
+    "id": "arcane_focus735",
+    "stat text": "20% increased maximum Energy Shield&lt;br&gt;10% faster start of Energy Shield Recharge&lt;br&gt;+10 to Intelligence",
+    "connections": "energy_shield1633,energy_shield405",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Guarding",
+    "id": "shield_spells_and_blocknotable2324",
+    "stat text": "60% increased Energy Shield from Equipped Shield&lt;br&gt;+10% Chance to Block Spell Damage while holding a Shield",
+    "connections": "mastery_shield216,shield_spells_and_block2332,shield_spells_and_block2333",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Heroism",
+    "id": "affliction_notable_arcane_heroism",
+    "stat text": "10% chance to gain Arcane Surge when you Hit a Unique enemy&lt;br&gt;30% increased Effect of Arcane Surge on you",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Potency",
+    "id": "arcane_potency378",
+    "stat text": "+30% to Critical Strike Multiplier for Spell Damage&lt;br&gt;30% increased Spell Critical Strike Chance",
+    "connections": "spell_critical_strike_multiplier377,mastery_criticals67,mastery_criticals67,spell_critical_strike_multiplier377",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Pyrotechnics",
+    "id": "affliction_notable_arcane_pyrotechnics",
+    "stat text": "20% increased Trap Damage&lt;br&gt;20% increased Mine Damage&lt;br&gt;Gain Arcane Surge when your Trap is Triggered by an Enemy&lt;br&gt;Gain Arcane Surge when your Mine is Detonated targeting an Enemy",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Retaliation",
+    "id": "spell_damage_notable_2975",
+    "stat text": "25% more Spell Damage if you've been Stunned while Casting Recently",
+    "connections": "mastery_caster47,spell_damage_2973_",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Sanctuary",
+    "id": "shield_spells_avoid_and_block_notable2328",
+    "stat text": "25% increased Spell Damage while holding a Shield&lt;br&gt;25% reduced Elemental Ailment Duration on you while holding a Shield&lt;br&gt;+8% Chance to Block Spell Damage while holding a Shield",
+    "connections": "mastery_shield215,shield_spells_avoid_and_block2327,shield_spells_avoid_and_block2334",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Shield Mastery",
+    "id": "shield_spells_mastery2335",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Shield Mastery",
+    "id": "shield_spells_mastery2336",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Staff Mastery",
+    "id": "staff_spells_mastery2337",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Staff Mastery",
+    "id": "staff_spells_mastery2338",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcane Will",
+    "id": "mana_and_mana_regen_notable2255",
+    "stat text": "Regenerate 5 Mana per second&lt;br&gt;30% increased maximum Mana&lt;br&gt;+10 to Intelligence",
+    "connections": "mana1623,mana1622",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcanist's Dominion",
+    "id": "savant901",
+    "stat text": "+20 to Intelligence&lt;br&gt;5% increased Cast Speed&lt;br&gt;20% increased Spell Damage",
+    "connections": "life_mana1639,intelligence918,elemental_damage1644,cast_speed420,minion_damage285,spell_critical_chance375,spell_damage723,stun_ignore1680",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcanist's Strongbox Chance",
+    "id": "atlas_strongbox_3_2",
+    "stat text": "Strongboxes in your Maps have 30% increased chance to be an Arcanist's Strongbox",
+    "connections": "atlas_strongbox_3_6,atlas_strongbox_3_1,atlas_strongbox_3_6",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcanist's Strongbox Chance",
+    "id": "atlas_strongbox_3_6",
+    "stat text": "Strongboxes in your Maps have 30% increased chance to be an Arcanist's Strongbox",
+    "connections": "atlas_strongbox_3_5,atlas_strongbox_3_2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Archaeology Tour",
+    "id": "atlas_disable_master_3",
+    "stat text": "Your Maps have 100% increased chance to contain Alva",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcing Blows",
+    "id": "arcing_blows210",
+    "stat text": "30% increased Lightning Damage with Attack Skills&lt;br&gt;Damage with Weapons Penetrates 8% Lightning Resistance",
+    "connections": "weapon_lightning_damage1715,mastery_elemental97,mastery_elemental97,weapon_lightning_damage1715",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arcing Shot",
+    "id": "affliction_notable_arcing_shot",
+    "stat text": "Arrows gain Damage as they travel farther, dealing up to 50% increased Damage with Hits to targets&lt;br&gt;Arrows gain Critical Strike Chance as they travel farther, up to 100% increased Critical Strike Chance",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area Damage",
+    "id": "affliction_area_damage",
+    "stat text": "10% increased Area Damage",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area Damage",
+    "id": "vaal_small_area_damage",
+    "stat text": "(7-12)% increased Area Damage",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area Damage Mastery",
+    "id": "affliction_mastery_area_damage",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect",
+    "id": "area_of_effect_radius1060",
+    "stat text": "12% increased Area of Effect",
+    "connections": "area_of_effect_radius1062",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect",
+    "id": "area_of_effect_radius1061",
+    "stat text": "12% increased Area of Effect",
+    "connections": "area_of_effect_radius1062,area_of_effect_radius1062,mana_regeneration1276",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect",
+    "id": "area_of_effect_radius1062",
+    "stat text": "12% increased Area of Effect",
+    "connections": "area_of_effect_radius1060,area_of_effect_radius1061",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect",
+    "id": "area_of_effect_radius1170",
+    "stat text": "10% increased Area of Effect",
+    "connections": "area_of_effect_radius1171,area_of_effect_radius1171,area_of_effect_radius381,deep_wisdom900",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect",
+    "id": "area_of_effect_radius1171",
+    "stat text": "10% increased Area of Effect",
+    "connections": "intelligence101,area_of_effect_radius1170,area_of_effect_radius381",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect",
+    "id": "area_of_effect_radius380",
+    "stat text": "10% increased Area of Effect",
+    "connections": "amplify379,area_of_effect_radius382,physical_and_elemental_damage_2219,area_of_effect_radius382",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect",
+    "id": "area_of_effect_radius382",
+    "stat text": "10% increased Area of Effect",
+    "connections": "amplify379,spellcaster_notable1873,area_of_effect_radius380,spellcaster_notable1873",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect",
+    "id": "vaal_small_area_of_effect",
+    "stat text": "(4-7)% increased Area of Effect",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect Damage",
+    "id": "area_damage_2224",
+    "stat text": "10% increased Area Damage",
+    "connections": "amplify379,intelligence894,amplify379",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect Damage",
+    "id": "area_of_effect_radius381",
+    "stat text": "10% increased Area Damage",
+    "connections": "area_of_effect_radius1171,area_of_effect_radius1170,blast_radius1121",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect Mastery",
+    "id": "melee_area_of_effect_mastery2446",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect per Endurance Charge",
+    "id": "endurance_charges2424",
+    "stat text": "3% increased Area of Effect per Endurance Charge",
+    "connections": "endurance_charges_notable2425,endurance_charges2422,endurance_charges_notable2425",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Area of Effect, Area Damage",
+    "id": "AscendancySaboteur17",
+    "stat text": "8% increased Area of Effect&lt;br&gt;10% increased Area Damage",
+    "connections": "AscendancySaboteur16,AscendancySaboteurStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Area Damage",
+    "id": "AscendancySaboteur5",
+    "stat text": "8% increased Area of Effect&lt;br&gt;10% increased Area Damage",
+    "connections": "AscendancySaboteur6,AscendancySaboteur16,AscendancySaboteur6",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Blind Effect",
+    "id": "AscendancySaboteur1",
+    "stat text": "8% increased Area of Effect&lt;br&gt;15% increased Blind Effect",
+    "connections": "AscendancySaboteur4,AscendancySaboteur4,AscendancySaboteurStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Mine Throwing Speed",
+    "id": "AscendancySaboteur11",
+    "stat text": "8% increased Area of Effect&lt;br&gt;5% increased Mine Throwing Speed",
+    "connections": "AscendancySaboteur12,AscendancySaboteur12,AscendancySaboteurStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Mine Throwing Speed",
+    "id": "AscendancySaboteur7",
+    "stat text": "8% increased Area of Effect&lt;br&gt;5% increased Mine Throwing Speed",
+    "connections": "AscendancySaboteur12,AscendancySaboteur2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Movement Speed",
+    "id": "AscendancySaboteur13",
+    "stat text": "8% increased Area of Effect&lt;br&gt;4% increased Movement Speed",
+    "connections": "AscendancySaboteur10,AscendancySaboteurStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Movement Speed",
+    "id": "AscendancySaboteur3",
+    "stat text": "8% increased Area of Effect&lt;br&gt;4% increased Movement Speed",
+    "connections": "AscendancySaboteur8,AscendancySaboteur8,AscendancySaboteurStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Trap and Mine Throwing Speed",
+    "id": "AscendancySaboteur21",
+    "stat text": "8% increased Area of Effect&lt;br&gt;5% increased Trap Throwing Speed&lt;br&gt;5% increased Mine Throwing Speed",
+    "connections": "AscendancySaboteur2,AscendancySaboteur4",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Trap Throwing Speed",
+    "id": "AscendancySaboteur15",
+    "stat text": "8% increased Area of Effect&lt;br&gt;5% increased Trap Throwing Speed",
+    "connections": "AscendancySaboteur14,AscendancySaboteurStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area of Effect, Trap Throwing Speed",
+    "id": "AscendancySaboteur9",
+    "stat text": "8% increased Area of Effect&lt;br&gt;5% increased Trap Throwing Speed",
+    "connections": "AscendancySaboteur14,AscendancySaboteur2",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Saboteur"
+  },
+  {
+    "name": "Area Spells Mastery",
+    "id": "area_spells_mastery2778",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "affliction_armour",
+    "stat text": "15% increased Armour",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "armour2023",
+    "stat text": "8% increased Armour",
+    "connections": "jewel_slot1971,armour2024,jewel_slot1971",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "armour2024",
+    "stat text": "8% increased Armour",
+    "connections": "armour2023,strength784",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "armour90",
+    "stat text": "14% increased Armour",
+    "connections": "armour_mastery89,dual_wield_block1053,armour_mastery89,dual_wield_block1053,shield_mastery730",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "armour92",
+    "stat text": "14% increased Armour",
+    "connections": "armour_mastery89,armour173,armour_mastery89",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "armour_endurance_charge2373",
+    "stat text": "10% increased Armour&lt;br&gt;+150 to Armour",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "armour_endurance_charge2374",
+    "stat text": "20% increased Armour",
+    "connections": "armour_endurance_charge_notable2376,armour_endurance_charge2375_,armour_endurance_charge_notable2376",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "armour_endurance_charge2375_",
+    "stat text": "14% increased Armour",
+    "connections": "armour_endurance_charge2374,strength775",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour",
+    "id": "vaal_small_armour",
+    "stat text": "(7-12)% increased Armour",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Elemental Resistances",
+    "id": "armour91",
+    "stat text": "10% increased Armour&lt;br&gt;+5% to all Elemental Resistances",
+    "connections": "armour93,armour93,strength820",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Elemental Resistances",
+    "id": "armour93",
+    "stat text": "10% increased Armour&lt;br&gt;+5% to all Elemental Resistances",
+    "connections": "armour91,steel_skin1275",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour1948",
+    "stat text": "10% increased Armour&lt;br&gt;5% increased maximum Energy Shield",
+    "connections": "armour_guards_2377,armour_crit_reduction_notable1944,armour_guards_2377",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour94",
+    "stat text": "10% increased Armour&lt;br&gt;4% increased maximum Energy Shield",
+    "connections": "armour95,strength780,armour95",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour95",
+    "stat text": "10% increased Armour&lt;br&gt;5% increased maximum Energy Shield",
+    "connections": "armour_crit_reduction_notable1944,armour94,armour_crit_reduction_notable1944",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour_and_energy_shield1178",
+    "stat text": "8% increased Armour&lt;br&gt;5% increased maximum Energy Shield",
+    "connections": "body_and_soul1173,body_and_soul1173,intelligence888",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour_and_energy_shield1447",
+    "stat text": "10% increased Armour&lt;br&gt;5% increased maximum Energy Shield",
+    "connections": "life_and_life_regen1891,armour_and_energy_shield1448,life_and_life_regen1891",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour_and_energy_shield1448",
+    "stat text": "10% increased Armour&lt;br&gt;5% increased maximum Energy Shield",
+    "connections": "armour_and_energy_shield1447,armour_and_energy_shield1449",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour_and_energy_shield1449",
+    "stat text": "10% increased Armour&lt;br&gt;5% increased maximum Energy Shield",
+    "connections": "armour_and_energy_shield1448,melee_notable1874",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour_and_energy_shield1450",
+    "stat text": "8% increased Armour&lt;br&gt;5% increased maximum Energy Shield",
+    "connections": "intelligence917,body_and_soul1173",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield",
+    "id": "armour_guards_2377",
+    "stat text": "10% increased Armour&lt;br&gt;4% increased maximum Energy Shield",
+    "connections": "strength1012,armour1948,strength1012",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield Mastery",
+    "id": "mastery_armour9",
+    "stat text": null,
+    "connections": "armour_crit_reduction_notable1944",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield Mastery",
+    "id": "mastery_energyshield107",
+    "stat text": null,
+    "connections": "body_and_soul1173",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Energy Shield, Aura Effect",
+    "id": "AscendancyGuardian6",
+    "stat text": "14% increased Armour&lt;br&gt;5% increased maximum Energy Shield&lt;br&gt;5% increased effect of Non-Curse Auras from your Skills",
+    "connections": "AscendancyGuardian3,AscendancyGuardianStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Guardian"
+  },
+  {
+    "name": "Armour and Energy Shield, Aura Effect",
+    "id": "AscendancyGuardian9",
+    "stat text": "14% increased Armour&lt;br&gt;5% increased maximum Energy Shield&lt;br&gt;5% increased effect of Non-Curse Auras from your Skills",
+    "connections": "AscendancyGuardian12,AscendancyGuardian3",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Guardian"
+  },
+  {
+    "name": "Armour and Energy Shield, Block Recovery",
+    "id": "AscendancyGuardian1",
+    "stat text": "14% increased Armour&lt;br&gt;5% increased maximum Energy Shield&lt;br&gt;30% increased Block Recovery",
+    "connections": "AscendancyGuardian4,AscendancyGuardian4,AscendancyGuardianStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Guardian"
+  },
+  {
+    "name": "Armour and Energy Shield, Life Regeneration",
+    "id": "AscendancyGuardian5",
+    "stat text": "14% increased Armour&lt;br&gt;5% increased maximum Energy Shield&lt;br&gt;Regenerate 0.5% of Life per second",
+    "connections": "AscendancyGuardian2,AscendancyGuardianStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Guardian"
+  },
+  {
+    "name": "Armour and Energy Shield, Minion Damage",
+    "id": "AscendancyGuardian13",
+    "stat text": "14% increased Armour&lt;br&gt;5% increased maximum Energy Shield&lt;br&gt;Minions deal 10% increased Damage",
+    "connections": "AscendancyGuardian16,AscendancyGuardian14,AscendancyGuardian16",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Guardian"
+  },
+  {
+    "name": "Armour and Energy Shield, Minion Damage",
+    "id": "AscendancyGuardian15",
+    "stat text": "14% increased Armour&lt;br&gt;5% increased maximum Energy Shield&lt;br&gt;Minions deal 10% increased Damage",
+    "connections": "AscendancyGuardian14,AscendancyGuardianStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Guardian"
+  },
+  {
+    "name": "Armour and Energy Shield, Shrine Buff Effect",
+    "id": "AscendancyGuardian8",
+    "stat text": "14% increased Armour&lt;br&gt;5% increased maximum Energy Shield&lt;br&gt;10% increased Effect of Shrine Buffs on you",
+    "connections": "AscendancyGuardian11,AscendancyGuardianStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Guardian"
+  },
+  {
+    "name": "Armour and Energy Shield, Warcry Duration",
+    "id": "AscendancyGuardian7",
+    "stat text": "14% increased Armour&lt;br&gt;5% increased maximum Energy Shield&lt;br&gt;20% increased Warcry Duration",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Guardian"
+  },
+  {
+    "name": "Armour and Evasion",
+    "id": "armour_and_evasion1453",
+    "stat text": "12% increased Evasion Rating and Armour&lt;br&gt;+4% to all Elemental Resistances",
+    "connections": "strength1004,leather_and_steel1458",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Evasion",
+    "id": "armour_and_evasion1454",
+    "stat text": "12% increased Evasion Rating and Armour&lt;br&gt;+4% to all Elemental Resistances",
+    "connections": "strength1005,leather_and_steel1458",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Evasion",
+    "id": "melee_evasion2028",
+    "stat text": "14% increased Evasion Rating and Armour",
+    "connections": "melee_evasion2037,dexterity875,melee_evasion2029,melee_evasion2037",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Evasion",
+    "id": "melee_evasion2037",
+    "stat text": "14% increased Evasion Rating and Armour",
+    "connections": "mace_accuracy_speed_notable2484,melee_evasion2028",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Evasion Mastery",
+    "id": "mastery_evasion109",
+    "stat text": null,
+    "connections": "mace_accuracy_speed_notable2484,melee_evasion_notable2031",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Evasion Mastery",
+    "id": "mastery_evasion115",
+    "stat text": null,
+    "connections": "leather_and_steel1458",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Evasion, Attack Damage",
+    "id": "AscendancyChampion6",
+    "stat text": "15% increased Evasion Rating and Armour&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancyChampion12,AscendancyChampionStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Armour and Evasion, Attack Damage while Fortified",
+    "id": "AscendancyChampion3",
+    "stat text": "15% increased Evasion Rating and Armour&lt;br&gt;10% increased Damage with Attack Skills while Fortified",
+    "connections": "AscendancyChampion7,AscendancyChampion7,AscendancyChampionStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Armour and Evasion, Attack Damage while Fortified",
+    "id": "AscendancyChampion4",
+    "stat text": "15% increased Evasion Rating and Armour&lt;br&gt;10% increased Damage with Attack Skills while Fortified",
+    "connections": "AscendancyChampion8,AscendancyChampion7,AscendancyChampion8",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Armour and Evasion, Aura Effect",
+    "id": "AscendancyChampion2",
+    "stat text": "15% increased Evasion Rating and Armour&lt;br&gt;5% increased effect of Non-Curse Auras from your Skills",
+    "connections": "AscendancyChampion9_,AscendancyChampion11,AscendancyChampion9_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Armour and Evasion, Aura Effect",
+    "id": "AscendancyChampion5",
+    "stat text": "15% increased Evasion Rating and Armour&lt;br&gt;5% increased effect of Non-Curse Auras from your Skills",
+    "connections": "AscendancyChampion11,AscendancyChampionStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Armour and Evasion, Impale Chance",
+    "id": "AscendancyChampion13",
+    "stat text": "15% increased Evasion Rating and Armour&lt;br&gt;10% chance to Impale Enemies on Hit with Attacks",
+    "connections": "AscendancyChampion14,AscendancyChampion14,AscendancyChampionStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Armour and Evasion, Taunt Duration",
+    "id": "AscendancyChampion1",
+    "stat text": "15% increased Evasion Rating and Armour&lt;br&gt;20% increased Taunt Duration",
+    "connections": "AscendancyChampion10,AscendancyChampion10,AscendancyChampionStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Champion"
+  },
+  {
+    "name": "Armour and Guard Skill Cooldown Recovery",
+    "id": "armour_guards_2378",
+    "stat text": "12% increased Armour&lt;br&gt;Guard Skills have 20% increased Cooldown Recovery Rate",
+    "connections": "armour_guards_2379,strength1005,armour_guards_2379",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Guard Skill Cooldown Recovery",
+    "id": "armour_guards_2379",
+    "stat text": "12% increased Armour&lt;br&gt;Guard Skills have 20% increased Cooldown Recovery Rate",
+    "connections": "armour_guards_notable_2380,armour_guards_2378,armour_guards_notable_2380",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Life",
+    "id": "armour170",
+    "stat text": "10% increased Armour&lt;br&gt;3% increased maximum Life",
+    "connections": "life_regen_armour_notable1732,life_regen_armour_notable1732,life_regeneration1573",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut1",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut2",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut21",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut22",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut23",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut24_",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut3",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut4",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut5",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life",
+    "id": "AscendancyCustomJuggernaut6",
+    "stat text": "8% increased Armour&lt;br&gt;4% increased maximum Life",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour and Life Regeneration",
+    "id": "armour_life_regen1771",
+    "stat text": "10% increased Armour&lt;br&gt;Regenerate 0.6% of Life per second",
+    "connections": "life_regeneration1573,life_regen_armour_notable1732,life_regeneration1573",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "affliction_mastery_armour",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "armour_mastery1314",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "armour_mastery1949",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "armour_mastery2450",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "armour_mastery2451",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "mastery_armour10",
+    "stat text": null,
+    "connections": "steel_skin1275",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "mastery_armour11",
+    "stat text": null,
+    "connections": "armour_guards_notable_2380",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "mastery_armour5_",
+    "stat text": null,
+    "connections": "life_regen_armour_notable1732",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "mastery_armour6",
+    "stat text": null,
+    "connections": "armour_endurance_charge_notable2376",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Mastery",
+    "id": "mastery_life134",
+    "stat text": null,
+    "connections": "life_armour_flask_life_notable1903",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour per Endurance Charge",
+    "id": "endurance_charges2423",
+    "stat text": "5% increased Armour per Endurance Charge",
+    "connections": "endurance_charges2422,dexterity838",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour Quality Chance",
+    "id": "atlas_quality_1_2",
+    "stat text": "Armour Items found in your Maps have 10% chance to have 20% Quality",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour, Attack Speed",
+    "id": "AscendancyJuggernaut3",
+    "stat text": "15% increased Armour&lt;br&gt;5% increased Attack Speed",
+    "connections": "AscendancyJuggernaut10,AscendancyJuggernautStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour, Chaos Resistance",
+    "id": "AscendancyJuggernaut6",
+    "stat text": "15% increased Armour&lt;br&gt;+11% to Chaos Resistance",
+    "connections": "AscendancyJuggernaut8,AscendancyJuggernaut8,AscendancyJuggernautStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour, Endurance Charge Duration",
+    "id": "AscendancyJuggernaut1",
+    "stat text": "15% increased Armour&lt;br&gt;15% increased Endurance Charge Duration",
+    "connections": "AscendancyJuggernaut11,AscendancyJuggernaut12",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour, Endurance Charge Duration",
+    "id": "AscendancyJuggernaut2",
+    "stat text": "15% increased Armour&lt;br&gt;15% increased Endurance Charge Duration",
+    "connections": "AscendancyJuggernaut11,AscendancyJuggernautStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour, Evasion and Life",
+    "id": "armour_evasion_life1850",
+    "stat text": "6% increased Evasion Rating and Armour&lt;br&gt;4% increased maximum Life",
+    "connections": "armour_evasion_life1851,physical_attack_damage1845,armour_evasion_life1851,armour_evasion_life1852,two_handed_attack_speed650",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour, Evasion and Life",
+    "id": "armour_evasion_life1851",
+    "stat text": "6% increased Evasion Rating and Armour&lt;br&gt;4% increased maximum Life",
+    "connections": "melee_damage125,armour_evasion_life1850",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour, Evasion and Life",
+    "id": "armour_evasion_life1852",
+    "stat text": "6% increased Evasion Rating and Armour&lt;br&gt;4% increased maximum Life",
+    "connections": "armour_evasion_life1850,attack_speed1847",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour, Evasion and Onslaught Effect",
+    "id": "melee_evasion2029",
+    "stat text": "10% increased Evasion Rating and Armour&lt;br&gt;15% increased Effect of Onslaught on you",
+    "connections": "melee_evasion2030,melee_evasion2028,dexterity877,melee_evasion2030,dexterity877",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour, Evasion and Onslaught Effect",
+    "id": "melee_evasion2030",
+    "stat text": "10% increased Evasion Rating and Armour&lt;br&gt;15% increased Effect of Onslaught on you",
+    "connections": "melee_evasion_notable2031,melee_evasion2029,melee_evasion_notable2031",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Armour, Life Regeneration",
+    "id": "AscendancyJuggernaut14",
+    "stat text": "15% increased Armour&lt;br&gt;Regenerate 0.5% of Life per second",
+    "connections": "AscendancyJuggernaut13,AscendancyJuggernautStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour, Movement Speed",
+    "id": "AscendancyJuggernaut4",
+    "stat text": "15% increased Armour&lt;br&gt;4% increased Movement Speed",
+    "connections": "AscendancyJuggernaut7,AscendancyJuggernaut7,AscendancyJuggernautStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Armour, Stun Duration",
+    "id": "AscendancyJuggernaut5",
+    "stat text": "15% increased Armour&lt;br&gt;20% increased Stun Duration on Enemies",
+    "connections": "AscendancyJuggernaut9,AscendancyJuggernaut11,AscendancyJuggernaut9",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Juggernaut"
+  },
+  {
+    "name": "Arrow Dancing",
+    "id": "arrow_dodging1183",
+    "stat text": "Evasion Rating is Doubled against Projectile Attacks&lt;br /&gt;25% less Evasion Rating against Melee Attacks",
+    "connections": "dexterity861",
+    "is keystone": "1",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arsenal of Vengeance",
+    "id": "keystone_retaliation_hits",
+    "stat text": "Damaging Retaliation Skills become Usable every sixth Hit from Enemies instead",
+    "connections": "strength794",
+    "is keystone": "1",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Arsonist",
+    "id": "arsonist338",
+    "stat text": "Regenerate 1.2% of Life per second&lt;br&gt;+10% to Fire Damage over Time Multiplier",
+    "connections": "fire_damage330,mastery_fire117,fire_damage330,fire_damage337,mastery_fire117",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Art of the Gladiator",
+    "id": "agility833",
+    "stat text": "10% increased Attack Speed&lt;br&gt;+20 to Dexterity&lt;br&gt;Ignore all Movement Penalties from Armour&lt;br&gt;10% increased Global Accuracy Rating",
+    "connections": "attack_speed1847,life129,dexterity975,mana550,dual_wield_damage621,projectile_damage1860,dexterity975",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Artefacts of the Vaal",
+    "id": "atlas_alva_3_6",
+    "stat text": "Your Maps with Incursions always have four Incursions",
+    "connections": "atlas_alva_3_4",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "As The Mountain",
+    "id": "block_notable_2934",
+    "stat text": "+12% Chance to Block Attack Damage while Dual Wielding or holding a Shield&lt;br&gt;+3% to maximum Chance to Block Attack Damage",
+    "connections": "mastery_block_291_,block_node_2932,mastery_block_291_",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "As The Thunder",
+    "id": "warcry_notable_2941",
+    "stat text": "20% increased Warcry Buff Effect&lt;br&gt;25% increased Warcry Duration",
+    "connections": "mastery_warcry_295,warcry_node_2940",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Ascendant",
+    "id": "AscendancyAscendantStart",
+    "stat text": null,
+    "connections": "AscendancyAscendant23,AscendancyAscendant21,AscendancyAscendant24,AscendancyAscendant20,AscendancyAscendant22,AscendancyAscendant19,AscendancyAscendant22,AscendancyAscendant21,AscendancyAscendant24,AscendancyAscendant20,seven1490",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Ascendant"
+  },
+  {
+    "name": "Ash, Frost and Storm",
+    "id": "elemental_damage_notable1727",
+    "stat text": "30% increased Elemental Damage&lt;br&gt;30% increased Effect of Non-Damaging Ailments&lt;br&gt;10% chance to Freeze, Shock and Ignite",
+    "connections": "mastery_elemental98,elemental_damage1726,mastery_elemental98",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aspect of Carnage",
+    "id": "AscendancyBerserker12",
+    "stat text": "10% increased Damage taken&lt;br&gt;40% more Damage",
+    "connections": "AscendancyBerserker2,AscendancyBerserker13,AscendancyBerserker2",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Berserker"
+  },
+  {
+    "name": "Aspect of Stone",
+    "id": "blight_special_notable13",
+    "stat text": "20% chance to Avoid Physical Damage from Hits",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aspect of the Eagle",
+    "id": "greater_impact638",
+    "stat text": "20% increased Damage with Bows&lt;br&gt;20% increased Damage Over Time with Bow Skills&lt;br&gt;6% increased Attack Speed with Bows&lt;br&gt;10% increased Accuracy Rating with Bows",
+    "connections": "bow_damage508,bow_damage_and_speed498,bow_attack_speed670",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aspect of the Lynx",
+    "id": "attack_damage_notable2120",
+    "stat text": "20% increased Attack Damage&lt;br&gt;5% increased Movement Speed&lt;br&gt;20% increased Critical Strike Chance for Attacks",
+    "connections": "dexterity976,bow_attack_speed671,bow_damage507,one_handed_attack_speed1027",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Assassin",
+    "id": "AscendancyAscendant46",
+    "stat text": "10% chance to gain a Power Charge on Critical Strike&lt;br&gt;+0.75% to Critical Strike Chance&lt;br&gt;Damage from your Critical Strikes cannot be Reflected&lt;br&gt;10% chance to gain Elusive on Critical Strike",
+    "connections": "AscendancyAscendant30",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Ascendant"
+  },
+  {
+    "name": "Assassin",
+    "id": "AscendancyAssassinStart",
+    "stat text": null,
+    "connections": "AscendancyAssassin11,AscendancyAssassin1,AscendancyAssassin5,AscendancyAssassin7,AscendancyAssassin13,six704",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Assassin"
+  },
+  {
+    "name": "Assassination",
+    "id": "assassination1239",
+    "stat text": "+25% to Critical Strike Multiplier&lt;br&gt;25% increased Critical Strike Chance",
+    "connections": "critical_strike_chance1019,critical_strike_chance1019,critical_strike_chance1020",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Assert Dominance",
+    "id": "affliction_notable_assert_dominance",
+    "stat text": "25% increased Area of Effect if you've Killed at least 5 Enemies Recently",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Assured Strike",
+    "id": "stances_notable2758_",
+    "stat text": "24% increased Melee Damage&lt;br&gt;+0.4 metres to Melee Strike Range while at least 5 Enemies are Nearby",
+    "connections": "mastery_attack13,stances2757",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Astonishing Affliction",
+    "id": "affliction_notable_astonishing_affliction",
+    "stat text": "20% increased Effect of Non-Damaging Ailments&lt;br&gt;20% increased Damage with Hits and Ailments against Enemies affected by Ailments&lt;br&gt;20% increased Duration of Elemental Ailments on Enemies",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Asylum",
+    "id": "curse_mitigation_notable2836",
+    "stat text": "18% reduced Effect of Curses on you&lt;br&gt;+18% to Chaos Resistance",
+    "connections": "curse_mitigation2834,mastery_resistance261,mastery_resistance261",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Atlas Currency Chance",
+    "id": "atlas_sextant_1_1",
+    "stat text": "Final Map Boss in each Map has 1% chance to drop additional Map Currency Items",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Atlas Currency Chance",
+    "id": "atlas_sextant_1_2",
+    "stat text": "Final Map Boss in each Map has 1% chance to drop additional Map Currency Items",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Atlas Currency Chance",
+    "id": "atlas_sextant_1_3",
+    "stat text": "Final Map Boss in each Map has 1% chance to drop additional Map Currency Items",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Atlas Currency Chance",
+    "id": "atlas_sextant_1_5",
+    "stat text": "Final Map Boss in each Map has 1% chance to drop additional Map Currency Items",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Atlas Memories",
+    "id": "atlas_mastery_memory_1",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Atlas Memories",
+    "id": "atlas_mastery_memory_2",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Atrophy",
+    "id": "chaos_damage2111",
+    "stat text": "27% increased Chaos Damage&lt;br&gt;12% increased Skill Effect Duration",
+    "connections": "mastery_chaos49,chaos_damage2109,mastery_chaos49",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack and Cast Speed",
+    "id": "attack_and_cast_speed_2208",
+    "stat text": "4% increased Attack Speed&lt;br&gt;4% increased Cast Speed",
+    "connections": "agility965,attack_and_cast_speed_2209,agility965",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack and Cast Speed",
+    "id": "attack_and_cast_speed_2209",
+    "stat text": "4% increased Attack Speed&lt;br&gt;4% increased Cast Speed",
+    "connections": "attack_and_cast_speed_2208,attack_and_cast_speed_2210",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack and Cast Speed",
+    "id": "attack_and_cast_speed_2210",
+    "stat text": "4% increased Attack Speed&lt;br&gt;4% increased Cast Speed",
+    "connections": "attack_and_cast_speed_2209,physical_damage1618",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack and Cast Speed, Accuracy",
+    "id": "accuracy1148",
+    "stat text": "4% increased Attack and Cast Speed&lt;br&gt;+20 to Accuracy Rating",
+    "connections": "precision843,melee_notable1874",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack and Cast Speed, Accuracy",
+    "id": "accuracy1149",
+    "stat text": "4% increased Attack and Cast Speed&lt;br&gt;+20 to Accuracy Rating",
+    "connections": "spellcaster_notable1873,precision843",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack and Cast Speed, Damage Over Time",
+    "id": "AscendancyTrickster3",
+    "stat text": "4% increased Attack and Cast Speed&lt;br&gt;10% increased Damage over Time",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Trickster"
+  },
+  {
+    "name": "Attack and Movement Speed",
+    "id": "attack_speed569",
+    "stat text": "3% increased Attack Speed&lt;br&gt;3% increased Movement Speed",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack and Movement Speed",
+    "id": "attack_speed570",
+    "stat text": "3% increased Attack Speed&lt;br&gt;3% increased Movement Speed",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Blind Mastery",
+    "id": "attack_blind_mastery2461",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage",
+    "id": "affliction_attack_damage_",
+    "stat text": "10% increased Attack Damage",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage",
+    "id": "one_handed_attack_speed1027",
+    "stat text": "12% increased Attack Damage",
+    "connections": "attack_damage_notable2120,weapon_artistry620,one_handed_damage1050,weapon_artistry620,attack_damage_notable2120",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage",
+    "id": "one_handed_damage1050",
+    "stat text": "12% increased Attack Damage",
+    "connections": "weapon_artistry620,one_handed_attack_speed1027,weapon_artistry620,claws_of_the_pride489",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage",
+    "id": "vaal_small_attack_damage",
+    "stat text": "(7-12)% increased Attack Damage",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage and Accuracy",
+    "id": "attack_damage2123",
+    "stat text": "12% increased Attack Damage&lt;br&gt;6% increased Global Accuracy Rating",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage and Attack Speed with Shield",
+    "id": "damage_while_using_shield1913",
+    "stat text": "Attack Skills deal 10% increased Damage while holding a Shield&lt;br&gt;3% increased Attack Speed while holding a Shield",
+    "connections": "damage_while_using_shield1914,damage_while_using_shield1914,shield_damage_notable1915",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage and Attack Speed with Shield",
+    "id": "damage_while_using_shield1914",
+    "stat text": "Attack Skills deal 10% increased Damage while holding a Shield&lt;br&gt;3% increased Attack Speed while holding a Shield",
+    "connections": "damage_while_using_shield1912,damage_while_using_shield1913",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage and Leech",
+    "id": "one_handed_physical_leech2353",
+    "stat text": "12% increased Attack Damage&lt;br&gt;60% increased total Recovery per second from Life Leech&lt;br&gt;12% increased Damage with Ailments from Attack Skills",
+    "connections": "one_handed_physical_leech2355,one_handed_physical_leech2355,one_handed_physical_leech_notable2356",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage and Leech",
+    "id": "one_handed_physical_leech2355",
+    "stat text": "12% increased Attack Damage&lt;br&gt;0.4% of Physical Attack Damage Leeched as Life&lt;br&gt;12% increased Damage with Ailments from Attack Skills",
+    "connections": "one_handed_physical_leech2354,dexterity853,one_handed_physical_leech2353,dexterity853",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage and Speed",
+    "id": "one_handed_physical_leech2354",
+    "stat text": "12% increased Attack Damage&lt;br&gt;12% increased Damage with Ailments from Attack Skills&lt;br&gt;3% increased Attack Speed",
+    "connections": "one_handed_physical_leech_notable2356,one_handed_physical_leech2355,one_handed_physical_leech_notable2356",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage in Blood Stance",
+    "id": "stance_generic1604",
+    "stat text": "20% increased Attack Damage while in Blood Stance",
+    "connections": "stance_generic_notable1928,stance_generic1605,stance_generic_notable1928",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage Mastery",
+    "id": "affliction_mastery_attack_damage_",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage while Dual Wielding",
+    "id": "affliction_attack_damage_while_dual_wielding_",
+    "stat text": "12% increased Attack Damage while Dual Wielding",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage while Dual Wielding Mastery",
+    "id": "affliction_mastery_attack_damage_while_dual_wielding_",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage while Fortified",
+    "id": "fortify_2065_",
+    "stat text": "16% increased Damage with Attack Skills while Fortified",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage while holding a Shield",
+    "id": "affliction_attack_damage_while_holding_a_shield",
+    "stat text": "12% increased Attack Damage while holding a Shield",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage while holding a Shield Mastery",
+    "id": "affliction_mastery_attack_damage_while_holding_a_shield",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage with Shield",
+    "id": "melee_physical_damage_with_shield1854",
+    "stat text": "Attack Skills deal 12% increased Damage while holding a Shield",
+    "connections": "melee_physical_damage_with_shield1855,might819,melee_physical_damage_with_shield1855,melee_physical_damage_with_shield_notable1858",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage with Shield",
+    "id": "melee_physical_damage_with_shield1855",
+    "stat text": "Attack Skills deal 12% increased Damage while holding a Shield",
+    "connections": "melee_physical_damage_with_shield1856,melee_physical_damage_with_shield1854,melee_physical_damage_with_shield1856",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage with Shield",
+    "id": "melee_physical_damage_with_shield1856",
+    "stat text": "Attack Skills deal 12% increased Damage while holding a Shield",
+    "connections": "defences_with_shield1857,strength1004,melee_physical_damage_with_shield1855",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Damage, Area of Effect",
+    "id": "AscendancySlayer6",
+    "stat text": "10% increased Area of Effect&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancySlayer12,AscendancySlayerStart_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Slayer"
+  },
+  {
+    "name": "Attack Damage, Attack Speed",
+    "id": "AscendancySlayer2",
+    "stat text": "5% increased Attack Speed&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancySlayer7,AscendancySlayer7,AscendancySlayer9",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Slayer"
+  },
+  {
+    "name": "Attack Damage, Attack Speed",
+    "id": "AscendancySlayer3",
+    "stat text": "5% increased Attack Speed&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancySlayer9,AscendancySlayer9,AscendancySlayerStart_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Slayer"
+  },
+  {
+    "name": "Attack Damage, Critical Strike Chance",
+    "id": "AscendancySlayer1",
+    "stat text": "15% increased Critical Strike Chance&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancySlayer8,AscendancySlayer8,AscendancySlayerStart_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Slayer"
+  },
+  {
+    "name": "Attack Damage, Frenzy and Endurance Charge Duration",
+    "id": "AscendancySlayer13",
+    "stat text": "15% increased Frenzy Charge Duration&lt;br&gt;15% increased Endurance Charge Duration&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancySlayer14,AscendancySlayer14,AscendancySlayerStart_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Slayer"
+  },
+  {
+    "name": "Attack Damage, Life Leech",
+    "id": "AscendancySlayer4",
+    "stat text": "0.4% of Attack Damage Leeched as Life&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancySlayer10,AscendancySlayer11",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Slayer"
+  },
+  {
+    "name": "Attack Damage, Life Leech",
+    "id": "AscendancySlayer5",
+    "stat text": "0.4% of Attack Damage Leeched as Life&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancySlayer11,AscendancySlayerStart_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Slayer"
+  },
+  {
+    "name": "Attack Ignite Chance",
+    "id": "attack_ignite_chance2866",
+    "stat text": "Attacks have 15% chance to Ignite",
+    "connections": "attack_ignite_chance2869,attack_ignite_chance2869,fire_damage_with_attacks2863",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Ignite Chance",
+    "id": "attack_ignite_chance2867",
+    "stat text": "Attacks have 15% chance to Ignite",
+    "connections": "attack_ignite_notable2876,attack_ignite_chance2868,attack_ignite_notable2876",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Ignite Chance",
+    "id": "attack_ignite_chance2868",
+    "stat text": "Attacks have 15% chance to Ignite",
+    "connections": "attack_ignite_chance2867,fire_dot_multi_with_attacks2864,strength778",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Ignite Chance",
+    "id": "attack_ignite_chance2869",
+    "stat text": "Attacks have 15% chance to Ignite",
+    "connections": "melee_ignite_notable2874,attack_ignite_chance2866,melee_ignite_notable2874",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Ignite Chance",
+    "id": "ignite_attacks2686",
+    "stat text": "Attacks have 15% chance to Ignite",
+    "connections": "ignite_attacks2688,fire_damage1244,ignite_attacks2688,dexterity854",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Ignite Chance and Attack Speed",
+    "id": "fire_damage1244",
+    "stat text": "Attacks have 10% chance to Ignite&lt;br&gt;3% increased Attack Speed",
+    "connections": "ignite_attacks2687,ignite_attacks2686,ignite_attacks2687",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Ignite Chance and Attack Speed",
+    "id": "ignite_attacks2687",
+    "stat text": "Attacks have 10% chance to Ignite&lt;br&gt;3% increased Attack Speed",
+    "connections": "ignite_attacks_notable2685,fire_damage1244,ignite_attacks_notable2685",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mana Cost",
+    "id": "attack_mana_cost_node_2911",
+    "stat text": "8% reduced Mana Cost of Attacks",
+    "connections": "attack_mana_cost_node_2912,attack_mana_cost_notable_2913,dexterity864,attack_mana_cost_node_2912,attack_mana_cost_notable_2913",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mana Cost",
+    "id": "attack_mana_cost_node_2912",
+    "stat text": "12% reduced Mana Cost of Attacks",
+    "connections": "attack_mana_cost_notable_2913,attack_mana_cost_node_2911,attack_mana_cost_notable_2913",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mana Cost",
+    "id": "attack_mana_cost_node_2914",
+    "stat text": "8% reduced Mana Cost of Attacks",
+    "connections": "attack_mana_cost_notable_2916,intelligence947,attack_mana_cost_node_2915,attack_mana_cost_notable_2916",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mana Cost",
+    "id": "attack_mana_cost_node_2915",
+    "stat text": "12% reduced Mana Cost of Attacks",
+    "connections": "attack_mana_cost_node_2914,attack_mana_cost_notable_2916",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mana Cost",
+    "id": "bleed_chance2189",
+    "stat text": "8% reduced Mana Cost of Attacks",
+    "connections": "strength785,bleed_chance_notable2190,strength785",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mana Cost",
+    "id": "physical_damage_over_time2188",
+    "stat text": "8% reduced Mana Cost of Attacks",
+    "connections": "bleed_chance_notable2190,strength781",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_attack13",
+    "stat text": null,
+    "connections": "stances_notable2758_",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_attack17",
+    "stat text": null,
+    "connections": "blight_special_notable6",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_attack20",
+    "stat text": null,
+    "connections": "berserking1031",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_attack21",
+    "stat text": null,
+    "connections": "fending150",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_attack24",
+    "stat text": null,
+    "connections": "melee_area_of_effect_noable2360",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_attack25",
+    "stat text": null,
+    "connections": "melee_damage_notable2124",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_attack270",
+    "stat text": null,
+    "connections": "stance_generic_notable1928",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_attack271",
+    "stat text": null,
+    "connections": "stance_generic_notable668",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_block31",
+    "stat text": null,
+    "connections": "attack_damage_notable2242",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Mastery",
+    "id": "mastery_dualwield90",
+    "stat text": null,
+    "connections": "one_handed_physical_leech_notable2356",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1231",
+    "stat text": "4% increased Attack Speed",
+    "connections": "attack_speed1646,attack_speed1645,attack_speed1646",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1285",
+    "stat text": "3% increased Attack Speed",
+    "connections": "attack_speed1286,attack_speed1279,attack_speed1286",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1286",
+    "stat text": "3% increased Attack Speed",
+    "connections": "attack_speed1287,attack_speed1285,attack_speed1287,jewel_slot1967",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1287",
+    "stat text": "3% increased Attack Speed",
+    "connections": "harrier1542,attack_speed1286,harrier1542",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1487",
+    "stat text": "4% increased Attack Speed",
+    "connections": "perfect_aim591,attack_speed1489,perfect_aim591",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1488",
+    "stat text": "4% increased Attack Speed",
+    "connections": "attack_speed1489,accuracy581,attack_speed1489",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1489",
+    "stat text": "4% increased Attack Speed",
+    "connections": "attack_speed1487,attack_speed1488",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1564",
+    "stat text": "4% increased Attack Speed",
+    "connections": "attack_speed1565,strength773,attack_speed1565,strength773",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1565",
+    "stat text": "4% increased Attack Speed",
+    "connections": "attack_speed1564,berserking1031",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1645",
+    "stat text": "4% increased Attack Speed",
+    "connections": "attack_speed1231,dexterity866",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1646",
+    "stat text": "4% increased Attack Speed",
+    "connections": "attack_damage_notable2242,attack_speed1231",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1846",
+    "stat text": "5% increased Attack Speed",
+    "connections": "attack_speed1847,attack_speed1847,two_handed_attack_speed651",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "attack_speed1847",
+    "stat text": "3% increased Attack Speed",
+    "connections": "armour_evasion_life1852,attack_speed1846,agility833",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "melee_attack_speed1484",
+    "stat text": "4% increased Attack Speed",
+    "connections": "melee_damage618,melee_damage618,melee_damage619",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "two_handed_attack_speed650",
+    "stat text": "3% increased Attack Speed",
+    "connections": "armour_evasion_life1850,two_handed_attack_speed651,attack_speed1270,two_handed_attack_speed651",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "two_handed_attack_speed651",
+    "stat text": "5% increased Attack Speed",
+    "connections": "attack_speed1846,two_handed_attack_speed650",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed",
+    "id": "vaal_small_attack_speed",
+    "stat text": "(3-4)% increased Attack Speed",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed and Accuracy",
+    "id": "attack_speed1270",
+    "stat text": "6% increased Attack Speed&lt;br&gt;+25 to Accuracy Rating",
+    "connections": "dexterity983,two_handed_attack_speed650,AscendancyAscendant4,duelist597,two_handed_attack_speed650,dexterity983",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed and Dexterity",
+    "id": "attack_speed1279",
+    "stat text": "4% increased Attack Speed&lt;br&gt;+5 to Dexterity",
+    "connections": "seven1490,accuracy_rating2345,seven1490,movement_speed1017,accuracy_rating2345,attack_speed1285",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed and One Handed Damage",
+    "id": "AscendancyGladiator4",
+    "stat text": "5% increased Attack Speed&lt;br&gt;10% increased Damage with One Handed Weapons",
+    "connections": "AscendancyGladiator9,AscendancyGladiator9,AscendancyGladiatorStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Gladiator"
+  },
+  {
+    "name": "Attack Speed and Poison Duration",
+    "id": "attack_poison2351",
+    "stat text": "3% increased Attack Speed&lt;br&gt;5% increased Poison Duration",
+    "connections": "attack_poison2349,attack_poison23512,attack_poison23512",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed and Poison Duration",
+    "id": "attack_poison23512",
+    "stat text": "3% increased Attack Speed&lt;br&gt;5% increased Poison Duration",
+    "connections": "attack_poison_notable2352,attack_poison2351,attack_poison_notable2352",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed in Sand Stance",
+    "id": "stance_generic1605",
+    "stat text": "6% increased Attack Speed while in Sand Stance",
+    "connections": "stance_generic1604,stance_generic1520,dexterity868",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed per Frenzy Charge",
+    "id": "frenzy_charges2420",
+    "stat text": "2% increased Attack Speed per Frenzy Charge",
+    "connections": "frenzy_charges_notable2421,frenzy_charges2418,frenzy_charges_notable2421",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attack Speed, Attack Damage",
+    "id": "AscendancyGladiator13",
+    "stat text": "5% increased Attack Speed&lt;br&gt;10% increased Attack Damage",
+    "connections": "AscendancyGladiator14,AscendancyGladiator14,AscendancyGladiatorStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Gladiator"
+  },
+  {
+    "name": "Attack Speed, Bleed Chance",
+    "id": "AscendancyGladiator1",
+    "stat text": "5% increased Attack Speed&lt;br&gt;Attacks have 15% chance to cause Bleeding",
+    "connections": "AscendancyGladiator8,AscendancyGladiator7,AscendancyGladiator8",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Gladiator"
+  },
+  {
+    "name": "Attack Speed, Bleed Chance",
+    "id": "AscendancyGladiator2",
+    "stat text": "5% increased Attack Speed&lt;br&gt;Attacks have 15% chance to cause Bleeding",
+    "connections": "AscendancyGladiator7,AscendancyGladiator7,AscendancyGladiatorStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Gladiator"
+  },
+  {
+    "name": "Attack Speed, Block Chance",
+    "id": "AscendancyGladiator16",
+    "stat text": "+3% Chance to Block Attack Damage&lt;br&gt;5% increased Attack Speed",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Gladiator"
+  },
+  {
+    "name": "Attack Speed, Block Chance",
+    "id": "AscendancyGladiator3",
+    "stat text": "+3% Chance to Block Attack Damage&lt;br&gt;5% increased Attack Speed",
+    "connections": "AscendancyGladiator11,AscendancyGladiatorStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Gladiator"
+  },
+  {
+    "name": "Attack Speed, Block Chance",
+    "id": "AscendancyGladiator5",
+    "stat text": "+3% Chance to Block Attack Damage&lt;br&gt;5% increased Attack Speed",
+    "connections": "AscendancyGladiator12,AscendancyGladiator10",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Gladiator"
+  },
+  {
+    "name": "Attack Speed, Block Chance",
+    "id": "AscendancyGladiator6",
+    "stat text": "+3% Chance to Block Attack Damage&lt;br&gt;5% increased Attack Speed",
+    "connections": "AscendancyGladiator10,AscendancyGladiatorStart",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": "Gladiator"
+  },
+  {
+    "name": "Attributes Mastery",
+    "id": "mastery_attributes255",
+    "stat text": null,
+    "connections": "super_intelligence_notable2443",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attributes Mastery",
+    "id": "mastery_attributes256",
+    "stat text": null,
+    "connections": "super_dexterity_notable2437",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Attributes Mastery",
+    "id": "mastery_attributes257",
+    "stat text": null,
+    "connections": "super_strength_notable2440",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Augury of Penitence",
+    "id": "AscendancyInquisitor9",
+    "stat text": "&lt;abbr title=&quot;6.0m radius&quot;&gt;Nearby&lt;/abbr&gt; Enemies take 16% increased Elemental Damage&lt;br&gt;&lt;abbr title=&quot;6.0m radius&quot;&gt;Nearby&lt;/abbr&gt; Enemies deal 8% less Elemental Damage",
+    "connections": "AscendancyInquisitor4",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Inquisitor"
+  },
+  {
+    "name": "Aura Area of Effect",
+    "id": "aura_area_of_effect1202",
+    "stat text": "12% increased Area of Effect of Aura Skills",
+    "connections": "general_aura_notable1791,aura_effect1555,general_aura_notable1791",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Area of Effect",
+    "id": "aura_area_of_effect1203",
+    "stat text": "12% increased Area of Effect of Aura Skills",
+    "connections": "reduced_mana_reservation1199,intelligence957,reduced_mana_reservation1199,intelligence957",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Area of Effect",
+    "id": "aura_area_of_effect1205",
+    "stat text": "12% increased Area of Effect of Aura Skills",
+    "connections": "aura_effect1554,intelligence912,aura_effect1554,reduced_mana_reservation1198",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Area of Effect",
+    "id": "banners2750",
+    "stat text": "12% increased Area of Effect of Aura Skills",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Area of Effect",
+    "id": "reservation_node_2909",
+    "stat text": "12% increased Area of Effect of Aura Skills",
+    "connections": "reservation_node_2908,dexterity877",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Effect",
+    "id": "affliction_aura_effect",
+    "stat text": "3% increased effect of Non-Curse Auras from your Skills",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Effect",
+    "id": "aura_effect1553",
+    "stat text": "6% increased effect of Non-Curse Auras from your Skills",
+    "connections": "intelligence960,reduced_mana_reservation1200,intelligence960",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Effect",
+    "id": "aura_effect1554",
+    "stat text": "6% increased effect of Non-Curse Auras from your Skills",
+    "connections": "aura_effect_reservation_cost_notable1559,aura_area_of_effect1205,aura_effect_reservation_cost_notable1559",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Effect",
+    "id": "aura_effect1555",
+    "stat text": "6% increased effect of Non-Curse Auras from your Skills",
+    "connections": "aura_area_of_effect1202,strength794",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Effect",
+    "id": "aura_effect1556",
+    "stat text": "6% increased effect of Non-Curse Auras from your Skills",
+    "connections": "reduced_mana_reservation1552,intelligence897,reduced_mana_reservation1552,intelligence897",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Effect",
+    "id": "vaal_small_aura_effect",
+    "stat text": "(2-4)% increased effect of Non-Curse Auras from your Skills",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Effect Mastery",
+    "id": "affliction_mastery_aura_effect",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Mastery",
+    "id": "aura_mastery",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Mastery",
+    "id": "aura_mastery2463",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Aura Mastery",
+    "id": "aura_mastery2752",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Automaton Studies",
+    "id": "vaal_notable_armour_1",
+    "stat text": "(30-40)% increased Armour&lt;br&gt;(3-4)% additional Physical Damage Reduction",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Avatar of Fire",
+    "id": "avatar_of_fire1543",
+    "stat text": "50% of Physical, Cold and Lightning Damage Converted to Fire Damage&lt;br /&gt;Deal no Non-Fire Damage",
+    "connections": "strength771,strength771",
+    "is keystone": "1",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Avatar of the Hunt",
+    "id": "bow_damage_speed_notable1711",
+    "stat text": "30% increased Damage with Bows&lt;br&gt;6% increased Movement Speed&lt;br&gt;30% increased Damage Over Time with Bow Skills&lt;br&gt;+200 to Evasion Rating",
+    "connections": "mastery_bow36,bow_damage_move_speed1709,bow_mobility2859_,mastery_bow36",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Avatar of the Wilds",
+    "id": "AscendancyRaider12",
+    "stat text": "Grants Level 20 Unbound Avatar Skill&lt;br&gt;Your Hits always inflict Freeze, Shock and Ignite while Unbound&lt;br&gt;Gain 1 Unbound Fury when you inflict an Elemental Ailment with a Hit on an Enemy, no more than once every 0.2 seconds for each type of Ailment&lt;br /&gt;Cannot gain Unbound Fury while Unbound&lt;br&gt;80% more Elemental Damage while Unbound",
+    "connections": "AscendancyRaider11,AscendancyRaider15,AscendancyRaider16",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Warden"
+  },
+  {
+    "name": "Avidity",
+    "id": "AscendancyDeadeye10",
+    "stat text": "+1 to Maximum Frenzy Charges&lt;br&gt;Gain a Frenzy Charge each second while Moving&lt;br&gt;5% more Accuracy Rating per Frenzy Charge",
+    "connections": "AscendancyDeadeye11",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": "Deadeye"
+  },
+  {
+    "name": "Avoid Elemental Ailments",
+    "id": "vaal_small_attack_dodge",
+    "stat text": "3% chance to Avoid Elemental Ailments",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Avoid Interruption while Casting",
+    "id": "stun_ignore2410",
+    "stat text": "15% chance to Ignore Stuns while Casting",
+    "connections": "stun_ignore2411,intelligence892,stun_ignore2411",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Avoid Interruption while Casting",
+    "id": "stun_ignore2411",
+    "stat text": "15% chance to Ignore Stuns while Casting",
+    "connections": "stun_ignore_notable2412,stun_ignore2410,stun_ignore_notable2412",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Avoid Interruption while Casting and Elemental Resistances",
+    "id": "stun_ignore1679",
+    "stat text": "15% chance to Ignore Stuns while Casting&lt;br&gt;+3% to all Elemental Resistances",
+    "connections": "deep_wisdom900,stun_ignore_str_dex1678,stun_ignore_str_dex1678",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Avoid Interruption while Casting and Elemental Resistances",
+    "id": "stun_ignore1680",
+    "stat text": "15% chance to Ignore Stuns while Casting&lt;br&gt;+3% to all Elemental Resistances",
+    "connections": "savant901,stun_ignore_str_dex1678",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Avoid Status Ailments",
+    "id": "avoid_status_ailments1696",
+    "stat text": "10% chance to Avoid Elemental Ailments",
+    "connections": "strength821,avoid_shock557,avoid_burning561,avoid_freeze562",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Awakened Depths",
+    "id": "atlas_abyss_4_7",
+    "stat text": "Abysses in your Maps have 100% increased chance to lead to an Abyssal Depths",
+    "connections": "atlas_abyss_2_2,atlas_abyss_4_5",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Awe and Terror",
+    "id": "banner_notable_2879",
+    "stat text": "Enemies Killed near your Banner have 20% chance to Explode, dealing a tenth of their Life as Physical Damage&lt;br&gt;Banner Skills have 20% increased Area of Effect",
+    "connections": "mastery_banner_275,banner_node_2885,mastery_banner_275",
+    "is keystone": "0",
+    "is notable": "1",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe and Sword Accuracy",
+    "id": "axe_sword_accuracy1605",
+    "stat text": "15% increased Accuracy Rating with Axes&lt;br&gt;15% increased Accuracy Rating with Swords",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe and Sword Attack Speed",
+    "id": "axe_sword_attack_speed1605",
+    "stat text": "4% increased Attack Speed with Axes&lt;br&gt;4% increased Attack Speed with Swords",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe and Sword Damage",
+    "id": "affliction_axe_and_sword_damage",
+    "stat text": "Axe Attacks deal 12% increased Damage with Hits and Ailments&lt;br&gt;Sword Attacks deal 12% increased Damage with Hits and Ailments",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe and Sword Damage",
+    "id": "axe_sword_damage1604",
+    "stat text": "12% increased Physical Damage with Axes&lt;br&gt;12% increased Physical Damage with Swords&lt;br&gt;Axe or Sword Attacks deal 12% increased Damage with Ailments",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe and Sword Damage Mastery",
+    "id": "affliction_mastery_axe_and_sword_damage",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe and Sword Mastery",
+    "id": "axe_sword_mastery1611",
+    "stat text": null,
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Attack Speed and Rage",
+    "id": "axe_damage_and_speed2465_",
+    "stat text": "4% increased Attack Speed with Axes&lt;br&gt;Inherent loss of Rage is 20% slower",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage",
+    "id": "axe_damage1079",
+    "stat text": "18% increased Physical Damage with Axes&lt;br&gt;Axe Attacks deal 18% increased Damage with Ailments",
+    "connections": "cleaving611,axe_damage110,cleaving611",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage",
+    "id": "axe_damage109",
+    "stat text": "18% increased Physical Damage with Axes&lt;br&gt;Axe Attacks deal 18% increased Damage with Ailments",
+    "connections": "axe_damage110,axe_damage110,axe_damage_and_accuracy106",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage",
+    "id": "axe_damage110",
+    "stat text": "18% increased Physical Damage with Axes&lt;br&gt;Axe Attacks deal 18% increased Damage with Ailments",
+    "connections": "axe_damage1079,axe_damage109",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage",
+    "id": "axe_damage_accuracy_crit2473",
+    "stat text": "Axe Attacks deal 12% increased Damage with Hits and Ailments",
+    "connections": "axe_damage_accuracy_crit2474,axe_damage_accuracy_crit2472,axe_damage_accuracy_crit2474,strength802",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage",
+    "id": "axe_damage_and_accuracy106",
+    "stat text": "14% increased Physical Damage with Axes&lt;br&gt;Axe Attacks deal 14% increased Damage with Ailments",
+    "connections": "axe_damage109,strength787,axe_damage_and_attack_speed97,strength787",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage",
+    "id": "axe_sword_damage1603",
+    "stat text": "14% increased Physical Damage with Axes&lt;br&gt;Axe Attacks deal 14% increased Damage with Ailments",
+    "connections": "axe_sword_attack_speed1606,strength818,strength818",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Accuracy",
+    "id": "axe_damage_accuracy_crit2472",
+    "stat text": "Axe Attacks deal 10% increased Damage with Hits and Ailments&lt;br&gt;10% increased Accuracy Rating with Axes",
+    "connections": "axe_damage_accuracy_crit2473,axe_damage_accuracy_crit_notable2476,axe_damage_accuracy_crit2473,axe_damage_accuracy_crit_notable2476",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Area of Effect",
+    "id": "axe_damage_evasion_armour1928",
+    "stat text": "12% increased Physical Damage with Axes&lt;br&gt;Axe Attacks deal 12% increased Damage with Ailments&lt;br&gt;6% increased Area of Effect",
+    "connections": null,
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Attack Speed",
+    "id": "axe_damage521",
+    "stat text": "12% increased Physical Damage with Axes&lt;br&gt;3% increased Attack Speed with Axes&lt;br&gt;Axe Attacks deal 12% increased Damage with Ailments",
+    "connections": "axe_damage_and_attack_speed98,axe_damage_and_attack_speed98,timberwolf105",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Attack Speed",
+    "id": "axe_damage_and_attack_speed1082",
+    "stat text": "Axe Attacks deal 8% increased Damage with Hits and Ailments&lt;br&gt;4% increased Attack Speed with Axes",
+    "connections": "hatchet_master104,axe_damage_and_speed2466_,axe_damage_and_speed2466_,hatchet_master104",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Attack Speed",
+    "id": "axe_damage_and_attack_speed518",
+    "stat text": "Axe Attacks deal 8% increased Damage with Hits and Ailments&lt;br&gt;4% increased Attack Speed with Axes",
+    "connections": "dexterity835,axe_damage_and_speed2466_,dexterity835",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Attack Speed",
+    "id": "axe_damage_and_attack_speed97",
+    "stat text": "12% increased Physical Damage with Axes&lt;br&gt;3% increased Attack Speed with Axes&lt;br&gt;Axe Attacks deal 12% increased Damage with Ailments",
+    "connections": "axe_damage_and_accuracy106,axe_damage_and_attack_speed98",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Attack Speed",
+    "id": "axe_damage_and_attack_speed98",
+    "stat text": "12% increased Physical Damage with Axes&lt;br&gt;3% increased Attack Speed with Axes&lt;br&gt;Axe Attacks deal 12% increased Damage with Ailments",
+    "connections": "axe_damage_and_attack_speed97,axe_damage521",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Attack Speed",
+    "id": "axe_damage_and_speed2466_",
+    "stat text": "Axe Attacks deal 8% increased Damage with Hits and Ailments&lt;br&gt;4% increased Attack Speed with Axes",
+    "connections": "axe_damage_and_attack_speed518,axe_damage_and_attack_speed1082",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  },
+  {
+    "name": "Axe Damage and Critical Strike Chance",
+    "id": "axe_damage_accuracy_crit2474",
+    "stat text": "Axe Attacks deal 10% increased Damage with Hits and Ailments&lt;br&gt;25% increased Critical Strike Chance with Axes",
+    "connections": "axe_damage_accuracy_crit2473,axe_damage_accuracy_crit2475",
+    "is keystone": "0",
+    "is notable": "0",
+    "ascendancy class": null
+  }
+]

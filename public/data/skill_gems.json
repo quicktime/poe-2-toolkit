@@ -1,0 +1,183 @@
+{
+  "active": [
+    {
+      "name": "Fireball",
+      "gem_type": "active",
+      "tags": [
+        "spell",
+        "fire",
+        "projectile"
+      ],
+      "spirit": 0,
+      "damage": "100%"
+    },
+    {
+      "name": "Freezing Pulse",
+      "gem_type": "active",
+      "tags": [
+        "spell",
+        "cold",
+        "projectile"
+      ],
+      "spirit": 0,
+      "damage": "100%"
+    },
+    {
+      "name": "Lightning Strike",
+      "gem_type": "active",
+      "tags": [
+        "attack",
+        "lightning",
+        "projectile"
+      ],
+      "spirit": 0,
+      "damage": "100%"
+    },
+    {
+      "name": "Raise Zombie",
+      "gem_type": "active",
+      "tags": [
+        "spell",
+        "minion"
+      ],
+      "spirit": 40,
+      "damage": "minion"
+    },
+    {
+      "name": "Summon Skeletons",
+      "gem_type": "active",
+      "tags": [
+        "spell",
+        "minion"
+      ],
+      "spirit": 30,
+      "damage": "minion"
+    }
+  ],
+  "support": [
+    {
+      "name": "Elemental Focus",
+      "gem_type": "support",
+      "spirit": 30,
+      "multiplier": 1.49,
+      "tags": [
+        "elemental",
+        "damage"
+      ]
+    },
+    {
+      "name": "Controlled Destruction",
+      "gem_type": "support",
+      "spirit": 30,
+      "multiplier": 1.44,
+      "tags": [
+        "spell",
+        "damage"
+      ]
+    },
+    {
+      "name": "Brutality",
+      "gem_type": "support",
+      "spirit": 30,
+      "multiplier": 1.59,
+      "tags": [
+        "physical",
+        "damage"
+      ]
+    },
+    {
+      "name": "Spell Echo",
+      "gem_type": "support",
+      "spirit": 40,
+      "tags": [
+        "spell",
+        "cast_speed"
+      ]
+    },
+    {
+      "name": "Multistrike",
+      "gem_type": "support",
+      "spirit": 40,
+      "tags": [
+        "attack",
+        "melee"
+      ]
+    },
+    {
+      "name": "Chain",
+      "gem_type": "support",
+      "spirit": 35,
+      "chains": 2,
+      "tags": [
+        "projectile",
+        "chaining"
+      ]
+    },
+    {
+      "name": "Fork",
+      "gem_type": "support",
+      "spirit": 25,
+      "tags": [
+        "projectile",
+        "forking"
+      ]
+    },
+    {
+      "name": "Fortify",
+      "gem_type": "support",
+      "spirit": 20,
+      "damageReduction": 20,
+      "tags": [
+        "melee",
+        "defense"
+      ]
+    },
+    {
+      "name": "Life Leech",
+      "gem_type": "support",
+      "spirit": 15,
+      "leechPercent": 2,
+      "tags": [
+        "attack",
+        "life"
+      ]
+    },
+    {
+      "name": "Life Gain on Hit",
+      "gem_type": "support",
+      "spirit": 15,
+      "lifePerHit": 20,
+      "tags": [
+        "attack",
+        "life"
+      ]
+    },
+    {
+      "name": "Cast on Critical Strike",
+      "gem_type": "support",
+      "spirit": 100,
+      "tags": [
+        "trigger",
+        "critical"
+      ]
+    },
+    {
+      "name": "Cast when Damage Taken",
+      "gem_type": "support",
+      "spirit": 50,
+      "tags": [
+        "trigger",
+        "defensive"
+      ]
+    },
+    {
+      "name": "Cast on Melee Kill",
+      "gem_type": "support",
+      "spirit": 30,
+      "tags": [
+        "trigger",
+        "melee"
+      ]
+    }
+  ]
+}

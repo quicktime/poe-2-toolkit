@@ -1,0 +1,13 @@
+{
+  "currency": {
+    "Orb of Alchemy": "1x each rare item of same base type",
+    "Chaos Orb": "Full rare set item level 60-74",
+    "Regal Orb": "Full rare set item level 75+",
+    "Divine Orb": "6-linked item (vendor)",
+    "Chromatic Orb": "Item with linked red, green, and blue sockets"
+  },
+  "crafting": {
+    "+1 Level Gems": "1 Magic Wand/Sceptre + 1 Ruby Ring + 1 Skill Gem",
+    "Movement Speed": "1 Magic Boots + 1 Quicksilver Flask + 1 Orb of Augmentation"
+  }
+}

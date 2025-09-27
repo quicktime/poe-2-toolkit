@@ -1,0 +1,143 @@
+{
+  "weapons": {
+    "Starforge": {
+      "base": "Infernal Sword",
+      "level": 67,
+      "mods": [
+        "300% increased Physical Damage",
+        "Adds 90-100 Physical Damage",
+        "6% increased Attack Speed",
+        "Your Physical Damage can Shock"
+      ]
+    },
+    "Rebuke of the Vaal": {
+      "base": "Vaal Blade",
+      "level": 64,
+      "mods": [
+        "Adds 19-28 Physical Damage",
+        "Adds 19-28 Fire Damage",
+        "Adds 19-28 Cold Damage",
+        "Adds 19-28 Lightning Damage",
+        "Adds 19-28 Chaos Damage"
+      ]
+    },
+    "Quill Rain": {
+      "base": "Short Bow",
+      "level": 5,
+      "mods": [
+        "100% increased Attack Speed",
+        "30% less Damage"
+      ]
+    },
+    "Windripper": {
+      "base": "Imperial Bow",
+      "level": 66,
+      "mods": [
+        "Adds 48-60 Cold Damage",
+        "Adds 1-85 Lightning Damage",
+        "15% increased Attack Speed",
+        "30% increased Critical Strike Chance",
+        "15% increased Quantity of Items Dropped by Slain Frozen Enemies"
+      ]
+    },
+    "The Whispering Ice": {
+      "base": "Vile Staff",
+      "level": 33,
+      "mods": [
+        "18% increased Intelligence",
+        "1% increased Spell Damage per 10 Intelligence",
+        "Grants Level 1 Icestorm Skill"
+      ]
+    }
+  },
+  "armour": {
+    "Shavronne's Wrappings": {
+      "base": "Occultist's Vestment",
+      "level": 62,
+      "mods": [
+        "140-200% increased Energy Shield",
+        "10-15% increased Lightning Resistance",
+        "Chaos Damage does not bypass Energy Shield"
+      ]
+    },
+    "Kaom's Heart": {
+      "base": "Glorious Plate",
+      "level": 68,
+      "mods": [
+        "+500 to Maximum Life",
+        "Has no Sockets"
+      ]
+    },
+    "Crown of Eyes": {
+      "base": "Hubris Circlet",
+      "level": 69,
+      "mods": [
+        "138-172% increased Energy Shield",
+        "+23-29% to Accuracy Rating",
+        "Increases and Reductions to Spell Damage also apply to Attack Damage"
+      ]
+    },
+    "Maligaro's Virtuosity": {
+      "base": "Deerskin Gloves",
+      "level": 21,
+      "mods": [
+        "+2 to Level of Socketed Dexterity Gems",
+        "50% increased Critical Strike Chance",
+        "5% increased Attack Speed"
+      ]
+    },
+    "Seven-League Step": {
+      "base": "Rawhide Boots",
+      "level": 1,
+      "mods": [
+        "50% increased Movement Speed"
+      ]
+    }
+  },
+  "accessories": {
+    "The Pandemonius": {
+      "base": "Jade Amulet",
+      "level": 64,
+      "mods": [
+        "20-30% increased Cold Damage",
+        "10-15% increased Attack Speed",
+        "Blind Chilled Enemies on Hit",
+        "Damage Penetrates 20% Cold Resistance against Chilled Enemies"
+      ]
+    },
+    "Ventor's Gamble": {
+      "base": "Gold Ring",
+      "level": 65,
+      "mods": [
+        "-10 to +10% increased Quantity of Items Found",
+        "-40 to +40% increased Rarity of Items Found",
+        "-25 to +50 to Life",
+        "-25 to +50% to Fire Resistance",
+        "-25 to +50% to Cold Resistance",
+        "-25 to +50% to Lightning Resistance"
+      ]
+    },
+    "Headhunter": {
+      "base": "Leather Belt",
+      "level": 40,
+      "mods": [
+        "25-40 to Maximum Life",
+        "40-55 to Strength",
+        "40-55 to Dexterity",
+        "When you Kill a Rare monster, you gain its Modifiers for 20 seconds"
+      ]
+    }
+  },
+  "jewels": {
+    "Watcher's Eye": {
+      "base": "Prismatic Jewel",
+      "level": 1,
+      "mods": [
+        "4-6% increased maximum Energy Shield",
+        "4-6% increased maximum Life",
+        "4-6% increased maximum Mana",
+        "2 or 3 additional modifiers while affected by Auras"
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "weapons": {
+    "Rusted Sword": {
+      "type": "sword",
+      "damage": "6-11",
+      "aps": 1.45,
+      "crit": 5
+    },
+    "Copper Kris": {
+      "type": "dagger",
+      "damage": "7-28",
+      "aps": 1.2,
+      "crit": 6.5
+    },
+    "Crude Bow": {
+      "type": "bow",
+      "damage": "5-13",
+      "aps": 1.4,
+      "crit": 5
+    },
+    "Driftwood Club": {
+      "type": "mace",
+      "damage": "8-12",
+      "aps": 1.25,
+      "crit": 5
+    },
+    "Driftwood Wand": {
+      "type": "wand",
+      "damage": "4-12",
+      "aps": 1.4,
+      "crit": 7
+    },
+    "Rusted Hatchet": {
+      "type": "axe",
+      "damage": "7-10",
+      "aps": 1.5,
+      "crit": 5
+    },
+    "Gnarled Branch": {
+      "type": "staff",
+      "damage": "9-27",
+      "aps": 1.15,
+      "crit": 6
+    }
+  },
+  "armor": {
+    "Plate Vest": {
+      "type": "chest",
+      "armor": 20,
+      "evasion": 0,
+      "energyShield": 0
+    },
+    "Shabby Jerkin": {
+      "type": "chest",
+      "armor": 0,
+      "evasion": 25,
+      "energyShield": 0
+    },
+    "Simple Robe": {
+      "type": "chest",
+      "armor": 0,
+      "evasion": 0,
+      "energyShield": 15
+    }
+  }
+}

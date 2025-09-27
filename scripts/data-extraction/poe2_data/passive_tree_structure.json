@@ -1,0 +1,19 @@
+{
+  "version": "0.3.0",
+  "classes": [
+    "Warrior",
+    "Marauder",
+    "Ranger",
+    "Witch",
+    "Templar",
+    "Shadow"
+  ],
+  "nodeCount": 1325,
+  "keystones": [
+    "Ancestral Bond",
+    "Avatar of Fire",
+    "Blood Magic",
+    "Chaos Inoculation",
+    "Eldritch Battery"
+  ]
+}

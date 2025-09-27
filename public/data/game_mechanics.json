@@ -1,0 +1,227 @@
+{
+  "atlas": {
+    "regions": [
+      "The Dreadlands",
+      "The Burning Wastes",
+      "The Frozen Peaks",
+      "The Sunken City",
+      "The Ancient Groves"
+    ],
+    "mechanics": {
+      "Delirium": {
+        "description": "Mist that intensifies combat",
+        "rewards": [
+          "Cluster Jewels",
+          "Simulacrum Splinters"
+        ]
+      },
+      "Breach": {
+        "description": "Tears in reality with waves of enemies",
+        "rewards": [
+          "Breach Rings",
+          "Breachstones"
+        ]
+      },
+      "Expedition": {
+        "description": "Archaeological dig sites with explosive combat",
+        "rewards": [
+          "Logbooks",
+          "Artifacts"
+        ]
+      },
+      "Ritual": {
+        "description": "Arena combat with deferred rewards",
+        "rewards": [
+          "Tribute",
+          "Ritual Base Types"
+        ]
+      }
+    },
+    "bossContent": {
+      "The Shaper": {
+        "level": 84,
+        "location": "Shaper's Realm",
+        "drops": [
+          "Shaper Influenced Items",
+          "Fragments"
+        ]
+      },
+      "The Elder": {
+        "level": 84,
+        "location": "The Elder's Domain",
+        "drops": [
+          "Elder Influenced Items",
+          "Watchers Eye"
+        ]
+      },
+      "The Maven": {
+        "level": 85,
+        "location": "The Maven's Crucible",
+        "drops": [
+          "Elevated Modifiers",
+          "Maven's Orb"
+        ]
+      }
+    }
+  },
+  "ascendancies": {
+    "Warrior": [
+      "Titan",
+      "Warbringer"
+    ],
+    "Ranger": [
+      "Deadeye",
+      "Pathfinder"
+    ],
+    "Witch": [
+      "Blood Mage",
+      "Infernalist"
+    ],
+    "Monk": [
+      "Invoker",
+      "Acolyte of Chayula"
+    ],
+    "Mercenary": [
+      "Witchhunter",
+      "Gemling Legionnaire"
+    ],
+    "Sorceress": [
+      "Stormweaver",
+      "Chronomancer"
+    ]
+  },
+  "quest_rewards": {
+    "Enemy at the Gate": {
+      "all": [
+        "Lesser Life Flask",
+        "Lesser Mana Flask"
+      ],
+      "warrior": [
+        "Heavy Strike",
+        "Shield Bash"
+      ],
+      "ranger": [
+        "Frenzy",
+        "Barrage"
+      ],
+      "witch": [
+        "Spark",
+        "Contagion"
+      ],
+      "monk": [
+        "Ice Strike",
+        "Tempest Bell"
+      ],
+      "mercenary": [
+        "Explosive Shot",
+        "Fragmentation Rounds"
+      ],
+      "sorceress": [
+        "Spark",
+        "Frost Bomb"
+      ]
+    },
+    "The Siren's Cadence": {
+      "all": [
+        "Quicksilver Flask"
+      ],
+      "warrior": [
+        "Leap Slam",
+        "Seismic Cry"
+      ],
+      "ranger": [
+        "Lightning Arrow",
+        "Rain of Arrows"
+      ],
+      "witch": [
+        "Essence Drain",
+        "Bane"
+      ],
+      "monk": [
+        "Whirling Assault",
+        "Falling Thunder"
+      ],
+      "mercenary": [
+        "Gas Grenade",
+        "Flash Grenade"
+      ],
+      "sorceress": [
+        "Ice Nova",
+        "Lightning Bolt"
+      ]
+    }
+  },
+  "vendor_recipes": {
+    "currency": {
+      "Orb of Alchemy": "1x each rare item of same base type",
+      "Chaos Orb": "Full rare set item level 60-74",
+      "Regal Orb": "Full rare set item level 75+",
+      "Divine Orb": "6-linked item (vendor)",
+      "Chromatic Orb": "Item with linked red, green, and blue sockets"
+    },
+    "crafting": {
+      "+1 Level Gems": "1 Magic Wand/Sceptre + 1 Ruby Ring + 1 Skill Gem",
+      "Movement Speed": "1 Magic Boots + 1 Quicksilver Flask + 1 Orb of Augmentation"
+    }
+  },
+  "spirit_costs": {
+    "Skeletal Arsonist": {
+      "min": 39,
+      "max": 90
+    },
+    "Skeletal Warrior": {
+      "min": 30,
+      "max": 70
+    },
+    "Zombie": {
+      "min": 40,
+      "max": 80
+    },
+    "Cast on Elemental Ailment": 100,
+    "Time of Need": 30,
+    "Totem (with Ancestral Bond)": 75,
+    "Clarity": 25,
+    "Determination": 50,
+    "Grace": 50,
+    "Discipline": 35
+  },
+  "damage_formulas": {
+    "hitChance": "AA / (AA + (DE/4)^0.9)",
+    "critDamageBonus": 100,
+    "bleeding": {
+      "magnitude": 0.14,
+      "duration": 5
+    },
+    "ignite": {
+      "magnitude": 0.2,
+      "duration": 4
+    },
+    "poison": {
+      "magnitude": 0.3,
+      "duration": 2
+    },
+    "shockDuration": 8,
+    "armorFormula": "Armor / (Armor + 10 * Damage)"
+  },
+  "skill_combos": {
+    "Warrior Combos": [
+      {
+        "name": "Boneshatter + Sunder",
+        "description": "Build trauma stacks with Boneshatter, release with Sunder",
+        "damage_multiplier": 2.5
+      },
+      {
+        "name": "Shield Charge + Shield Bash",
+        "description": "Charge in, stun with bash",
+        "utility": "mobility + stun"
+      }
+    ],
+    "Monk Combos": [
+      {
+        "name": "Ice Strike + Glacial Cascade",
+        "description": "Freeze with Ice Strike, shatter with cascade",
+        "damage_type": "cold"
+      }
+    ]
+  }
+}

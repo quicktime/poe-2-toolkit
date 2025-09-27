@@ -1,0 +1,21 @@
+{
+  "Warrior Combos": [
+    {
+      "name": "Boneshatter + Sunder",
+      "description": "Build trauma stacks with Boneshatter, release with Sunder",
+      "damage_multiplier": 2.5
+    },
+    {
+      "name": "Shield Charge + Shield Bash",
+      "description": "Charge in, stun with bash",
+      "utility": "mobility + stun"
+    }
+  ],
+  "Monk Combos": [
+    {
+      "name": "Ice Strike + Glacial Cascade",
+      "description": "Freeze with Ice Strike, shatter with cascade",
+      "damage_type": "cold"
+    }
+  ]
+}

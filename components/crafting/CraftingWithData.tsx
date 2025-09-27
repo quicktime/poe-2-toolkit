@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { SearchableSelect, type SelectOption } from '@/components/ui/searchable-select';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -78,16 +79,26 @@ export function CraftingWithData() {
     setLoading(true);
     try {
       // Load base items
-      const { data: items } = await supabase
+      const { data: items, error: itemsError } = await supabase
         .from('base_items')
         .select('*')
         .order('name');
 
       // Load currency
-      const { data: currency } = await supabase
+      const { data: currency, error: currencyError } = await supabase
         .from('currency_items')
         .select('*')
         .order('tier, name');
+
+      if (itemsError) {
+        console.error('Error loading items:', itemsError);
+      }
+      if (currencyError) {
+        console.error('Error loading currency:', currencyError);
+      }
+
+      console.log('Loaded items:', items?.length, 'items');
+      console.log('Sample item:', items?.[0]);
 
       setBaseItems(items || []);
       setCurrencyItems(currency || []);
@@ -100,10 +111,25 @@ export function CraftingWithData() {
 
   // Filter items by category
   const filteredItems = baseItems.filter(item => {
+    // Check both category and base_type fields for compatibility
+    const itemType = item.category?.toLowerCase() || item.base_type?.toLowerCase() || '';
+
     if (selectedCategory === 'weapon') {
-      return ['sword', 'axe', 'mace', 'bow', 'staff', 'wand', 'dagger', 'claw'].includes(item.category);
+      // Check if it's a weapon category or specific weapon type
+      return itemType === 'weapon' ||
+             ['sword', 'axe', 'mace', 'bow', 'staff', 'wand', 'dagger', 'claw'].includes(itemType);
     }
-    return item.category === selectedCategory;
+    if (selectedCategory === 'armour') {
+      // Check for armour category or specific armour types
+      return itemType === 'armour' ||
+             ['chest', 'helmet', 'gloves', 'boots', 'shield', 'body'].includes(itemType);
+    }
+    if (selectedCategory === 'accessory') {
+      // Check for accessory category or specific accessory types
+      return itemType === 'accessorie' || itemType === 'accessory' ||
+             ['amulet', 'ring', 'belt'].includes(itemType);
+    }
+    return false;
   });
 
   // Group currency by type
@@ -313,21 +339,28 @@ export function CraftingWithData() {
             </SelectContent>
           </Select>
 
-          <Select
-            value={selectedItem?.id.toString()}
-            onValueChange={(id) => setSelectedItem(baseItems.find(i => i.id === parseInt(id)) || null)}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Select item" />
-            </SelectTrigger>
-            <SelectContent>
-              {filteredItems.map(item => (
-                <SelectItem key={item.id} value={item.id.toString()}>
-                  {item.name}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <SearchableSelect
+            value={selectedItem?.id.toString() || ''}
+            onValueChange={(id) => {
+              const item = baseItems.find(i => i.id === parseInt(id));
+              setSelectedItem(item || null);
+              // Reset item state when changing items
+              if (item) {
+                setItemRarity('normal');
+                setItemMods([]);
+                setCraftingHistory([]);
+                setTotalCost(0);
+              }
+            }}
+            placeholder="Select or search for an item..."
+            searchPlaceholder="Type to search items..."
+            emptyText="No items found"
+            options={filteredItems.map(item => ({
+              value: item.id.toString(),
+              label: item.name,
+              category: `Lvl ${item.required_level || 1}`
+            } as SelectOption))}
+          />
 
           {selectedItem && (
             <div className="p-4 border rounded-lg space-y-2">

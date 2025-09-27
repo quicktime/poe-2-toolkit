@@ -1,0 +1,61 @@
+{
+  "Enemy at the Gate": {
+    "all": [
+      "Lesser Life Flask",
+      "Lesser Mana Flask"
+    ],
+    "warrior": [
+      "Heavy Strike",
+      "Shield Bash"
+    ],
+    "ranger": [
+      "Frenzy",
+      "Barrage"
+    ],
+    "witch": [
+      "Spark",
+      "Contagion"
+    ],
+    "monk": [
+      "Ice Strike",
+      "Tempest Bell"
+    ],
+    "mercenary": [
+      "Explosive Shot",
+      "Fragmentation Rounds"
+    ],
+    "sorceress": [
+      "Spark",
+      "Frost Bomb"
+    ]
+  },
+  "The Siren's Cadence": {
+    "all": [
+      "Quicksilver Flask"
+    ],
+    "warrior": [
+      "Leap Slam",
+      "Seismic Cry"
+    ],
+    "ranger": [
+      "Lightning Arrow",
+      "Rain of Arrows"
+    ],
+    "witch": [
+      "Essence Drain",
+      "Bane"
+    ],
+    "monk": [
+      "Whirling Assault",
+      "Falling Thunder"
+    ],
+    "mercenary": [
+      "Gas Grenade",
+      "Flash Grenade"
+    ],
+    "sorceress": [
+      "Ice Nova",
+      "Lightning Bolt"
+    ]
+  }
+}
