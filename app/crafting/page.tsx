@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { CraftingInterface } from '@/components/crafting/CraftingInterface';
+import { CraftingWithData } from '@/components/crafting/CraftingWithData';
 import { CraftingInstructions } from '@/components/crafting/CraftingInstructions';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Hammer, TrendingUp, BookOpen, GraduationCap } from 'lucide-react';
+import { Hammer, TrendingUp, BookOpen, GraduationCap, Database } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function CraftingPage() {
@@ -24,10 +25,14 @@ export default function CraftingPage() {
 
       {/* Main Content */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4 max-w-lg">
+        <TabsList className="grid w-full grid-cols-5 max-w-2xl">
           <TabsTrigger value="craft" className="flex items-center gap-2">
+            <Database className="h-4 w-4" />
+            Live Craft
+          </TabsTrigger>
+          <TabsTrigger value="simulator" className="flex items-center gap-2">
             <Hammer className="h-4 w-4" />
-            Craft
+            Simulator
           </TabsTrigger>
           <TabsTrigger value="instructions" className="flex items-center gap-2">
             <GraduationCap className="h-4 w-4" />
@@ -44,6 +49,10 @@ export default function CraftingPage() {
         </TabsList>
 
         <TabsContent value="craft" className="space-y-6">
+          <CraftingWithData />
+        </TabsContent>
+
+        <TabsContent value="simulator" className="space-y-6">
           <CraftingInterface />
         </TabsContent>
 
