@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Separator } from '@/components/ui/separator';
+import { ModPoolExplorer } from './ModPoolExplorer';
 import {
   Coins,
   Sparkles,
@@ -20,7 +21,9 @@ import {
   TrendingUp,
   AlertTriangle,
   Check,
-  X
+  X,
+  Database,
+  Wand2
 } from 'lucide-react';
 
 const supabase = createClient();
@@ -320,13 +323,28 @@ export function CraftingWithData() {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-3">
-      {/* Item Selection */}
-      <Card className="lg:col-span-1">
-        <CardHeader>
-          <CardTitle>Select Base Item</CardTitle>
-          <CardDescription>Choose an item from the database</CardDescription>
-        </CardHeader>
+    <div className="space-y-6">
+      {/* Tabs for different views */}
+      <Tabs defaultValue="craft" className="w-full">
+        <TabsList className="grid grid-cols-2 w-full max-w-md">
+          <TabsTrigger value="craft" className="flex items-center gap-2">
+            <Wand2 className="h-4 w-4" />
+            Crafting Simulator
+          </TabsTrigger>
+          <TabsTrigger value="explore" className="flex items-center gap-2">
+            <Database className="h-4 w-4" />
+            Mod Explorer
+          </TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="craft" className="mt-6">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {/* Item Selection */}
+            <Card className="lg:col-span-1">
+              <CardHeader>
+                <CardTitle>Select Base Item</CardTitle>
+                <CardDescription>Choose an item from the database</CardDescription>
+              </CardHeader>
         <CardContent className="space-y-4">
           <Select value={selectedCategory} onValueChange={setSelectedCategory}>
             <SelectTrigger>
@@ -513,6 +531,106 @@ export function CraftingWithData() {
           )}
         </CardContent>
       </Card>
+    </div>
+        </TabsContent>
+
+        <TabsContent value="explore" className="mt-6">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {/* Item Selection for Explorer */}
+            <Card className="lg:col-span-1">
+              <CardHeader>
+                <CardTitle>Select Base Item</CardTitle>
+                <CardDescription>Choose an item to explore available mods</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select category" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="weapon">Weapons</SelectItem>
+                    <SelectItem value="armour">Armour</SelectItem>
+                    <SelectItem value="accessory">Accessories</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                <SearchableSelect
+                  value={selectedItem?.id.toString() || ''}
+                  onValueChange={(id) => {
+                    const item = baseItems.find(i => i.id === parseInt(id));
+                    setSelectedItem(item || null);
+                  }}
+                  placeholder="Select or search for an item..."
+                  searchPlaceholder="Type to search items..."
+                  emptyText="No items found"
+                  options={filteredItems.map(item => ({
+                    value: item.id.toString(),
+                    label: item.name,
+                    category: `Lvl ${item.required_level || 1}`
+                  } as SelectOption))}
+                />
+
+                {selectedItem && (
+                  <div className="p-4 border rounded-lg space-y-2">
+                    <h4 className="font-semibold">{selectedItem.name}</h4>
+                    <Badge variant="secondary">{selectedItem.category}</Badge>
+
+                    {selectedItem.damage_min && (
+                      <p className="text-sm">
+                        <Swords className="inline h-3 w-3 mr-1" />
+                        Damage: {selectedItem.damage_min}-{selectedItem.damage_max}
+                      </p>
+                    )}
+                    {selectedItem.attack_speed && (
+                      <p className="text-sm">APS: {selectedItem.attack_speed}</p>
+                    )}
+                    {selectedItem.armour && (
+                      <p className="text-sm">
+                        <Shield className="inline h-3 w-3 mr-1" />
+                        Armour: {selectedItem.armour}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Mod Pool Explorer */}
+            <div className="lg:col-span-2">
+              <ModPoolExplorer
+                selectedItem={selectedItem}
+                onApplyMods={(mods) => {
+                  // Apply selected mods to the item
+                  setItemMods(mods.map(mod => {
+                    if (mod.stat && mod.values) {
+                      const avg = Math.floor((mod.values.min + mod.values.max) / 2);
+                      if (mod.stat.includes('#')) {
+                        return mod.stat.replace('#', avg.toString());
+                      }
+                      return `+${avg} ${mod.stat}`;
+                    }
+                    return mod.name;
+                  }));
+                  setItemRarity('rare');
+
+                  // Add to crafting history
+                  setCraftingHistory(prev => [...prev, {
+                    currency: {
+                      id: 0,
+                      name: 'Manual Mod Selection',
+                      type: 'special',
+                      effect: `Applied ${mods.length} selected mods`,
+                      tier: 'special'
+                    },
+                    result: `Applied ${mods.filter(m => m.mod_type === 'prefix').length} prefixes and ${mods.filter(m => m.mod_type === 'suffix').length} suffixes`,
+                    success: true
+                  }]);
+                }}
+              />
+            </div>
+          </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
