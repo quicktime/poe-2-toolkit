@@ -1,15 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { useCharacters } from '@/hooks/useCharacter';
+import { useCharacters, useCharacter } from '@/hooks/useCharacter';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import BuildOptimizer from '@/components/BuildOptimizer';
+import { OptimizationPanel } from '@/components/optimization/OptimizationPanel';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function OptimizePage() {
   const { isAuthenticated, isLoading: authLoading } = useAuth();
   const { data: characters, isLoading, error } = useCharacters();
   const [selectedCharacter, setSelectedCharacter] = useState<string>('');
+  const { data: character } = useCharacter(selectedCharacter);
+  const [optimizationMode, setOptimizationMode] = useState<'min-max' | 'simulator'>('min-max');
 
   if (authLoading || isLoading) {
     return (
@@ -66,27 +70,73 @@ export default function OptimizePage() {
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="text-3xl font-bold">Build Optimizer</h1>
                 <span className="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-sm font-medium">
-                  What-If Analysis
+                  {optimizationMode === 'min-max' ? 'AI Min-Max Analysis' : 'What-If Simulator'}
                 </span>
               </div>
               <p className="text-purple-100 mb-4">
-                Simulate equipment changes, jewel swaps, and passive tree modifications to see their impact
+                {optimizationMode === 'min-max' ?
+                  'AI-powered recommendations to maximize your build performance with "replace X with Y for Z% improvement" insights' :
+                  'Simulate equipment changes, jewel swaps, and passive tree modifications to see their impact'
+                }
               </p>
+
+              {/* Mode Toggle */}
+              <div className="flex gap-2 mb-4">
+                <button
+                  onClick={() => setOptimizationMode('min-max')}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    optimizationMode === 'min-max'
+                      ? 'bg-white text-purple-600'
+                      : 'bg-white/20 text-white hover:bg-white/30'
+                  }`}
+                >
+                  🎯 Min-Max Optimizer
+                </button>
+                <button
+                  onClick={() => setOptimizationMode('simulator')}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    optimizationMode === 'simulator'
+                      ? 'bg-white text-purple-600'
+                      : 'bg-white/20 text-white hover:bg-white/30'
+                  }`}
+                >
+                  🔧 What-If Simulator
+                </button>
+              </div>
 
               {/* Key Features */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-                <div className="bg-white/10 backdrop-blur rounded-lg p-3">
-                  <div className="text-lg font-semibold mb-1">💎 Jewel Simulator</div>
-                  <div className="text-sm text-purple-100">See DPS/stat changes from different jewels</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg p-3">
-                  <div className="text-lg font-semibold mb-1">⚙️ Equipment Optimizer</div>
-                  <div className="text-sm text-purple-100">Compare gear upgrades and their effects</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg p-3">
-                  <div className="text-lg font-semibold mb-1">📊 Impact Analysis</div>
-                  <div className="text-sm text-purple-100">Before/after comparison with exact changes</div>
-                </div>
+                {optimizationMode === 'min-max' ? (
+                  <>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+                      <div className="text-lg font-semibold mb-1">🤖 AI Recommendations</div>
+                      <div className="text-sm text-purple-100">Algorithmic detection of best upgrades</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+                      <div className="text-lg font-semibold mb-1">📈 Incremental Path</div>
+                      <div className="text-sm text-purple-100">Step-by-step optimization roadmap</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+                      <div className="text-lg font-semibold mb-1">💰 Cost Analysis</div>
+                      <div className="text-sm text-purple-100">Budget-aware upgrade priorities</div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+                      <div className="text-lg font-semibold mb-1">💎 Jewel Simulator</div>
+                      <div className="text-sm text-purple-100">See DPS/stat changes from different jewels</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+                      <div className="text-lg font-semibold mb-1">⚙️ Equipment Optimizer</div>
+                      <div className="text-sm text-purple-100">Compare gear upgrades and their effects</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur rounded-lg p-3">
+                      <div className="text-lg font-semibold mb-1">📊 Impact Analysis</div>
+                      <div className="text-sm text-purple-100">Before/after comparison with exact changes</div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -127,12 +177,23 @@ export default function OptimizePage() {
           )}
         </div>
 
-        {/* Build Optimizer */}
+        {/* Build Optimizer / Min-Max Panel */}
         {selectedCharacter ? (
-          <BuildOptimizer
-            characterName={selectedCharacter}
-            className="w-full"
-          />
+          optimizationMode === 'min-max' && character ? (
+            <OptimizationPanel
+              character={character}
+              onApplyRecommendation={(rec) => {
+                console.log('Applying recommendation:', rec);
+                // Here you would apply the recommendation to the character
+                // This could involve updating equipment, passive tree, etc.
+              }}
+            />
+          ) : (
+            <BuildOptimizer
+              characterName={selectedCharacter}
+              className="w-full"
+            />
+          )
         ) : (
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-12">
             <div className="text-center">
