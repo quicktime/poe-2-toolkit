@@ -2,11 +2,19 @@
  * Unified Path of Exile 2 Crafting System with Real-Time Market Integration
  * Uses POE2Scout API for live currency rates
  * All costs in EXALTED equivalent (PoE2: Chaos > Exalted!)
+ * 
+ * UPDATE: Now includes Homogenous Omen strategies and actual PoE2 0.3 modifiers
  */
 
 import { POE2ScoutProvider } from '@/lib/market/providers/poe2scout';
 import { CurrencyRates } from '@/types/market';
 import { POE2_COMPREHENSIVE_CRAFTING } from './poe2-comprehensive-crafting-system';
+import { 
+  WAND_PREFIXES, 
+  WAND_SUFFIXES, 
+  WAND_CORRUPTED_IMPLICITS,
+  WAND_CRAFTING_METHODS 
+} from './poe2-actual-wand-mods';
 
 /**
  * CRITICAL PoE2 Currency Values from POE2Scout (Rise of the Abyssal League)
@@ -58,6 +66,10 @@ export const POE2_CURRENCY_RATES = {
   'omen_of_fortune': 15,
   'omen_of_preservation': 12,
   'omen_of_duplication': 25,
+  'homogenous_omen': 190, // 0.5 Divine
+  'omen_of_corruption': 380, // 1 Divine
+  'omen_of_chance': 150,
+  'omen_of_blanching': 100,
   
   // Distilled Emotions
   'distilled_ire': 10,
@@ -77,7 +89,11 @@ export const POE2_CURRENCY_RATES = {
   'rune_of_refinement': 8,
   'rune_of_tempering': 20,
   'rune_of_enhancement': 35,
-  'rune_of_genesis': 50
+  'rune_of_genesis': 50,
+  
+  // Special crafting
+  'recombinator': 50,
+  'multimod': 10 // May not exist in PoE2
 };
 
 export interface CraftingCost {
@@ -222,6 +238,11 @@ export class UnifiedCraftingSystem {
     // Update rates first
     await this.updateCurrencyRates(league);
     
+    // Check if this requires special handling
+    const hasGainMods = this.hasGainAsExtraMods(targetMods);
+    const modCount = targetMods.length;
+    const needsCorruption = modCount > 6;
+    
     // Determine budget tier
     let strategy: 'budget' | 'midTier' | 'highEnd';
     if (budget < 10) {
@@ -230,6 +251,11 @@ export class UnifiedCraftingSystem {
       strategy = 'midTier';
     } else {
       strategy = 'highEnd';
+    }
+    
+    // Override strategy for special items
+    if (hasGainMods || needsCorruption) {
+      strategy = 'highEnd'; // Force high-end strategy for mirror-tier items
     }
     
     // Find appropriate route from comprehensive system
@@ -516,6 +542,12 @@ export class UnifiedCraftingSystem {
     // Search through POE2_COMPREHENSIVE_CRAFTING routes
     const routes = [];
     
+    // Check if this is a wand requiring special crafting (Gain as Extra mods)
+    if (itemBase.toLowerCase().includes('wand') && strategy === 'highEnd') {
+      // Add Homogenous Omen strategy for high-end wands
+      routes.push(this.getHomogenousOmenWandRoute());
+    }
+    
     for (const [category, items] of Object.entries(POE2_COMPREHENSIVE_CRAFTING.craftingRoutes)) {
       for (const [itemType, strategies] of Object.entries(items)) {
         if (itemBase.toLowerCase().includes(itemType.toLowerCase())) {
@@ -643,6 +675,111 @@ export class UnifiedCraftingSystem {
     }
     
     return 'weapon';
+  }
+
+  /**
+   * Get Homogenous Omen crafting route for mirror-tier wands
+   * This handles the "Gain as Extra" mods that actually exist in PoE2
+   */
+  private getHomogenousOmenWandRoute(): any {
+    return {
+      name: 'Mirror-Tier Wand (Homogenous Omen Strategy)',
+      description: 'Use Homogenous Omens to target multiple "Gain as Extra" damage mods',
+      steps: [
+        {
+          action: 'alteration_perfect',
+          description: 'Alt spam for +3 to all spell skills OR +5 lightning skills',
+          expectedCost: 300, // Many attempts needed
+          targetMod: '+3 to Level of all Spell Skills',
+          expectedMods: ['+3 spell skills', '+5 lightning skills']
+        },
+        {
+          action: 'augmentation',
+          description: 'Add second mod if good prefix',
+          expectedCost: 5
+        },
+        {
+          action: 'regal',
+          description: 'Make rare',
+          expectedCost: 1
+        },
+        {
+          action: 'homogenous_omen',
+          description: 'Homogenous Omen + Greater Exalt for "Gain % as Extra Physical"',
+          expectedCost: 1.5, // Uses both omen + greater exalt
+          targetMod: 'Gain 24% of Damage as Extra Physical Damage'
+        },
+        {
+          action: 'homogenous_omen',
+          description: 'Homogenous Omen + Greater Exalt for "Gain % as Extra Fire"',
+          expectedCost: 1.5,
+          targetMod: 'Gain 30% of Damage as Extra Fire Damage'
+        },
+        {
+          action: 'homogenous_omen',
+          description: 'Homogenous Omen + Greater Exalt for "Gain % as Extra Lightning"',
+          expectedCost: 1.5,
+          targetMod: 'Gain 28% of Damage as Extra Lightning Damage'
+        },
+        {
+          action: 'homogenous_omen',
+          description: 'Homogenous Omen + Greater Dextral Exalt for Critical Spell Damage',
+          expectedCost: 1.5,
+          targetMod: '38% increased Critical Spell Damage Bonus'
+        },
+        {
+          action: 'homogenous_omen',
+          description: 'Homogenous Omen + Greater Dextral Exalt for Cast Speed',
+          expectedCost: 1.5,
+          targetMod: '35% increased Cast Speed'
+        },
+        {
+          action: 'divine',
+          description: 'Perfect all mod rolls (35% cast speed, 38% crit, max damage values)',
+          expectedCost: 2, // 2 divines worth of attempts
+        },
+        {
+          action: 'omen_of_corruption',
+          description: 'Optional: Use with Vaal Orb for 7th mod (Grants Spellslinger)',
+          expectedCost: 1.5, // Omen + vaal orb
+          targetMod: 'Grants Skill: Level 18 Spellslinger',
+          warning: 'CORRUPTION - Cannot modify after this!'
+        }
+      ],
+      expectedTotalCost: 3800, // ~10 divines
+      successRate: 'very_low',
+      targetMods: [
+        '+3 to Level of all Spell Skills',
+        '+5 to Level of all Lightning Spell Skills',
+        'Gain 24% of Damage as Extra Physical Damage',
+        'Gain 30% of Damage as Extra Fire Damage', 
+        'Gain 28% of Damage as Extra Lightning Damage',
+        '38% increased Critical Spell Damage Bonus',
+        '35% increased Cast Speed',
+        'Grants Spellslinger (Corrupted Implicit)'
+      ]
+    };
+  }
+
+  /**
+   * Check if target mods include "Gain as Extra" damage
+   */
+  private hasGainAsExtraMods(targetMods: string[]): boolean {
+    return targetMods.some(mod => 
+      mod.toLowerCase().includes('gain') && 
+      mod.toLowerCase().includes('as extra')
+    );
+  }
+
+  /**
+   * Override mod limit check for corrupted items
+   */
+  private getMaxModCount(itemBase: string, corrupted: boolean = false): number {
+    // Corrupted items can exceed normal 6-mod limit
+    if (corrupted) {
+      return 8; // Can have implicit + 7 explicit mods
+    }
+    return 6; // Normal limit: 3 prefixes + 3 suffixes
   }
 
   /**

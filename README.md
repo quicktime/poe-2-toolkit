@@ -4,7 +4,7 @@ A comprehensive character planning, build optimization, and community analytics 
 
 > ⚠️ **Note**: This toolkit is designed exclusively for Path of Exile 2 and includes all the new mechanics introduced in the sequel. It is NOT compatible with Path of Exile 1.
 
-## 🚀 Current Features (9 Major Tools Complete)
+## 🚀 Current Features (10 Major Tools Complete)
 
 ### 🎯 Core Character Tools
 - **🔐 OAuth Authentication**: Secure login with Path of Exile account
@@ -19,6 +19,13 @@ A comprehensive character planning, build optimization, and community analytics 
 - **✨ Build Templates**: Save, categorize, and share character builds with complexity scoring
 - **🧠 Character Insights**: Deep analysis of inventory, gems, weaknesses, and combat style
 - **🧮 Minion DPS Calculator**: Accurate minion/totem DPS with spirit optimization and passive tree integration
+
+### 🔨 Crafting System (NEW!)
+- **🎨 Dynamic Crafting Simulator**: Complete crafting system with real PoE 2 mechanics
+- **📋 Mod Database**: Full database of all item modifiers, weights, and tiers
+- **🎯 Smart Route Generation**: AI-powered crafting route optimization based on selected mods
+- **💰 Real-Time Pricing**: Integration with POE2Scout for live currency rates
+- **📊 Cost Analysis**: Detailed breakdown of crafting costs and success rates
 
 ### 📊 Community & Analytics
 - **📊 Community Analytics**: Real-time insights on class distribution, popular builds, and equipment meta
@@ -74,6 +81,35 @@ npm run dev
 ```
 
 4. **Open**: http://localhost:3002
+
+## 🔨 Crafting System Features
+
+The new crafting system provides comprehensive crafting simulation for Path of Exile 2:
+
+### Dynamic Mod Selection
+- Browse all available modifiers for any item type
+- Filter by rarity, tier, tags, and requirements
+- Visual indicators for mod rarity (Extremely Rare → Common)
+- Real-time validation of mod combinations
+
+### Intelligent Route Generation
+- **Homogenous Omen Strategy**: For mirror-tier items with "Gain as Extra" mods
+- **Essence Crafting**: Deterministic crafting with guaranteed mods
+- **Alt-Regal Strategy**: Budget-friendly approach for starter items
+- **Recombinator Method**: Split crafting for difficult combinations
+- **Hybrid Approach**: Combines multiple methods for optimal results
+
+### Cost Analysis
+- Real-time currency rates from POE2Scout API
+- Single attempt vs expected total cost calculations
+- Currency breakdown and distribution charts
+- Budget utilization tracking with warnings
+
+### Supported Currencies
+- All PoE 2 currencies including Perfect and Greater variants
+- Homogenous Omens for targeted crafting
+- Essences, Runes, and Distilled Emotions
+- Proper PoE 2 rates (1 Chaos = 12 Exalted, 1 Divine = 380 Exalted)
 
 ## 🔐 OAuth Setup
 
