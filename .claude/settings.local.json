@@ -40,7 +40,8 @@
       "Bash(npm test:*)",
       "Bash(yarn add:*)",
       "Bash(npm run test:coverage:*)",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
