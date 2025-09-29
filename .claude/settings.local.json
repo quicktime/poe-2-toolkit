@@ -29,7 +29,9 @@
       "Bash(tasklist)",
       "Bash(test:*)",
       "WebFetch(domain:localhost)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []
