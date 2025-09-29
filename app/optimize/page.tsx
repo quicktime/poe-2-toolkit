@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { useCharacters, useCharacter } from '@/hooks/useCharacter';
+import { useCharacters } from '@/hooks/useCharacter';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import BuildOptimizer from '@/components/BuildOptimizer';
 // import { OptimizationPanel } from '@/components/optimization/OptimizationPanel';
@@ -12,7 +12,7 @@ export default function OptimizePage() {
   const { isAuthenticated, isLoading: authLoading } = useAuth();
   const { data: characters, isLoading, error } = useCharacters();
   const [selectedCharacter, setSelectedCharacter] = useState<string>('');
-  const { data: character } = useCharacter(selectedCharacter);
+  const character = characters?.find(c => c.name === selectedCharacter);
   const [optimizationMode, setOptimizationMode] = useState<'min-max' | 'simulator'>('min-max');
 
   if (authLoading || isLoading) {
