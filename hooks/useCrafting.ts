@@ -1,7 +1,18 @@
+/**
+ * React Hook for Crafting System Integration
+ * Uses the unified crafting system with real-time market data
+ * All costs in EXALTED equivalent (PoE2: 1 Chaos = 12 Exalted!)
+ */
+
 'use client'
 
-import { useState, useCallback } from 'react'
-import { PoE2CraftingSimulator } from '@/lib/calculator/poe2CraftingSimulator'
+import { useState, useCallback, useEffect } from 'react'
+import { 
+  craftingSystem, 
+  type CraftingRoute, 
+  type CraftingCost,
+  type MarketIntegratedItem 
+} from '@/lib/crafting'
 
 interface CraftingParams {
   base: string
@@ -10,43 +21,103 @@ interface CraftingParams {
   targetMods: string[]
   advanced: boolean
   simCount: number
+  budget?: number
 }
 
 interface CraftingResult {
   successRate: number
   avgCost: number
+  costInExalted: number  // Changed from divines
   costInDivines: number
+  costInChaos: number    // Added chaos cost
   avgAttempts: number
   minAttempts: number
   maxAttempts: number
   commonMods?: Array<{ name: string; weight: number }>
   bestResult?: { description: string }
+  route?: CraftingRoute
+  marketValue?: number
+  roi?: number
 }
 
 export function useCrafting() {
   const [item, setItem] = useState<any>(null)
   const [craftingResult, setCraftingResult] = useState<CraftingResult | null>(null)
   const [isLoading, setIsLoading] = useState(false)
+  const [currencyRates, setCurrencyRates] = useState<Map<string, number>>(new Map())
+
+  // Load currency rates on mount
+  useEffect(() => {
+    const loadRates = async () => {
+      try {
+        await craftingSystem.updateCurrencyRates('Standard')
+        // Store rates for display
+        const rates = new Map<string, number>()
+        rates.set('chaos', 12.01)  // 1 chaos = 12 exalted
+        rates.set('divine', 380.31) // 1 divine = 380 exalted
+        rates.set('exalted', 1)
+        setCurrencyRates(rates)
+      } catch (error) {
+        console.error('Failed to load currency rates:', error)
+      }
+    }
+    loadRates()
+  }, [])
 
   const simulateCraft = useCallback(async (params: CraftingParams) => {
     setIsLoading(true)
 
     try {
-      const simulator = new PoE2CraftingSimulator()
-      const result = await simulator.simulate(params)
+      // Get optimal route from unified system
+      const budget = params.budget || 100 // Default 100 exalted budget
+      const route = await craftingSystem.getOptimalCraftingRoute(
+        params.base,
+        params.targetMods,
+        budget,
+        'Standard'
+      )
+
+      // Price check the expected result
+      const priceCheck = await craftingSystem.priceCheckCraftedItem({
+        base: params.base,
+        category: params.base.includes('sword') ? 'weapon' : 'armor',
+        itemLevel: params.level,
+        mods: params.targetMods.map((mod, i) => ({
+          id: `mod_${i}`,
+          name: mod,
+          tier: 1,
+          type: (i % 2 === 0 ? 'prefix' : 'suffix') as 'prefix' | 'suffix',
+          value: 90
+        })),
+        estimatedValue: { currency: 'exalted', amount: 0, exaltedEquivalent: 0 }
+      }, 'Standard')
+
+      // Calculate ROI
+      const roiData = await craftingSystem.calculateCraftingROI(
+        params.base,
+        route,
+        'Standard'
+      )
 
       setCraftingResult({
-        successRate: result.successRate,
-        avgCost: result.avgCost,
-        costInDivines: Math.round(result.avgCost / 50 * 10) / 10, // 50 exalted = 1 divine in PoE 2
-        avgAttempts: result.avgAttempts,
-        minAttempts: result.minAttempts,
-        maxAttempts: result.maxAttempts,
-        commonMods: result.commonMods,
-        bestResult: result.bestResult
+        successRate: route.successRate,
+        avgCost: route.totalCost.exaltedEquivalent,
+        costInExalted: route.totalCost.exaltedEquivalent,
+        costInDivines: route.totalCost.exaltedEquivalent / 380.31, // Convert to divines
+        costInChaos: route.totalCost.exaltedEquivalent / 12.01,   // Convert to chaos
+        avgAttempts: route.steps.length,
+        minAttempts: Math.floor(route.steps.length * 0.5),
+        maxAttempts: Math.floor(route.steps.length * 2),
+        route,
+        marketValue: priceCheck.estimatedValue,
+        roi: roiData.roi
       })
 
-      setItem(result.finalItem)
+      setItem({
+        base: params.base,
+        level: params.level,
+        mods: params.targetMods
+      })
     } catch (error) {
       console.error('Crafting simulation failed:', error)
     } finally {
@@ -55,56 +126,62 @@ export function useCrafting() {
   }, [])
 
   const calculateCosts = useCallback((method: string, attempts: number) => {
-    // Path of Exile 2 costs in EXALTED ORBS
-    const costs: Record<string, number> = {
-      essence: 5,
-      fossil: 10,
-      harvest: 20,
-      alteration: 0.1,
-      regal: 0.3,
-      alchemy: 0.05,
-      metacraft: 50,
-      beast: 15,
-      veiled: 25
-    }
-
-    return (costs[method] || 0.1) * attempts
+    // Use real-time rates from unified system
+    const cost = craftingSystem.getCurrencyValue(method, attempts)
+    return cost.exaltedEquivalent
   }, [])
 
   const optimizeCraft = useCallback(async () => {
     setIsLoading(true)
 
     try {
-      const simulator = new PoE2CraftingSimulator()
-      const methods = ['essence', 'fossil', 'harvest', 'alteration', 'chaos']
-      const results = []
-
-      for (const method of methods) {
-        const result = await simulator.simulate({
-          base: 'two-handed-sword',
-          level: 85,
-          method,
+      // Get market recommendations for optimal crafts
+      const recommendations = await craftingSystem.getMarketBasedRecommendations(100, 'Standard')
+      
+      if (recommendations.length > 0) {
+        const best = recommendations[0]
+        
+        // Simulate the best option
+        await simulateCraft({
+          base: best.itemType,
+          level: 86,
+          method: 'optimal',
           targetMods: [],
           advanced: true,
-          simCount: 1000
+          simCount: 1,
+          budget: 100
         })
-
-        results.push({
-          method,
-          ...result
-        })
+        
+        return best
       }
-
-      results.sort((a, b) => {
-        const efficiencyA = a.successRate / a.avgCost
-        const efficiencyB = b.successRate / b.avgCost
-        return efficiencyB - efficiencyA
-      })
-
-      return results[0]
     } finally {
       setIsLoading(false)
     }
+  }, [simulateCraft])
+
+  // Additional utility functions
+  const toExalted = useCallback((currency: string, amount: number): number => {
+    const cost = craftingSystem.getCurrencyValue(currency, amount)
+    return cost.exaltedEquivalent
+  }, [])
+
+  const priceCheck = useCallback(async (base: string, mods: string[]): Promise<number> => {
+    const item: MarketIntegratedItem = {
+      base,
+      category: base.includes('sword') ? 'weapon' : 'armor',
+      itemLevel: 86,
+      mods: mods.map((mod, i) => ({
+        id: `mod_${i}`,
+        name: mod,
+        tier: 1,
+        type: (i % 2 === 0 ? 'prefix' : 'suffix') as 'prefix' | 'suffix',
+        value: 90
+      })),
+      estimatedValue: { currency: 'exalted', amount: 0, exaltedEquivalent: 0 }
+    }
+    
+    const result = await craftingSystem.priceCheckCraftedItem(item, 'Standard')
+    return result.estimatedValue
   }, [])
 
   return {
@@ -113,6 +190,9 @@ export function useCrafting() {
     isLoading,
     simulateCraft,
     calculateCosts,
-    optimizeCraft
+    optimizeCraft,
+    toExalted,
+    priceCheck,
+    currencyRates
   }
 }
