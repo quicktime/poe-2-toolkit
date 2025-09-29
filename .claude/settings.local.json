@@ -30,8 +30,17 @@
       "Bash(test:*)",
       "WebFetch(domain:localhost)",
       "Bash(node:*)",
+      "Bash(mkdir:*)",
       "Bash(cat:*)",
-      "Bash(find:*)"
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm test:*)",
+      "Bash(yarn add:*)",
+      "Bash(npm run test:coverage:*)",
+      "Bash(git rebase:*)"
     ],
     "deny": [],
     "ask": []
