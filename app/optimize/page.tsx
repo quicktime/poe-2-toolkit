@@ -5,7 +5,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useCharacters, useCharacter } from '@/hooks/useCharacter';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import BuildOptimizer from '@/components/BuildOptimizer';
-import { OptimizationPanel } from '@/components/optimization/OptimizationPanel';
+// import { OptimizationPanel } from '@/components/optimization/OptimizationPanel';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function OptimizePage() {
@@ -180,13 +180,9 @@ export default function OptimizePage() {
         {/* Build Optimizer / Min-Max Panel */}
         {selectedCharacter ? (
           optimizationMode === 'min-max' && character ? (
-            <OptimizationPanel
-              character={character}
-              onApplyRecommendation={(rec) => {
-                console.log('Applying recommendation:', rec);
-                // Here you would apply the recommendation to the character
-                // This could involve updating equipment, passive tree, etc.
-              }}
+            <BuildOptimizer 
+              character={character} 
+              characters={characters || []} 
             />
           ) : (
             <BuildOptimizer
