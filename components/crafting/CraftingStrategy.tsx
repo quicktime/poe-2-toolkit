@@ -202,7 +202,7 @@ export function CraftingStrategy({ request, analysis }: CraftingStrategyProps) {
             Materials Shopping List
           </CardTitle>
           <CardDescription>
-            Currency you\'ll need before starting
+            Currency you&apos;ll need before starting
           </CardDescription>
         </CardHeader>
         <CardContent>

@@ -41,7 +41,17 @@
       "Bash(yarn add:*)",
       "Bash(npm run test:coverage:*)",
       "Bash(git rebase:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(vercel ls:*)",
+      "Bash(vercel inspect:*)",
+      "Bash(vercel:*)",
+      "Bash(find:*)",
+      "Bash(sed:*)",
+      "Bash(touch:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)"
     ],
     "deny": [],
     "ask": []

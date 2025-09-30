@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { poeApiService } from '@/lib/api/poeApiService';
-import type { CharacterDetailsResponse } from '@/types/character';
+import type { CharacterDetailsResponse, CharacterItem } from '@/types/character';
 
 export async function GET(
   request: NextRequest,
@@ -34,37 +34,107 @@ export async function GET(
 
     // Transform the data to match our expected format
     const responseData: CharacterDetailsResponse = {
-      // Basic character info
-      id: characterDetails.id,
-      name: characterDetails.name,
-      level: characterDetails.level,
-      class: characterDetails.class,
-      ascendancyClass: characterDetails.ascendancyClass,
-      league: characterDetails.league,
-      experience: characterDetails.experience,
-      lastActive: characterDetails.lastActive,
+      character: {
+        // Basic character info
+        id: characterDetails.id,
+        name: characterDetails.name,
+        realm: 'pc', // Default to PC realm for PoE 2
+        level: characterDetails.level,
+        class: characterDetails.class as any,
+        ascendancyClass: characterDetails.ascendancyClass || '',
+        league: characterDetails.league || 'Standard',
+        experience: characterDetails.experience || 0,
+        lastActive: characterDetails.lastActive || new Date().toISOString(),
 
-      // Character stats
-      life: characterDetails.life,
-      mana: characterDetails.mana,
-      energy_shield: characterDetails.energy_shield,
-      strength: characterDetails.strength,
-      dexterity: characterDetails.dexterity,
-      intelligence: characterDetails.intelligence,
+        // Equipment
+        items: (characterDetails.equipment || []).map((item: any) => ({
+          ...item,
+          sockets: item.sockets?.map((socket: any) => ({
+            group: socket.group || 0,
+            attr: socket.attr || 'S',
+            sColour: socket.attr || 'R' // Map attr to sColour
+          }))
+        })) as CharacterItem[],
 
-      // Equipment and inventory
-      items: characterDetails.equipment || [],
-      inventory: characterDetails.inventory || [],
+        // Skills
+        skills: characterDetails.skills?.map((skillGroup: any) => ({
+          id: skillGroup.id || '',
+          name: skillGroup.mainSkill?.name || '',
+          icon: '',
+          activeGem: skillGroup.mainSkill ? {
+            id: skillGroup.mainSkill.id || '',
+            name: skillGroup.mainSkill.name || '',
+            level: skillGroup.mainSkill.level || 1,
+            quality: skillGroup.mainSkill.quality || 0,
+            experience: skillGroup.mainSkill.experience || 0,
+            icon: '',
+            tags: []
+          } : {
+            id: '',
+            name: '',
+            level: 1,
+            quality: 0,
+            experience: 0,
+            icon: '',
+            tags: []
+          },
+          supportGems: skillGroup.supportGems?.map((gem: any) => ({
+            id: gem.id || '',
+            name: gem.name || '',
+            level: gem.level || 1,
+            quality: gem.quality || 0,
+            experience: gem.experience || 0,
+            icon: '',
+            tags: []
+          })) || [],
+          slot: skillGroup.slot || ''
+        })) || [],
 
-      // Skills and gems
-      skills: characterDetails.skills || [],
+        // Stats
+        stats: {
+          life: {
+            current: characterDetails.life || 0,
+            max: characterDetails.life || 0,
+            reserved: 0,
+            unreserved: characterDetails.life || 0
+          },
+          mana: {
+            current: characterDetails.mana || 0,
+            max: characterDetails.mana || 0,
+            reserved: 0,
+            unreserved: characterDetails.mana || 0
+          },
+          energyShield: {
+            current: characterDetails.energy_shield || 0,
+            max: characterDetails.energy_shield || 0,
+            reserved: 0,
+            unreserved: characterDetails.energy_shield || 0
+          },
+          evasion: 0,
+          armour: 0,
+          resistances: {
+            fire: 0,
+            cold: 0,
+            lightning: 0,
+            chaos: 0
+          },
+          accuracy: 0,
+          criticalStrikeChance: 0,
+          criticalStrikeMultiplier: 0,
+          attackSpeed: 0,
+          castSpeed: 0,
+          movementSpeed: 0,
+          blockChance: 0,
+          spellBlockChance: 0
+        },
 
-      // Passive tree data
-      passives: characterDetails.passives || {
-        hashes: [],
-        hashes_ex: [],
-        mastery_effects: {},
-        jewel_data: {}
+        // Passive tree data
+        passives: {
+          hashes: characterDetails.passives?.hashes || [],
+          hashesEx: characterDetails.passives?.hashes_ex || [],
+          masteryEffects: characterDetails.passives?.mastery_effects || {},
+          jewelData: characterDetails.passives?.jewel_data || {}
+        }
       }
     };
 

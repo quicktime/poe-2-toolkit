@@ -87,7 +87,7 @@ export default function AscendancySelector({
           Choose Ascendancy for {characterClass}
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-          Select an ascendancy class to specialize your character's abilities
+          Select an ascendancy class to specialize your character&apos;s abilities
         </p>
       </div>
 

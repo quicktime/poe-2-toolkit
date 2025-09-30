@@ -23,11 +23,12 @@ export async function GET(request: NextRequest) {
       characters: characters.map(char => ({
         id: char.id,
         name: char.name,
+        realm: 'pc', // Default to PC realm for PoE 2
         level: char.level,
-        class: char.class,
+        class: char.class as any, // Type assertion for CharacterClass
         ascendancyClass: char.ascendancyClass,
-        league: char.league,
-        experience: char.experience,
+        league: char.league || 'Standard',
+        experience: char.experience || 0,
         lastActive: char.lastActive
       }))
     };
@@ -48,11 +49,12 @@ export async function GET(request: NextRequest) {
             characters: characters.map(char => ({
               id: char.id,
               name: char.name,
+              realm: 'pc', // Default to PC realm for PoE 2
               level: char.level,
-              class: char.class,
+              class: char.class as any, // Type assertion for CharacterClass
               ascendancyClass: char.ascendancyClass,
-              league: char.league,
-              experience: char.experience,
+              league: char.league || 'Standard',
+              experience: char.experience || 0,
               lastActive: char.lastActive
             }))
           };

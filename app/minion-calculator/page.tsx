@@ -77,7 +77,7 @@ export default function MinionCalculatorPage() {
                   Minion Mechanics
                 </h3>
                 <div className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
-                  <p><strong>Separate Scaling:</strong> Minions don't scale with your damage stats</p>
+                  <p><strong>Separate Scaling:</strong> Minions don&apos;t scale with your damage stats</p>
                   <p><strong>Gem Level:</strong> Primary source of minion damage scaling</p>
                   <p><strong>Weapon Bonus:</strong> 25% of weapon base damage applies to minions</p>
                 </div>

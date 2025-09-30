@@ -63,7 +63,7 @@ export default function PlannerPage() {
   };
 
   const handleLoadBuild = (build: typeof savedBuilds[0]) => {
-    setSelectedClass(build.class);
+    setSelectedClass(build.class as CharacterClass);
     setCurrentBuild(build.allocated);
     setBuildName(build.name);
   };

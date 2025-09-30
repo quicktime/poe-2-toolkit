@@ -43,7 +43,11 @@ export interface CraftingAnalysis {
   };
 }
 
-export function CraftingInterface() {
+interface CraftingInterfaceProps {
+  currencyRates?: Record<string, number>;
+}
+
+export default function CraftingInterface({ currencyRates = {} }: CraftingInterfaceProps) {
   const [craftingRequest, setCraftingRequest] = useState<CraftingRequest>({
     itemBase: '',
     itemType: '',

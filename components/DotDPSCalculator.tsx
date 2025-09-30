@@ -599,7 +599,7 @@ export default function DotDPSCalculator({ className = '' }: DotDPSCalculatorPro
                     <li>• Invest in ailment chance</li>
                     <li>• For poison: increase stack limits</li>
                     <li>• For bleeding: utilize enemy movement</li>
-                    <li>• Use "faster ailment" over duration</li>
+                    <li>• Use &quot;faster ailment&quot; over duration</li>
                   </ul>
                 </div>
               </div>

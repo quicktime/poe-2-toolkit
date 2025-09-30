@@ -179,10 +179,10 @@ export default function OptimizePage() {
 
         {/* Build Optimizer / Min-Max Panel */}
         {selectedCharacter ? (
-          optimizationMode === 'min-max' && character ? (
+          optimizationMode === 'min-max' ? (
             <BuildOptimizer 
-              character={character} 
-              characters={characters || []} 
+              characterName={selectedCharacter}
+              className="w-full"
             />
           ) : (
             <BuildOptimizer

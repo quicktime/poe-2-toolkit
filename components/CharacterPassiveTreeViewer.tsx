@@ -28,7 +28,7 @@ export default function CharacterPassiveTreeViewer({
     if (characterDetails?.passives) {
       const allocated: AllocatedPassives = {
         nodes: new Set(characterDetails.passives.hashes || []),
-        classStartNode: characterDetails.passives.class_start_node || 1,
+        classStartNode: 1, // Default start node
         pointsUsed: characterDetails.passives.hashes?.length || 0
       };
       setLocalAllocated(allocated);
@@ -46,7 +46,7 @@ export default function CharacterPassiveTreeViewer({
     if (characterDetails?.passives) {
       const originalAllocated: AllocatedPassives = {
         nodes: new Set(characterDetails.passives.hashes || []),
-        classStartNode: characterDetails.passives.class_start_node || 1,
+        classStartNode: 1, // Default start node
         pointsUsed: characterDetails.passives.hashes?.length || 0
       };
       setLocalAllocated(originalAllocated);
@@ -80,7 +80,7 @@ export default function CharacterPassiveTreeViewer({
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
         <LoadingSpinner />
         <p className="text-center mt-4 text-gray-600 dark:text-gray-400">
-          Loading {characterName}'s passive tree...
+          Loading {characterName}&apos;s passive tree...
         </p>
       </div>
     );
@@ -192,7 +192,7 @@ export default function CharacterPassiveTreeViewer({
         onAllocationChange={handleAllocationChange}
         readOnly={readOnly}
         characterEquipment={characterDetails.items || []}
-        jewelSocketData={characterDetails.passives?.jewel_data || {}}
+        jewelSocketData={characterDetails.passives?.jewelData || {}}
         showJewelEffects={showJewelEffects}
       />
 
@@ -202,9 +202,9 @@ export default function CharacterPassiveTreeViewer({
           Live Character Integration
         </h3>
         <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-1">
-          <li>• This tree shows your character's actual allocated passives</li>
-          <li>• Changes are local only - they won't affect your in-game character</li>
-          <li>• Use "Reset to Character" to revert to your live passive allocation</li>
+          <li>• This tree shows your character&apos;s actual allocated passives</li>
+          <li>• Changes are local only - they won&apos;t affect your in-game character</li>
+          <li>• Use &quot;Reset to Character&quot; to revert to your live passive allocation</li>
           <li>• Save builds to compare different passive configurations</li>
           <li>• Character data updates when you refresh or reload the page</li>
         </ul>

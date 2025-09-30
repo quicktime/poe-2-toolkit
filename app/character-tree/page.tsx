@@ -44,7 +44,7 @@ export default function CharacterTreePage() {
             Character Passive Trees
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            View and analyze your characters' passive skill allocations with live data
+            View and analyze your characters&apos; passive skill allocations with live data
           </p>
         </div>
 
@@ -100,12 +100,12 @@ export default function CharacterTreePage() {
                 No Characters Found
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                We couldn't find any characters in your account. This could be because:
+                We couldn&apos;t find any characters in your account. This could be because:
               </p>
               <ul className="text-sm text-gray-500 dark:text-gray-400 text-left inline-block">
                 <li>• Your characters are set to private</li>
-                <li>• You haven't created any characters yet</li>
-                <li>• There's an API connection issue</li>
+                <li>• You haven&apos;t created any characters yet</li>
+                <li>• There&apos;s an API connection issue</li>
                 <li>• Your authentication session has expired</li>
               </ul>
             </div>
@@ -144,11 +144,11 @@ export default function CharacterTreePage() {
             Live Character Integration Features
           </h3>
           <ul className="text-sm text-green-700 dark:text-green-300 space-y-1">
-            <li>• <strong>Real-time Data:</strong> View your character's actual passive allocations</li>
+            <li>• <strong>Real-time Data:</strong> View your character&apos;s actual passive allocations</li>
             <li>• <strong>What-if Planning:</strong> Test different builds without affecting your character</li>
             <li>• <strong>Build Comparison:</strong> Compare your current build to theoretical optimizations</li>
             <li>• <strong>Save Builds:</strong> Export modified builds for sharing or future reference</li>
-            <li>• <strong>Reset Function:</strong> Always return to your character's live allocation</li>
+            <li>• <strong>Reset Function:</strong> Always return to your character&apos;s live allocation</li>
           </ul>
         </div>
       </div>

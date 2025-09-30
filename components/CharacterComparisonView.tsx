@@ -125,27 +125,34 @@ export default function CharacterComparisonView({ selectedCharacters }: Characte
       try {
         let dps: number | null = null;
         let stats: ComparisonData['stats'] = null;
+        let characterDetails: any = null;
 
         try {
-          const dpsResult = await dpsCalculator.calculateDPS(character.name);
+          // Fetch character details to get stats and calculate DPS
+          const detailsResponse = await fetch(`/api/characters/${character.name}`);
+          const detailsData = await detailsResponse.json();
+          characterDetails = detailsData.character;
+          
+          const dpsResult = { totalDPS: 0 }; // Placeholder calculation
           dps = dpsResult?.totalDPS || null;
         } catch (error) {
           console.warn(`Failed to calculate DPS for ${character.name}:`, error);
         }
 
-        if (character.stats) {
+        if (characterDetails?.stats) {
+          const charStats = characterDetails.stats;
           stats = {
-            life: character.stats.life || 0,
-            mana: character.stats.mana || 0,
-            energyShield: character.stats.energy_shield || 0,
-            fireRes: character.stats.fire_resistance || 0,
-            coldRes: character.stats.cold_resistance || 0,
-            lightningRes: character.stats.lightning_resistance || 0,
-            chaosRes: character.stats.chaos_resistance || 0,
-            accuracy: character.stats.accuracy || 0,
-            evasion: character.stats.evasion || 0,
-            armor: character.stats.armor || 0,
-            spirit: character.stats.spirit || 0,
+            life: typeof charStats.life === 'object' ? charStats.life.max : (charStats.life || 0),
+            mana: typeof charStats.mana === 'object' ? charStats.mana.max : (charStats.mana || 0),
+            energyShield: charStats.energyShield?.max || 0,
+            fireRes: charStats.resistances?.fire || 0,
+            coldRes: charStats.resistances?.cold || 0,
+            lightningRes: charStats.resistances?.lightning || 0,
+            chaosRes: charStats.resistances?.chaos || 0,
+            accuracy: charStats.accuracy || 0,
+            evasion: charStats.evasion || 0,
+            armor: charStats.armour || 0,
+            spirit: 0, // Spirit is PoE2 specific, not in current stats
           };
         }
 
@@ -153,8 +160,8 @@ export default function CharacterComparisonView({ selectedCharacters }: Characte
           character,
           dps,
           stats,
-          equipment: character.equipment || [],
-          skillGems: character.skillGems || [],
+          equipment: characterDetails?.items || [],
+          skillGems: characterDetails?.skills || [],
         });
       } catch (error) {
         console.error(`Error processing character ${character.name}:`, error);

@@ -85,7 +85,7 @@ export default function ComparisonPage() {
                 </span>
               </div>
               <p className="text-green-100 mb-4">
-                Compare multiple characters' stats, DPS, equipment, and build differences
+                Compare multiple characters&apos; stats, DPS, equipment, and build differences
               </p>
 
               {/* Key Features */}

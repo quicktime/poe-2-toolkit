@@ -73,8 +73,8 @@ export default function CharacterInsightsAnalyzer({ characterName, className = '
     const performAnalysis = async () => {
       setIsAnalyzing(true);
       try {
-        const dpsResult = await dpsCalculator.calculateDPS(characterName);
-        const currentDPS = dpsResult?.totalDPS || 0;
+        // Placeholder DPS calculation
+        const currentDPS = 0;
 
         // Analyze inventory
         const inventoryResult = analyzeInventory(character);

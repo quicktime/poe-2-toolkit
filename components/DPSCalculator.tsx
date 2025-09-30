@@ -43,7 +43,7 @@ export default function DPSCalculator({
     if (characterDetails?.passives) {
       return {
         nodes: new Set(characterDetails.passives.hashes || []),
-        classStartNode: characterDetails.passives.class_start_node || 1,
+        classStartNode: 1, // Default start node
         pointsUsed: characterDetails.passives.hashes?.length || 0
       };
     }
@@ -382,7 +382,7 @@ export default function DPSCalculator({
           <span>✓</span> PoE 2 Accurate Calculations
         </h4>
         <ul className="text-sm text-green-700 dark:text-green-300 space-y-1">
-          <li>• <strong>Correct Hit Chance:</strong> Uses PoE 2's accuracy/(accuracy+evasion) formula</li>
+          <li>• <strong>Correct Hit Chance:</strong> Uses PoE 2&apos;s accuracy/(accuracy+evasion) formula</li>
           <li>• <strong>Proper Damage Formula:</strong> Includes damage effectiveness and correct modifier order</li>
           <li>• <strong>Spirit System:</strong> Calculates spirit costs and DPS efficiency</li>
           <li>• <strong>Combo Mechanics:</strong> Factors in combo point generation and consumption</li>

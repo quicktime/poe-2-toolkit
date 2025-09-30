@@ -69,7 +69,7 @@ export default function ComprehensiveCharacterView({ characterName }: Comprehens
     return num.toLocaleString();
   };
 
-  const renderEquipmentItem = (item: PoEItem) => {
+  const renderEquipmentItem = (item: CharacterItem) => {
     const getRarityColor = (rarity?: string) => {
       switch (rarity?.toLowerCase()) {
         case 'normal': return 'text-gray-300';
@@ -178,7 +178,7 @@ export default function ComprehensiveCharacterView({ characterName }: Comprehens
       return <div className="text-gray-400">No passive data available</div>;
     }
 
-    const { hashes, hashes_ex, mastery_effects, jewel_data } = character.passives;
+    const { hashes, hashesEx, masteryEffects, jewelData } = character.passives;
 
     return (
       <div className="space-y-4">
@@ -196,29 +196,29 @@ export default function ComprehensiveCharacterView({ characterName }: Comprehens
             <div className="bg-gray-100 dark:bg-gray-700 rounded p-3">
               <div className="text-xs text-gray-600 dark:text-gray-400">Ascendancy</div>
               <div className="text-xl font-semibold text-gray-900 dark:text-white">
-                {hashes_ex?.length || 0}
+                {hashesEx?.length || 0}
               </div>
             </div>
             <div className="bg-gray-100 dark:bg-gray-700 rounded p-3">
               <div className="text-xs text-gray-600 dark:text-gray-400">Masteries</div>
               <div className="text-xl font-semibold text-gray-900 dark:text-white">
-                {Object.keys(mastery_effects || {}).length}
+                {Object.keys(masteryEffects || {}).length}
               </div>
             </div>
             <div className="bg-gray-100 dark:bg-gray-700 rounded p-3">
               <div className="text-xs text-gray-600 dark:text-gray-400">Jewels</div>
               <div className="text-xl font-semibold text-gray-900 dark:text-white">
-                {Object.keys(jewel_data || {}).length}
+                {Object.keys(jewelData || {}).length}
               </div>
             </div>
           </div>
         </div>
 
-        {mastery_effects && Object.keys(mastery_effects).length > 0 && (
+        {masteryEffects && Object.keys(masteryEffects).length > 0 && (
           <div>
             <h4 className="font-medium text-gray-900 dark:text-white mb-2">Selected Masteries</h4>
             <div className="space-y-2">
-              {Object.entries(mastery_effects).map(([masteryId, effectId]) => (
+              {Object.entries(masteryEffects).map(([masteryId, effectId]) => (
                 <div key={masteryId} className="bg-purple-100 dark:bg-purple-900/20 p-2 rounded">
                   <div className="text-sm text-purple-800 dark:text-purple-200">
                     Mastery {masteryId}: Effect {effectId}
@@ -229,11 +229,11 @@ export default function ComprehensiveCharacterView({ characterName }: Comprehens
           </div>
         )}
 
-        {jewel_data && Object.keys(jewel_data).length > 0 && (
+        {jewelData && Object.keys(jewelData).length > 0 && (
           <div>
             <h4 className="font-medium text-gray-900 dark:text-white mb-2">Jewel Modifications</h4>
             <div className="space-y-2">
-              {Object.entries(jewel_data).map(([socketId, jewelInfo]) => (
+              {Object.entries(jewelData).map(([socketId, jewelInfo]) => (
                 <div key={socketId} className="bg-green-100 dark:bg-green-900/20 p-2 rounded">
                   <div className="text-sm text-green-800 dark:text-green-200">
                     Socket {socketId}: {JSON.stringify(jewelInfo)}
@@ -312,39 +312,39 @@ export default function ComprehensiveCharacterView({ characterName }: Comprehens
                 <div className="bg-red-100 dark:bg-red-900/20 p-3 rounded">
                   <div className="text-xs text-red-600 dark:text-red-400">Life</div>
                   <div className="text-xl font-semibold text-red-800 dark:text-red-200">
-                    {formatNumber(character.life)}
+                    {formatNumber(character.stats?.life?.max || 0)}
                   </div>
                 </div>
                 <div className="bg-blue-100 dark:bg-blue-900/20 p-3 rounded">
                   <div className="text-xs text-blue-600 dark:text-blue-400">Mana</div>
                   <div className="text-xl font-semibold text-blue-800 dark:text-blue-200">
-                    {formatNumber(character.mana)}
+                    {formatNumber(character.stats?.mana?.max || 0)}
                   </div>
                 </div>
-                {character.energy_shield && (
+                {character.stats?.energyShield?.max && (
                   <div className="bg-purple-100 dark:bg-purple-900/20 p-3 rounded">
                     <div className="text-xs text-purple-600 dark:text-purple-400">Energy Shield</div>
                     <div className="text-xl font-semibold text-purple-800 dark:text-purple-200">
-                      {formatNumber(character.energy_shield)}
+                      {formatNumber(character.stats?.energyShield?.max || 0)}
                     </div>
                   </div>
                 )}
                 <div className="bg-orange-100 dark:bg-orange-900/20 p-3 rounded">
                   <div className="text-xs text-orange-600 dark:text-orange-400">Strength</div>
                   <div className="text-xl font-semibold text-orange-800 dark:text-orange-200">
-                    {formatNumber(character.strength)}
+                    {formatNumber(0)}
                   </div>
                 </div>
                 <div className="bg-green-100 dark:bg-green-900/20 p-3 rounded">
                   <div className="text-xs text-green-600 dark:text-green-400">Dexterity</div>
                   <div className="text-xl font-semibold text-green-800 dark:text-green-200">
-                    {formatNumber(character.dexterity)}
+                    {formatNumber(0)}
                   </div>
                 </div>
                 <div className="bg-indigo-100 dark:bg-indigo-900/20 p-3 rounded">
                   <div className="text-xs text-indigo-600 dark:text-indigo-400">Intelligence</div>
                   <div className="text-xl font-semibold text-indigo-800 dark:text-indigo-200">
-                    {formatNumber(character.intelligence)}
+                    {formatNumber(0)}
                   </div>
                 </div>
               </div>

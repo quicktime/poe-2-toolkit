@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Link from 'next/link';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -23,7 +24,7 @@ export default function RootLayout({
               <div className="flex items-center gap-6">
                 <h1 className="text-xl font-bold">PoE 2 Toolkit</h1>
                 <div className="flex gap-4">
-                  <a href="/" className="hover:text-primary">Home</a>
+                  <Link href="/" className="hover:text-primary">Home</Link>
                   <a href="/waystone" className="hover:text-primary">Waystone Optimizer</a>
                   <a href="/calculator" className="hover:text-primary">DPS Calculator</a>
                   <a href="/planner" className="hover:text-primary">Build Planner</a>

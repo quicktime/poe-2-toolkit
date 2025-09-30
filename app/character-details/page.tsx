@@ -100,12 +100,12 @@ export default function CharacterDetailsPage() {
                 No Characters Found
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                We couldn't find any characters in your account. This could be because:
+                We couldn&apos;t find any characters in your account. This could be because:
               </p>
               <ul className="text-sm text-gray-500 dark:text-gray-400 text-left inline-block">
                 <li>• Your characters are set to private</li>
-                <li>• You haven't created any characters yet</li>
-                <li>• There's an API connection issue</li>
+                <li>• You haven&apos;t created any characters yet</li>
+                <li>• There&apos;s an API connection issue</li>
                 <li>• Your authentication session has expired</li>
               </ul>
             </div>
