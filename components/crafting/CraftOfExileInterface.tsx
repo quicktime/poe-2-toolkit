@@ -21,15 +21,22 @@ import {
   AlertCircle,
   ChevronRight,
   Coins,
-  Gem
+  Gem,
+  Loader2
 } from 'lucide-react';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '@/components/ui/command';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
+import { createClient } from '@supabase/supabase-js';
 
 // Import our mod database and calculator
 import { POE2_MOD_DATABASE } from '@/lib/crafting/poe2-mod-database';
 import { CraftingCalculator, type CraftingMethod } from '@/lib/crafting/craftingCalculator';
+
+// Initialize Supabase client
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 interface SelectedModifier {
   id: string;
@@ -42,33 +49,19 @@ interface SelectedModifier {
 }
 
 
-// Available item bases (simplified - in production, load from database)
-const ITEM_BASES = [
-  // Wands
-  { id: 'convoking_wand', name: 'Convoking Wand', category: 'wand', level: 72 },
-  { id: 'imbued_wand', name: 'Imbued Wand', category: 'wand', level: 59 },
-  { id: 'prophecy_wand', name: 'Prophecy Wand', category: 'wand', level: 68 },
-  { id: 'profane_wand', name: 'Profane Wand', category: 'wand', level: 70 },
-  { id: 'tornado_wand', name: 'Tornado Wand', category: 'wand', level: 65 },
-  
-  // Sceptres
-  { id: 'void_sceptre', name: 'Void Sceptre', category: 'sceptre', level: 68 },
-  { id: 'sambar_sceptre', name: 'Sambar Sceptre', category: 'sceptre', level: 70 },
-  { id: 'karui_sceptre', name: 'Karui Sceptre', category: 'sceptre', level: 56 },
-  
-  // Staves
-  { id: 'judgement_staff', name: 'Judgement Staff', category: 'staff', level: 68 },
-  { id: 'eclipse_staff', name: 'Eclipse Staff', category: 'staff', level: 70 },
-  
-  // Body Armours
-  { id: 'vaal_regalia', name: 'Vaal Regalia', category: 'body', level: 68 },
-  { id: 'assassins_garb', name: "Assassin's Garb", category: 'body', level: 68 },
-  { id: 'glorious_plate', name: 'Glorious Plate', category: 'body', level: 68 },
-];
+interface ItemBase {
+  id: string;
+  name: string;
+  category: string;
+  item_class: string;
+  required_level: number;
+}
 
 export default function CraftOfExileInterface() {
   // State
-  const [selectedBase, setSelectedBase] = useState<typeof ITEM_BASES[0] | null>(null);
+  const [itemBases, setItemBases] = useState<ItemBase[]>([]);
+  const [loadingItems, setLoadingItems] = useState(true);
+  const [selectedBase, setSelectedBase] = useState<ItemBase | null>(null);
   const [selectedPrefixes, setSelectedPrefixes] = useState<SelectedModifier[]>([]);
   const [selectedSuffixes, setSelectedSuffixes] = useState<SelectedModifier[]>([]);
   const [craftingRoutes, setCraftingRoutes] = useState<CraftingMethod[]>([]);
@@ -84,6 +77,30 @@ export default function CraftOfExileInterface() {
   const [suffixSearchOpen, setSuffixSearchOpen] = useState(false);
   const [suffixSearchValue, setSuffixSearchValue] = useState('');
 
+  // Fetch items from database
+  useEffect(() => {
+    const loadItems = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('item_bases')
+          .select('*')
+          .order('name');
+        
+        if (error) throw error;
+        
+        if (data) {
+          setItemBases(data);
+        }
+      } catch (error) {
+        console.error('Failed to load items:', error);
+      } finally {
+        setLoadingItems(false);
+      }
+    };
+    
+    loadItems();
+  }, []);
+  
   // Fetch currency rates
   useEffect(() => {
     fetch('/api/market/currency-rates')
@@ -149,7 +166,7 @@ export default function CraftOfExileInterface() {
         selectedBase.name,
         prefixTargets,
         suffixTargets,
-        selectedBase.level
+        selectedBase.required_level
       );
       
       setCraftingRoutes(routes);
@@ -189,12 +206,18 @@ export default function CraftOfExileInterface() {
                       variant="outline" 
                       className="w-full justify-between"
                       role="combobox"
+                      disabled={loadingItems}
                     >
-                      {selectedBase ? (
+                      {loadingItems ? (
+                        <span className="flex items-center gap-2">
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          Loading items...
+                        </span>
+                      ) : selectedBase ? (
                         <span className="flex items-center gap-2">
                           <Package className="w-4 h-4" />
                           {selectedBase.name}
-                          <Badge variant="secondary">iLvl {selectedBase.level}</Badge>
+                          <Badge variant="secondary">iLvl {selectedBase.required_level}</Badge>
                         </span>
                       ) : (
                         <span className="text-muted-foreground">
@@ -214,8 +237,8 @@ export default function CraftOfExileInterface() {
                       />
                       <CommandEmpty className="p-4 text-center text-muted-foreground">No item found.</CommandEmpty>
                       <CommandGroup>
-                        <ScrollArea className="h-[300px]">
-                          {ITEM_BASES.filter(item => 
+                        <ScrollArea className="h-[400px]">
+                          {itemBases.filter(item => 
                             item.name.toLowerCase().includes(itemSearchValue.toLowerCase())
                           ).map(item => (
                             <CommandItem
@@ -231,8 +254,8 @@ export default function CraftOfExileInterface() {
                               <div className="flex items-center justify-between w-full">
                                 <span>{item.name}</span>
                                 <div className="flex gap-2">
-                                  <Badge variant="outline">{item.category}</Badge>
-                                  <Badge variant="secondary">iLvl {item.level}</Badge>
+                                  <Badge variant="outline">{item.category || item.item_class}</Badge>
+                                  <Badge variant="secondary">iLvl {item.required_level}</Badge>
                                 </div>
                               </div>
                             </CommandItem>
