@@ -51,7 +51,16 @@
       "Bash(pkill:*)",
       "Bash(npm run:*)",
       "Bash(lsof:*)",
-      "Bash(kill:*)"
+      "Bash(kill:*)",
+      "Bash(mv:*)",
+      "Bash(components/crafting/CraftingStrategy.tsx )",
+      "Bash(components/crafting/CraftingResults.tsx )",
+      "Bash(components/crafting/ItemSelector.tsx )",
+      "Bash(components/crafting/CraftingValueAnalysis.tsx )",
+      "Bash(components/crafting/CraftingWithData.tsx )",
+      "Bash(components/crafting/MarketIntegration.tsx )",
+      "Bash(components/crafting/CurrencyTierSelector.tsx)",
+      "Bash(components/crafting/ModPoolExplorer.tsx)"
     ],
     "deny": [],
     "ask": []
