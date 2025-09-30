@@ -30,8 +30,8 @@ import { cn } from '@/lib/utils';
 import { createClient } from '@supabase/supabase-js';
 
 // Import our mod database and calculator
-import { POE2_MOD_DATABASE } from '@/lib/crafting/poe2-mod-database';
 import { CraftingCalculator, type CraftingMethod } from '@/lib/crafting/craftingCalculator';
+import { POE2_MOD_DATABASE } from '@/lib/crafting/poe2-mod-database';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -68,6 +68,8 @@ export default function CraftOfExileInterface() {
   const [isCalculating, setIsCalculating] = useState(false);
   const [currencyRates, setCurrencyRates] = useState<any>({});
   const [calculator] = useState(() => new CraftingCalculator());
+  const [databaseMods, setDatabaseMods] = useState<{ prefixes: any[], suffixes: any[] }>({ prefixes: [], suffixes: [] });
+  const [loadingMods, setLoadingMods] = useState(false);
   
   // Search states
   const [itemSearchOpen, setItemSearchOpen] = useState(false);
@@ -108,37 +110,96 @@ export default function CraftOfExileInterface() {
       .then(data => setCurrencyRates(data.rates || {}))
       .catch(console.error);
   }, []);
+  
+  // Fetch mods when an item is selected
+  useEffect(() => {
+    if (!selectedBase) {
+      setDatabaseMods({ prefixes: [], suffixes: [] });
+      return;
+    }
+    
+    const loadMods = async () => {
+      setLoadingMods(true);
+      try {
+        // Load mods that apply to this item type
+        const { data: mods, error } = await supabase
+          .from('crafting_mods')
+          .select('*')
+          .contains('item_types', [selectedBase.item_class])
+          .order('tier', { ascending: true });
+        
+        if (error) throw error;
+        
+        if (mods) {
+          const prefixes = mods.filter(mod => mod.type === 'prefix').map(mod => ({
+            id: mod.id,
+            name: mod.name,
+            type: 'prefix' as const,
+            tier: mod.tier || 1,
+            values: { min: mod.min_value || 0, max: mod.max_value || 0 },
+            weight: mod.weight || 100,
+            tags: mod.tags || []
+          }));
+          
+          const suffixes = mods.filter(mod => mod.type === 'suffix').map(mod => ({
+            id: mod.id,
+            name: mod.name,
+            type: 'suffix' as const,
+            tier: mod.tier || 1,
+            values: { min: mod.min_value || 0, max: mod.max_value || 0 },
+            weight: mod.weight || 100,
+            tags: mod.tags || []
+          }));
+          
+          setDatabaseMods({ prefixes, suffixes });
+        }
+      } catch (error) {
+        console.error('Failed to load mods:', error);
+        // Fallback to hardcoded mods if database fails
+        setDatabaseMods({
+          prefixes: POE2_MOD_DATABASE.prefixes.slice(0, 20),
+          suffixes: POE2_MOD_DATABASE.suffixes.slice(0, 20)
+        });
+      } finally {
+        setLoadingMods(false);
+      }
+    };
+    
+    loadMods();
+  }, [selectedBase]);
 
   // Get available mods for selected item
   const availableMods = useMemo(() => {
     if (!selectedBase) return { prefixes: [], suffixes: [] };
     
-    const prefixes = POE2_MOD_DATABASE.prefixes
-      .filter(mod => mod.itemTypes.includes(selectedBase.category))
-      .map(mod => ({
-        id: mod.id,
-        name: mod.name,
-        type: 'prefix' as const,
-        tier: mod.tier,
-        values: { min: mod.minValue, max: mod.maxValue },
-        weight: mod.weight,
-        tags: mod.tags
-      }));
+    // Use mods from database if available, otherwise fallback to hardcoded
+    if (databaseMods.prefixes.length > 0 || databaseMods.suffixes.length > 0) {
+      return databaseMods;
+    }
+    
+    // Fallback to hardcoded mods
+    const prefixes = POE2_MOD_DATABASE?.prefixes?.slice(0, 50).map(mod => ({
+      id: mod.id,
+      name: mod.name,
+      type: 'prefix' as const,
+      tier: mod.tier,
+      values: mod.values || { min: 0, max: 0 },
+      weight: mod.weight,
+      tags: mod.tags || []
+    })) || [];
       
-    const suffixes = POE2_MOD_DATABASE.suffixes
-      .filter(mod => mod.itemTypes.includes(selectedBase.category))
-      .map(mod => ({
-        id: mod.id,
-        name: mod.name,
-        type: 'suffix' as const,
-        tier: mod.tier,
-        values: { min: mod.minValue, max: mod.maxValue },
-        weight: mod.weight,
-        tags: mod.tags
-      }));
+    const suffixes = POE2_MOD_DATABASE?.suffixes?.slice(0, 50).map(mod => ({
+      id: mod.id,
+      name: mod.name,
+      type: 'suffix' as const,
+      tier: mod.tier,
+      values: mod.values || { min: 0, max: 0 },
+      weight: mod.weight,
+      tags: mod.tags || []
+    })) || [];
       
     return { prefixes, suffixes };
-  }, [selectedBase]);
+  }, [selectedBase, databaseMods]);
 
   // Calculate crafting routes using the calculator
   const calculateCraftingRoutes = () => {

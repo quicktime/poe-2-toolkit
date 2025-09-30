@@ -756,6 +756,20 @@ export function isModSetCraftable(mods: ModifierDefinition[]): {
   };
 }
 
+// Create a simplified structure for the UI
+export const POE2_MOD_DATABASE = {
+  prefixes: [
+    ...WEAPON_MOD_POOLS.flatMap(pool => pool.prefixes),
+    ...ARMOR_MOD_POOLS.flatMap(pool => pool.prefixes),
+    ...JEWELRY_MOD_POOLS.flatMap(pool => pool.prefixes),
+  ],
+  suffixes: [
+    ...WEAPON_MOD_POOLS.flatMap(pool => pool.suffixes),
+    ...ARMOR_MOD_POOLS.flatMap(pool => pool.suffixes),
+    ...JEWELRY_MOD_POOLS.flatMap(pool => pool.suffixes),
+  ]
+};
+
 export default {
   WEAPON_MOD_POOLS,
   ARMOR_MOD_POOLS,
