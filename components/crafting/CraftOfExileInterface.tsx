@@ -15,13 +15,10 @@ import {
   Search,
   Plus,
   X,
-  TrendingUp,
   Package,
   Sparkles,
   AlertCircle,
   ChevronRight,
-  Coins,
-  Gem,
   Loader2
 } from 'lucide-react';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '@/components/ui/command';
@@ -602,38 +599,43 @@ export default function CraftOfExileInterface() {
                       </div>
                     </div>
 
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" size="sm" className="w-full">
-                          View Details
-                          <ChevronRight className="w-4 h-4 ml-1" />
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent 
-                        className="w-[450px] border border-gray-700 dark:border-gray-800 shadow-xl"
-                        style={{ 
-                          backgroundColor: 'rgb(17, 24, 39)',
-                          opacity: '1',
-                          backdropFilter: 'none'
+                    <div className="space-y-2">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full"
+                        onClick={() => {
+                          const detailsEl = document.getElementById(`details-${index}`);
+                          if (detailsEl) {
+                            detailsEl.classList.toggle('hidden');
+                          }
                         }}
                       >
+                        View Details
+                        <ChevronRight className="w-4 h-4 ml-1" />
+                      </Button>
+                      
+                      <div 
+                        id={`details-${index}`}
+                        className="hidden p-4 bg-gray-900 dark:bg-gray-950 border border-gray-700 dark:border-gray-800 rounded-lg shadow-xl"
+                      >
                         <div className="space-y-3">
-                          <h4 className="font-semibold">{route.name}</h4>
+                          <h4 className="font-semibold text-gray-100">{route.name}</h4>
                           
                           <div className="space-y-2">
-                            <h5 className="text-sm font-medium">Crafting Steps:</h5>
+                            <h5 className="text-sm font-medium text-gray-200">Crafting Steps:</h5>
                             {route.steps.map((step, stepIndex) => (
-                              <div key={stepIndex} className="pl-3 border-l-2 border-muted">
+                              <div key={stepIndex} className="pl-3 border-l-2 border-gray-700">
                                 <div className="flex items-center justify-between">
-                                  <div className="font-medium text-sm">{step.action}</div>
+                                  <div className="font-medium text-sm text-gray-100">{step.action}</div>
                                   {step.optional && (
                                     <Badge variant="outline" className="text-xs">Optional</Badge>
                                   )}
                                 </div>
-                                <div className="text-xs text-muted-foreground">
+                                <div className="text-xs text-gray-400">
                                   {step.description}
                                 </div>
-                                <div className="text-xs mt-1 space-x-3">
+                                <div className="text-xs mt-1 space-x-3 text-gray-300">
                                   <span>Item: <strong>{step.item}</strong> x{step.quantity}</span>
                                   <span>Success: <strong>{step.successChance}%</strong></span>
                                 </div>
@@ -641,26 +643,26 @@ export default function CraftOfExileInterface() {
                             ))}
                           </div>
                           
-                          <Separator />
+                          <Separator className="border-gray-700" />
                           
                           <div className="grid grid-cols-2 gap-4">
                             <div>
-                              <h5 className="font-medium text-sm mb-1 text-green-600">Pros</h5>
+                              <h5 className="font-medium text-sm mb-1 text-green-500">Pros</h5>
                               <ul className="text-xs space-y-1">
                                 {route.pros.map((pro, i) => (
-                                  <li key={i} className="flex items-start">
-                                    <span className="text-green-600 mr-1">+</span>
+                                  <li key={i} className="flex items-start text-gray-200">
+                                    <span className="text-green-500 mr-1">+</span>
                                     <span>{pro}</span>
                                   </li>
                                 ))}
                               </ul>
                             </div>
                             <div>
-                              <h5 className="font-medium text-sm mb-1 text-red-600">Cons</h5>
+                              <h5 className="font-medium text-sm mb-1 text-red-500">Cons</h5>
                               <ul className="text-xs space-y-1">
                                 {route.cons.map((con, i) => (
-                                  <li key={i} className="flex items-start">
-                                    <span className="text-red-600 mr-1">-</span>
+                                  <li key={i} className="flex items-start text-gray-200">
+                                    <span className="text-red-500 mr-1">-</span>
                                     <span>{con}</span>
                                   </li>
                                 ))}
@@ -668,8 +670,8 @@ export default function CraftOfExileInterface() {
                             </div>
                           </div>
                         </div>
-                      </PopoverContent>
-                    </Popover>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </CardContent>
