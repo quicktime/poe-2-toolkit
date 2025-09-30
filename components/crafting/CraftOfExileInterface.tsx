@@ -609,7 +609,14 @@ export default function CraftOfExileInterface() {
                           <ChevronRight className="w-4 h-4 ml-1" />
                         </Button>
                       </PopoverTrigger>
-                      <PopoverContent className="w-[450px] bg-popover border border-gray-700 dark:border-gray-800 shadow-xl">
+                      <PopoverContent 
+                        className="w-[450px] border border-gray-700 dark:border-gray-800 shadow-xl"
+                        style={{ 
+                          backgroundColor: 'rgb(17, 24, 39)',
+                          opacity: '1',
+                          backdropFilter: 'none'
+                        }}
+                      >
                         <div className="space-y-3">
                           <h4 className="font-semibold">{route.name}</h4>
                           
