@@ -204,14 +204,15 @@ export default function CraftOfExileInterface() {
                       )}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-full p-0" align="start">
-                    <Command>
+                  <PopoverContent className="w-full p-0 bg-gray-900/95 dark:bg-gray-950/95 backdrop-blur-md border border-gray-700 dark:border-gray-800 shadow-xl" align="start">
+                    <Command className="bg-transparent">
                       <CommandInput 
                         placeholder="Type to search items..." 
                         value={itemSearchValue}
                         onValueChange={setItemSearchValue}
+                        className="border-b"
                       />
-                      <CommandEmpty>No item found.</CommandEmpty>
+                      <CommandEmpty className="p-4 text-center text-muted-foreground">No item found.</CommandEmpty>
                       <CommandGroup>
                         <ScrollArea className="h-[300px]">
                           {ITEM_BASES.filter(item => 
@@ -219,6 +220,7 @@ export default function CraftOfExileInterface() {
                           ).map(item => (
                             <CommandItem
                               key={item.id}
+                              className="cursor-pointer hover:bg-accent/50"
                               onSelect={() => {
                                 setSelectedBase(item);
                                 setItemSearchOpen(false);
@@ -271,14 +273,15 @@ export default function CraftOfExileInterface() {
                         Add Prefix
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-[400px] p-0" align="start">
-                      <Command>
+                    <PopoverContent className="w-[400px] p-0 bg-gray-900/95 dark:bg-gray-950/95 backdrop-blur-md border border-gray-700 dark:border-gray-800 shadow-xl" align="start">
+                      <Command className="bg-transparent">
                         <CommandInput 
                           placeholder="Search prefixes..." 
                           value={prefixSearchValue}
                           onValueChange={setPrefixSearchValue}
+                          className="border-b"
                         />
-                        <CommandEmpty>No prefix found.</CommandEmpty>
+                        <CommandEmpty className="p-4 text-center text-muted-foreground">No prefix found.</CommandEmpty>
                         <CommandGroup>
                           <ScrollArea className="h-[300px]">
                             {availableMods.prefixes
@@ -289,6 +292,7 @@ export default function CraftOfExileInterface() {
                               .map(mod => (
                                 <CommandItem
                                   key={mod.id}
+                                  className="cursor-pointer hover:bg-accent/50"
                                   onSelect={() => {
                                     setSelectedPrefixes([...selectedPrefixes, mod]);
                                     setPrefixSearchOpen(false);
@@ -359,14 +363,15 @@ export default function CraftOfExileInterface() {
                         Add Suffix
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-[400px] p-0" align="start">
-                      <Command>
+                    <PopoverContent className="w-[400px] p-0 bg-gray-900/95 dark:bg-gray-950/95 backdrop-blur-md border border-gray-700 dark:border-gray-800 shadow-xl" align="start">
+                      <Command className="bg-transparent">
                         <CommandInput 
                           placeholder="Search suffixes..." 
                           value={suffixSearchValue}
                           onValueChange={setSuffixSearchValue}
+                          className="border-b"
                         />
-                        <CommandEmpty>No suffix found.</CommandEmpty>
+                        <CommandEmpty className="p-4 text-center text-muted-foreground">No suffix found.</CommandEmpty>
                         <CommandGroup>
                           <ScrollArea className="h-[300px]">
                             {availableMods.suffixes
@@ -377,6 +382,7 @@ export default function CraftOfExileInterface() {
                               .map(mod => (
                                 <CommandItem
                                   key={mod.id}
+                                  className="cursor-pointer hover:bg-accent/50"
                                   onSelect={() => {
                                     setSelectedSuffixes([...selectedSuffixes, mod]);
                                     setSuffixSearchOpen(false);
