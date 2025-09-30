@@ -29,7 +29,25 @@ export default function CraftingPage() {
         const response = await fetch('/api/market/currency-rates');
         if (response.ok) {
           const data = await response.json();
-          setCurrencyRates(data.rates || {});
+          // Convert the nested structure to a simpler format
+          const simplifiedRates: any = {};
+          if (data.rates) {
+            // Divine to exalted rate (Divine is more valuable)
+            if (data.rates.divine?.exalted) {
+              simplifiedRates.divineToEx = Math.round(1 / data.rates.divine.exalted);
+            } else {
+              simplifiedRates.divineToEx = 380; // fallback
+            }
+            // Chaos to exalted rate
+            if (data.rates.exalted?.chaos) {
+              simplifiedRates.chaosToEx = Math.round(1 / data.rates.exalted.chaos);
+            } else {
+              simplifiedRates.chaosToEx = 12; // fallback
+            }
+            // Store original rates for other components
+            simplifiedRates.raw = data.rates;
+          }
+          setCurrencyRates(simplifiedRates);
         }
 
         // Fetch item market data
@@ -82,7 +100,7 @@ export default function CraftingPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-purple-100 text-sm">Divine Orb</p>
-                    <p className="text-2xl font-bold">{currencyRates.divine || 380} Ex</p>
+                    <p className="text-2xl font-bold">{currencyRates.divineToEx || 380} Ex</p>
                   </div>
                   <TrendingUp className="w-8 h-8 text-green-400" />
                 </div>
@@ -92,8 +110,8 @@ export default function CraftingPage() {
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-purple-100 text-sm">Chaos Orb</p>
-                    <p className="text-2xl font-bold">{currencyRates.chaos || 12} Ex</p>
+                    <p className="text-purple-100 text-sm">Chaos : Exalted</p>
+                    <p className="text-2xl font-bold">1:{currencyRates.chaosToEx || 12}</p>
                   </div>
                   <DollarSign className="w-8 h-8 text-yellow-400" />
                 </div>
@@ -103,8 +121,8 @@ export default function CraftingPage() {
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-purple-100 text-sm">Homogenous Omen</p>
-                    <p className="text-2xl font-bold">{currencyRates.omen || 190} Ex</p>
+                    <p className="text-purple-100 text-sm">Market Activity</p>
+                    <p className="text-2xl font-bold">Live</p>
                   </div>
                   <Package className="w-8 h-8 text-purple-400" />
                 </div>

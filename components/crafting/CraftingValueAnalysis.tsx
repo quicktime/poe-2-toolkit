@@ -12,6 +12,9 @@ interface CraftingValueAnalysisProps {
 }
 
 export default function CraftingValueAnalysis({ currencyRates, marketData }: CraftingValueAnalysisProps) {
+  // Extract raw rates if available, otherwise use as-is
+  const rates = currencyRates?.raw || currencyRates || {};
+  const safeMarketData = marketData || {};
   const [analysis, setAnalysis] = useState<any[]>([]);
 
   useEffect(() => {

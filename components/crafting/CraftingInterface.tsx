@@ -48,6 +48,8 @@ interface CraftingInterfaceProps {
 }
 
 export default function CraftingInterface({ currencyRates = {} }: CraftingInterfaceProps) {
+  // Extract raw rates for calculations, use simplified rates for display
+  const rates = currencyRates.raw || currencyRates;
   const [craftingRequest, setCraftingRequest] = useState<CraftingRequest>({
     itemBase: '',
     itemType: '',

@@ -13,6 +13,8 @@ interface MarketIntegrationProps {
 }
 
 export default function MarketIntegration({ selectedItem, onItemChange }: MarketIntegrationProps) {
+  // Ensure selectedItem is always a string
+  const safeSelectedItem = selectedItem || 'wand';
   const [marketData, setMarketData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState(new Date());
