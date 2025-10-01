@@ -617,7 +617,14 @@ export default function CraftOfExileInterface() {
                       
                       <div 
                         id={`details-${index}`}
-                        className="hidden p-4 bg-gray-900 dark:bg-gray-950 border border-gray-700 dark:border-gray-800 rounded-lg shadow-xl"
+                        className="hidden p-4 border border-gray-700 dark:border-gray-800 rounded-lg shadow-xl relative z-50"
+                        style={{
+                          backgroundColor: '#111827',
+                          color: '#f3f4f6',
+                          opacity: '1',
+                          backdropFilter: 'none',
+                          isolation: 'isolate'
+                        }}
                       >
                         <div className="space-y-3">
                           <h4 className="font-semibold text-gray-100">{route.name}</h4>
