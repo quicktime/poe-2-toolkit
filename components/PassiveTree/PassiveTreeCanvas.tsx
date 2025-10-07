@@ -158,17 +158,13 @@ export default function PassiveTreeCanvas({
     ctx.translate(centerX + offset.x, centerY + offset.y);
     ctx.scale(scale, scale);
 
-    // Draw connections - ONLY for orbit 0 nodes (line connectors between groups)
-    // Regular nodes are arranged in orbits and don't need individual connection lines
+    // Draw all connections between nodes
     ctx.lineWidth = 4 / scale;
     ctx.lineCap = 'round';
 
     const drawnConnections = new Set<string>();
 
     Object.values(treeData.nodes).forEach(node => {
-      // Only draw connections for orbit 0 nodes (the line connectors)
-      if (node.orbit !== 0) return;
-
       const isFromAllocated = allocated.nodes.has(node.id);
 
       node.connections.forEach(targetId => {
