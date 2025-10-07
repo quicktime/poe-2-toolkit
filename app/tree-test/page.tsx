@@ -26,7 +26,7 @@ export default function TreeTestPage() {
 
   // Render tree
   useEffect(() => {
-    if (!canvasRef.current || !treeData) return;
+    if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -36,9 +36,25 @@ export default function TreeTestPage() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 
+    console.log('Canvas size:', canvas.width, 'x', canvas.height);
+
     // Clear canvas
     ctx.fillStyle = '#0a0a0a';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Draw a test circle to prove rendering works
+    ctx.fillStyle = '#ff0000';
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, Math.PI * 2);
+    ctx.fill();
+    console.log('Drew test circle at center');
+
+    if (!treeData) {
+      console.log('No tree data yet');
+      return;
+    }
+
+    console.log('Tree data available, rendering...');
 
     ctx.save();
 
