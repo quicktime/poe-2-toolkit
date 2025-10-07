@@ -116,6 +116,8 @@ export class PoE2TreeDataLoader {
       position,
       connections,
       stats: poe2Node.stats,
+      orbit: poe2Node.orbit,
+      orbitIndex: poe2Node.orbitIndex,
       isKeystone: poe2Node.isKeystone || false,
       isNotable: poe2Node.isNotable || false,
       isJewelSocket: poe2Node.isJewelSocket || false,

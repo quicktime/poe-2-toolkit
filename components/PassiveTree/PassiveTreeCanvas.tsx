@@ -61,10 +61,10 @@ export default function PassiveTreeCanvas({
 
   // Get node size based on orbit
   const getNodeSize = (orbit: number): number => {
-    if (orbit === 0) return 30;
-    if (orbit >= 7) return 100; // Keystones
-    if (orbit >= 5) return 70;  // Notables
-    return 50; // Regular nodes
+    if (orbit === 0) return 0; // Line connectors, don't render
+    if (orbit >= 7) return 120; // Keystones (large)
+    if (orbit >= 5) return 90;  // Notables (medium)
+    return 60; // Regular nodes (small)
   };
 
   // Convert screen coordinates to world coordinates
@@ -181,18 +181,18 @@ export default function PassiveTreeCanvas({
 
         if (bothAllocated) {
           // Glow for allocated paths
-          ctx.strokeStyle = 'rgba(212, 175, 55, 0.4)';
-          ctx.lineWidth = 10 / scale;
+          ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
+          ctx.lineWidth = 12 / scale;
           ctx.beginPath();
           ctx.moveTo(node.position.x, node.position.y);
           ctx.lineTo(targetNode.position.x, targetNode.position.y);
           ctx.stroke();
         }
 
-        // Main line
-        ctx.strokeStyle = bothAllocated ? '#d4af37' : '#4a4a4a';
-        ctx.lineWidth = (bothAllocated ? 6 : 2) / scale;
-        ctx.globalAlpha = bothAllocated ? 1 : 0.3;
+        // Main line - much brighter for visibility
+        ctx.strokeStyle = bothAllocated ? '#d4af37' : '#8a8a8a';
+        ctx.lineWidth = (bothAllocated ? 6 : 3) / scale;
+        ctx.globalAlpha = bothAllocated ? 1 : 0.6;
         ctx.beginPath();
         ctx.moveTo(node.position.x, node.position.y);
         ctx.lineTo(targetNode.position.x, targetNode.position.y);
@@ -201,24 +201,29 @@ export default function PassiveTreeCanvas({
       });
     });
 
-    // Draw nodes with actual sprites
+    // Draw nodes with actual sprites (skip orbit 0 - line connectors)
     Object.values(treeData.nodes).forEach(node => {
+      const orbit = node.orbit || 0;
+
+      // Skip orbit 0 nodes (line connectors between groups)
+      if (orbit === 0) return;
+
       const isAllocated = allocated.nodes.has(node.id);
       const isHovered = hoveredNode === node.id || highlightedNode === node.id;
-      const orbit = node.orbit || 0;
 
       const spriteSet = isAllocated ? sprites.active : sprites.normal;
       const sprite = spriteSet[orbit];
 
       if (sprite && sprite.complete) {
         const size = getNodeSize(orbit);
+        if (size === 0) return;
 
         // Draw hover ring
         if (isHovered) {
           ctx.strokeStyle = '#ffffff';
-          ctx.lineWidth = 3 / scale;
+          ctx.lineWidth = 4 / scale;
           ctx.beginPath();
-          ctx.arc(node.position.x, node.position.y, (size / 2) + (5 / scale), 0, Math.PI * 2);
+          ctx.arc(node.position.x, node.position.y, (size / 2) + (8 / scale), 0, Math.PI * 2);
           ctx.stroke();
         }
 
