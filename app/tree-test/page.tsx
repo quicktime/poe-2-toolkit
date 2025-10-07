@@ -122,12 +122,7 @@ export default function TreeTestPage() {
       ctx.fillText(node.name, group.x, group.y - 400);
     });
 
-    ctx.restore();
-
-    // DISABLE node rendering for now - just debug groups
-    return;
-
-    // Draw all nodes
+    // Draw all nodes (calculated positions in orbits around groups)
     Object.values(treeData.nodes).forEach((node: any) => {
       const orbit = node.orbit || 0;
 
@@ -153,19 +148,25 @@ export default function TreeTestPage() {
         y = group.y + Math.sin(angle) * radius;
       }
 
-      // Draw node
+      // Draw node - very small to see full structure
       ctx.beginPath();
-      ctx.arc(x, y, orbit >= 7 ? 80 : orbit >= 5 ? 60 : 40, 0, Math.PI * 2);
+      const nodeSize = orbit >= 7 ? 150 : orbit >= 5 ? 100 : 60;
+      ctx.arc(x, y, nodeSize, 0, Math.PI * 2);
 
       if (node.isKeystone) {
-        ctx.fillStyle = '#d4af37';
+        ctx.fillStyle = '#d4af37'; // Gold
       } else if (node.isNotable) {
-        ctx.fillStyle = '#6666ff';
+        ctx.fillStyle = '#4488ff'; // Blue
       } else {
-        ctx.fillStyle = '#888888';
+        ctx.fillStyle = '#666666'; // Gray
       }
 
       ctx.fill();
+
+      // Border
+      ctx.strokeStyle = '#333333';
+      ctx.lineWidth = 10;
+      ctx.stroke();
     });
 
     // Draw connections
