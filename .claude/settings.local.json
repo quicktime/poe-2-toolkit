@@ -52,6 +52,7 @@
       "Bash(npm run:*)",
       "Bash(lsof:*)",
       "Bash(kill:*)",
+      "Bash(npm update:*)",
       "Bash(mv:*)",
       "Bash(components/crafting/CraftingStrategy.tsx )",
       "Bash(components/crafting/CraftingResults.tsx )",

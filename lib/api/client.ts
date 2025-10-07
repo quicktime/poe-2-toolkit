@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import { createPoeApiRateLimiter, type MultiTierRateLimiter } from './rateLimiter';
 
 interface RateLimitInfo {
   limit: number;
@@ -9,10 +10,7 @@ interface RateLimitInfo {
 interface APIClientOptions {
   maxRetries?: number;
   retryDelay?: number;
-  rateLimit?: {
-    maxRequests: number;
-    windowMs: number;
-  };
+  enableRateLimiter?: boolean;
 }
 
 class APIClient {
@@ -20,13 +18,17 @@ class APIClient {
   private maxRetries: number;
   private retryDelay: number;
   private rateLimitInfo: RateLimitInfo | null = null;
-  private requestQueue: Array<() => Promise<any>> = [];
-  private processing = false;
+  private rateLimiter: MultiTierRateLimiter | null = null;
 
   constructor(baseUrl: string = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://api.pathofexile.com', options: APIClientOptions = {}) {
     this.baseUrl = baseUrl;
     this.maxRetries = options.maxRetries || 3;
     this.retryDelay = options.retryDelay || 1000;
+
+    // Enable rate limiter by default
+    if (options.enableRateLimiter !== false) {
+      this.rateLimiter = createPoeApiRateLimiter();
+    }
   }
 
   private async getAccessToken(): Promise<string | null> {
@@ -47,42 +49,16 @@ class APIClient {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  private async processQueue(): Promise<void> {
-    if (this.processing || this.requestQueue.length === 0) {
-      return;
-    }
-
-    this.processing = true;
-
-    while (this.requestQueue.length > 0) {
-      // Check rate limit
-      if (this.rateLimitInfo && this.rateLimitInfo.remaining === 0) {
-        const resetTime = this.rateLimitInfo.reset * 1000;
-        const now = Date.now();
-        if (resetTime > now) {
-          await this.wait(resetTime - now);
-        }
-      }
-
-      const request = this.requestQueue.shift();
-      if (request) {
-        await request();
-      }
-
-      // Add small delay between requests to be respectful
-      if (this.requestQueue.length > 0) {
-        await this.wait(100);
-      }
-    }
-
-    this.processing = false;
-  }
-
   async request<T>(
     endpoint: string,
     options: RequestInit = {},
     retryCount = 0
   ): Promise<T> {
+    // Acquire rate limit tokens before making request
+    if (this.rateLimiter) {
+      await this.rateLimiter.acquire();
+    }
+
     const token = await this.getAccessToken();
 
     if (!token && endpoint.includes('/profile')) {
@@ -105,19 +81,23 @@ class APIClient {
         headers,
       });
 
-      // Update rate limit info
+      // Update rate limit info from response headers
       this.rateLimitInfo = this.parseRateLimitHeaders(response.headers);
 
-      // Handle rate limiting
+      // Handle rate limiting (429)
+      // This is a backup in case our rate limiter is too aggressive or server limits changed
       if (response.status === 429) {
         const retryAfter = parseInt(response.headers.get('Retry-After') || '60');
+        console.warn(`[API] Rate limited by server. Waiting ${retryAfter}s before retry.`);
         await this.wait(retryAfter * 1000);
         return this.request<T>(endpoint, options, retryCount);
       }
 
-      // Handle server errors with retry
+      // Handle server errors with exponential backoff
       if (response.status >= 500 && retryCount < this.maxRetries) {
-        await this.wait(this.retryDelay * Math.pow(2, retryCount));
+        const backoffDelay = this.retryDelay * Math.pow(2, retryCount);
+        console.warn(`[API] Server error ${response.status}. Retrying in ${backoffDelay}ms (attempt ${retryCount + 1}/${this.maxRetries})`);
+        await this.wait(backoffDelay);
         return this.request<T>(endpoint, options, retryCount + 1);
       }
 
@@ -131,7 +111,9 @@ class APIClient {
     } catch (error) {
       // Network errors - retry if possible
       if (retryCount < this.maxRetries) {
-        await this.wait(this.retryDelay * Math.pow(2, retryCount));
+        const backoffDelay = this.retryDelay * Math.pow(2, retryCount);
+        console.warn(`[API] Network error. Retrying in ${backoffDelay}ms (attempt ${retryCount + 1}/${this.maxRetries})`);
+        await this.wait(backoffDelay);
         return this.request<T>(endpoint, options, retryCount + 1);
       }
       throw error;
@@ -161,19 +143,40 @@ class APIClient {
     return this.request<T>(endpoint, { method: 'DELETE' });
   }
 
-  // Queue a request for rate-limited processing
-  async queueRequest<T>(fn: () => Promise<T>): Promise<T> {
-    return new Promise((resolve, reject) => {
-      this.requestQueue.push(async () => {
-        try {
-          const result = await fn();
-          resolve(result);
-        } catch (error) {
-          reject(error);
-        }
-      });
-      this.processQueue();
-    });
+  /**
+   * Get rate limiter statistics (if enabled)
+   */
+  getRateLimitStats() {
+    if (!this.rateLimiter) {
+      return null;
+    }
+    return this.rateLimiter.getAllStats();
+  }
+
+  /**
+   * Get current rate limit info from last response headers
+   */
+  getCurrentRateLimitInfo(): RateLimitInfo | null {
+    return this.rateLimitInfo;
+  }
+
+  /**
+   * Reset the rate limiter (useful for testing)
+   */
+  resetRateLimiter(): void {
+    if (this.rateLimiter) {
+      this.rateLimiter.reset();
+    }
+  }
+
+  /**
+   * Clean up resources
+   */
+  destroy(): void {
+    if (this.rateLimiter) {
+      this.rateLimiter.destroy();
+      this.rateLimiter = null;
+    }
   }
 }
 

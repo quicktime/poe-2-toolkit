@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { QueryProvider } from "@/contexts/QueryProvider";
 import { Navigation } from "@/components/Navigation";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,14 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <QueryProvider>
-          <AuthProvider>
-            <Navigation />
-            <main className="min-h-screen">
-              {children}
-            </main>
-          </AuthProvider>
-        </QueryProvider>
+        <ErrorBoundary>
+          <QueryProvider>
+            <AuthProvider>
+              <Navigation />
+              <main className="min-h-screen">
+                {children}
+              </main>
+            </AuthProvider>
+          </QueryProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );
