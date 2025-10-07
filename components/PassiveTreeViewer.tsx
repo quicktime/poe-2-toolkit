@@ -317,7 +317,7 @@ export default function PassiveTreeViewer({
       </div>
 
       {/* Tree Visualization */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden relative">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden relative h-[800px]">
         {treeData ? (
           <>
             <PassiveTreeCanvas
@@ -340,7 +340,7 @@ export default function PassiveTreeViewer({
                   setHoveredNodeData(null);
                 }
               }}
-              className="h-[600px]"
+              className="w-full h-full"
             />
             {hoveredNodeData && (
               <NodeTooltip
@@ -351,7 +351,7 @@ export default function PassiveTreeViewer({
             )}
           </>
         ) : (
-          <div className="h-[600px] flex items-center justify-center text-gray-500">
+          <div className="h-full flex items-center justify-center text-gray-500">
             Failed to load passive tree data
           </div>
         )}
