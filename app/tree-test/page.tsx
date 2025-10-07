@@ -77,12 +77,27 @@ export default function TreeTestPage() {
 
     console.log('Transform:', { centerX, centerY, scale, offset });
 
-    // Draw all groups as small dots to see structure
+    // Draw center marker (in world coordinates)
+    ctx.fillStyle = '#ff0000';
+    ctx.beginPath();
+    ctx.arc(0, 0, 500, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Draw distance circles for reference
+    ctx.strokeStyle = '#333333';
+    ctx.lineWidth = 20;
+    [5000, 10000, 15000].forEach(radius => {
+      ctx.beginPath();
+      ctx.arc(0, 0, radius, 0, Math.PI * 2);
+      ctx.stroke();
+    });
+
+    // Draw all groups as dots
     ctx.fillStyle = '#00ff00'; // Bright green to see groups clearly
     let groupsDrawn = 0;
     groups.forEach((group: any) => {
       ctx.beginPath();
-      ctx.arc(group.x, group.y, 100, 0, Math.PI * 2);
+      ctx.arc(group.x, group.y, 200, 0, Math.PI * 2);
       ctx.fill();
       groupsDrawn++;
     });
