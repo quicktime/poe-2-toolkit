@@ -106,7 +106,6 @@ export default function TreeTestPage() {
     // Label some known keystones for verification
     const keystones = Object.values(treeData.nodes).filter((n: any) => n.isKeystone);
     ctx.fillStyle = '#ffff00';
-    ctx.font = '400px Arial';
     ctx.textAlign = 'center';
 
     keystones.slice(0, 10).forEach((node: any) => {
@@ -118,8 +117,13 @@ export default function TreeTestPage() {
       ctx.arc(group.x, group.y, 300, 0, Math.PI * 2);
       ctx.fill();
 
-      // Draw name
-      ctx.fillText(node.name, group.x, group.y - 400);
+      // Draw name - need to flip back the text since we flipped Y
+      ctx.save();
+      ctx.translate(group.x, group.y - 400);
+      ctx.scale(1, -1); // Flip text back
+      ctx.font = '400px Arial';
+      ctx.fillText(node.name, 0, 0);
+      ctx.restore();
     });
 
     ctx.restore();
