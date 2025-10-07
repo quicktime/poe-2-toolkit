@@ -122,31 +122,16 @@ export default function TreeTestPage() {
       ctx.fillText(node.name, group.x, group.y - 400);
     });
 
-    // Draw all nodes (calculated positions in orbits around groups)
+    // Draw all nodes using pre-calculated positions from data loader
     Object.values(treeData.nodes).forEach((node: any) => {
       const orbit = node.orbit || 0;
 
       // Skip orbit 0 (connectors)
       if (orbit === 0) return;
 
-      // Calculate position
-      const group = treeData.groups[node.group];
-      if (!group) return;
-
-      const orbitRadii = treeData.constants?.orbitRadii || [0, 82, 162, 335, 493, 662, 846];
-      const radius = orbitRadii[orbit] || 0;
-
-      let x = group.x;
-      let y = group.y;
-
-      if (radius > 0) {
-        const skillsPerOrbit = treeData.constants?.skillsPerOrbit || [1, 6, 12, 12, 16, 16, 16];
-        const skillsInThisOrbit = skillsPerOrbit[orbit] || 16;
-        const angle = (node.orbitIndex / skillsInThisOrbit) * 2 * Math.PI;
-
-        x = group.x + Math.cos(angle) * radius;
-        y = group.y + Math.sin(angle) * radius;
-      }
+      // Use the position already calculated by the data loader
+      const x = node.position.x;
+      const y = node.position.y;
 
       // Draw node - very small to see full structure
       ctx.beginPath();
@@ -169,59 +154,27 @@ export default function TreeTestPage() {
       ctx.stroke();
     });
 
-    // Draw connections
-    ctx.strokeStyle = '#666666';
-    ctx.lineWidth = 2;
+    // Draw connections using pre-calculated positions
+    ctx.strokeStyle = '#444444';
+    ctx.lineWidth = 15;
     const drawn = new Set<string>();
 
     Object.values(treeData.nodes).forEach((node: any) => {
       if (!node.connections) return;
 
-      // Get node position
-      const group1 = treeData.groups[node.group];
-      if (!group1) return;
+      const x1 = node.position.x;
+      const y1 = node.position.y;
 
-      const orbit1 = node.orbit || 0;
-      const orbitRadii = treeData.constants?.orbitRadii || [0, 82, 162, 335, 493, 662, 846];
-      const radius1 = orbitRadii[orbit1] || 0;
-
-      let x1 = group1.x;
-      let y1 = group1.y;
-
-      if (radius1 > 0) {
-        const skillsPerOrbit = treeData.constants?.skillsPerOrbit || [1, 6, 12, 12, 16, 16, 16];
-        const skillsInThisOrbit = skillsPerOrbit[orbit1] || 16;
-        const angle = (node.orbitIndex / skillsInThisOrbit) * 2 * Math.PI;
-        x1 = group1.x + Math.cos(angle) * radius1;
-        y1 = group1.y + Math.sin(angle) * radius1;
-      }
-
-      node.connections.forEach((conn: any) => {
-        const targetId = typeof conn === 'object' ? conn.id : conn;
-        const targetNode = treeData.nodes[targetId];
+      node.connections.forEach((connId: number) => {
+        const targetNode = treeData.nodes[connId];
         if (!targetNode) return;
 
-        const connKey = node.skill < targetId ? `${node.skill}-${targetId}` : `${targetId}-${node.skill}`;
+        const connKey = node.id < connId ? `${node.id}-${connId}` : `${connId}-${node.id}`;
         if (drawn.has(connKey)) return;
         drawn.add(connKey);
 
-        // Get target position
-        const group2 = treeData.groups[targetNode.group];
-        if (!group2) return;
-
-        const orbit2 = targetNode.orbit || 0;
-        const radius2 = orbitRadii[orbit2] || 0;
-
-        let x2 = group2.x;
-        let y2 = group2.y;
-
-        if (radius2 > 0) {
-          const skillsPerOrbit = treeData.constants?.skillsPerOrbit || [1, 6, 12, 12, 16, 16, 16];
-          const skillsInThisOrbit = skillsPerOrbit[orbit2] || 16;
-          const angle = (targetNode.orbitIndex / skillsInThisOrbit) * 2 * Math.PI;
-          x2 = group2.x + Math.cos(angle) * radius2;
-          y2 = group2.y + Math.sin(angle) * radius2;
-        }
+        const x2 = targetNode.position.x;
+        const y2 = targetNode.position.y;
 
         ctx.beginPath();
         ctx.moveTo(x1, y1);
