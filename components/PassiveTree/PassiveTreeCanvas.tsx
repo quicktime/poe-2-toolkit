@@ -27,7 +27,7 @@ export default function PassiveTreeCanvas({
     active: HTMLImageElement[]
   } | null>(null);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const [scale, setScale] = useState(0.15); // Start zoomed out to see whole tree
+  const [scale, setScale] = useState(0.02); // Start very zoomed out to see whole tree (~30k unit range)
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [hoveredNode, setHoveredNode] = useState<number | null>(null);
@@ -254,7 +254,7 @@ export default function PassiveTreeCanvas({
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
     const delta = e.deltaY > 0 ? 0.9 : 1.1;
-    setScale(prev => Math.max(0.05, Math.min(1.5, prev * delta)));
+    setScale(prev => Math.max(0.01, Math.min(2.0, prev * delta)));
   };
 
   return (
@@ -279,13 +279,13 @@ export default function PassiveTreeCanvas({
           +
         </button>
         <button
-          onClick={() => setScale(prev => Math.max(0.05, prev / 1.2))}
+          onClick={() => setScale(prev => Math.max(0.01, prev / 1.2))}
           className="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-bold"
         >
           −
         </button>
         <button
-          onClick={() => { setScale(0.15); setOffset({ x: 0, y: 0 }); }}
+          onClick={() => { setScale(0.02); setOffset({ x: 0, y: 0 }); }}
           className="px-3 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded text-sm"
         >
           Reset
