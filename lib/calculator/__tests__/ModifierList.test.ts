@@ -252,10 +252,108 @@ describe('ModifierList', () => {
     test('should export modifier data', () => {
       modifierList.parseAndAdd('50% increased damage', 'test_source');
       modifierList.parseAndAdd('+100 to maximum life', 'test_source_2');
-      
+
       const exported = modifierList.export();
       expect(exported).toHaveProperty('INC_damage');
       expect(exported).toHaveProperty('ADDED_maximum_life');
+    });
+  });
+
+  describe('Subtype Verification', () => {
+    test('should include subtypes in life and mana modifier tags', () => {
+      modifierList.parseAndAdd('+50 to maximum life');
+      modifierList.parseAndAdd('+30 to maximum mana');
+      modifierList.parseAndAdd('20% increased maximum life');
+
+      const lifeMods = modifierList.getMods('ADDED', { type: 'resource', subtype: 'life' });
+      expect(lifeMods).toHaveLength(1);
+      expect(lifeMods[0].value).toBe(50);
+
+      const manaMods = modifierList.getMods('ADDED', { type: 'resource', subtype: 'mana' });
+      expect(manaMods).toHaveLength(1);
+      expect(manaMods[0].value).toBe(30);
+
+      const incLifeMods = modifierList.getMods('INC', { type: 'resource', subtype: 'life' });
+      expect(incLifeMods).toHaveLength(1);
+      expect(incLifeMods[0].value).toBe(20);
+    });
+
+    test('should include subtypes in attribute modifier tags', () => {
+      modifierList.parseAndAdd('+50 to strength');
+      modifierList.parseAndAdd('+30 to dexterity');
+      modifierList.parseAndAdd('+40 to intelligence');
+
+      const strMods = modifierList.getMods('ADDED', { type: 'attribute', subtype: 'strength' });
+      expect(strMods).toHaveLength(1);
+      expect(strMods[0].value).toBe(50);
+
+      const dexMods = modifierList.getMods('ADDED', { type: 'attribute', subtype: 'dexterity' });
+      expect(dexMods).toHaveLength(1);
+      expect(dexMods[0].value).toBe(30);
+
+      const intMods = modifierList.getMods('ADDED', { type: 'attribute', subtype: 'intelligence' });
+      expect(intMods).toHaveLength(1);
+      expect(intMods[0].value).toBe(40);
+    });
+
+    test('should include subtypes in defense modifier tags', () => {
+      modifierList.parseAndAdd('+500 to armour');
+      modifierList.parseAndAdd('+300 to evasion rating');
+      modifierList.parseAndAdd('25% increased armour');
+
+      const armourMods = modifierList.getMods('ADDED', { type: 'defense', subtype: 'armour' });
+      expect(armourMods).toHaveLength(1);
+      expect(armourMods[0].value).toBe(500);
+
+      const evasionMods = modifierList.getMods('ADDED', { type: 'defense', subtype: 'evasion' });
+      expect(evasionMods).toHaveLength(1);
+      expect(evasionMods[0].value).toBe(300);
+
+      const incArmourMods = modifierList.getMods('INC', { type: 'defense', subtype: 'armour' });
+      expect(incArmourMods).toHaveLength(1);
+      expect(incArmourMods[0].value).toBe(25);
+    });
+
+    test('should include subtypes in block modifier tags', () => {
+      modifierList.parseAndAdd('20% chance to block attack damage');
+      modifierList.parseAndAdd('15% chance to block spell damage');
+
+      const attackBlockMods = modifierList.getMods('ADDED', { type: 'defense', subtype: 'attack_block' });
+      expect(attackBlockMods).toHaveLength(1);
+      expect(attackBlockMods[0].value).toBe(20);
+
+      const spellBlockMods = modifierList.getMods('ADDED', { type: 'defense', subtype: 'spell_block' });
+      expect(spellBlockMods).toHaveLength(1);
+      expect(spellBlockMods[0].value).toBe(15);
+    });
+
+    test('should parse all attributes modifier', () => {
+      modifierList.parseAndAdd('+20 to all attributes');
+
+      const strMods = modifierList.getMods('ADDED', { type: 'attribute', subtype: 'strength' });
+      const dexMods = modifierList.getMods('ADDED', { type: 'attribute', subtype: 'dexterity' });
+      const intMods = modifierList.getMods('ADDED', { type: 'attribute', subtype: 'intelligence' });
+
+      expect(strMods).toHaveLength(1);
+      expect(dexMods).toHaveLength(1);
+      expect(intMods).toHaveLength(1);
+
+      expect(strMods[0].value).toBe(20);
+      expect(dexMods[0].value).toBe(20);
+      expect(intMods[0].value).toBe(20);
+    });
+
+    test('should include specific subtypes in charge modifiers', () => {
+      modifierList.parseAndAdd('+2 to maximum endurance charges');
+      modifierList.parseAndAdd('+1 to maximum frenzy charges');
+
+      const enduranceMods = modifierList.getMods('ADDED', { type: 'resource', subtype: 'endurance_charges' });
+      expect(enduranceMods).toHaveLength(1);
+      expect(enduranceMods[0].value).toBe(2);
+
+      const frenzyMods = modifierList.getMods('ADDED', { type: 'resource', subtype: 'frenzy_charges' });
+      expect(frenzyMods).toHaveLength(1);
+      expect(frenzyMods[0].value).toBe(1);
     });
   });
 });

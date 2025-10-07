@@ -422,40 +422,95 @@ export class ModifierList {
           type: 'ADDED',
           name: 'maximum_life',
           value: parseFloat(match[1]),
-          tags: [{ type: 'resource' }]
+          tags: [{ type: 'resource', subtype: 'life' }]
         })
       },
-      
+
       {
         regex: /^(\d+)% increased maximum life$/i,
         handler: (match) => ({
           type: 'INC',
           name: 'maximum_life',
           value: parseFloat(match[1]),
-          tags: [{ type: 'resource' }]
+          tags: [{ type: 'resource', subtype: 'life' }]
         })
       },
-      
+
       {
         regex: /^\+(\d+) to maximum mana$/i,
         handler: (match) => ({
           type: 'ADDED',
           name: 'maximum_mana',
           value: parseFloat(match[1]),
-          tags: [{ type: 'resource' }]
+          tags: [{ type: 'resource', subtype: 'mana' }]
         })
       },
-      
+
       {
         regex: /^(\d+)% increased maximum mana$/i,
         handler: (match) => ({
           type: 'INC',
           name: 'maximum_mana',
           value: parseFloat(match[1]),
-          tags: [{ type: 'resource' }]
+          tags: [{ type: 'resource', subtype: 'mana' }]
         })
       },
-      
+
+      // Attributes
+      {
+        regex: /^\+(\d+) to strength$/i,
+        handler: (match) => ({
+          type: 'ADDED',
+          name: 'strength',
+          value: parseFloat(match[1]),
+          tags: [{ type: 'attribute', subtype: 'strength' }]
+        })
+      },
+
+      {
+        regex: /^\+(\d+) to dexterity$/i,
+        handler: (match) => ({
+          type: 'ADDED',
+          name: 'dexterity',
+          value: parseFloat(match[1]),
+          tags: [{ type: 'attribute', subtype: 'dexterity' }]
+        })
+      },
+
+      {
+        regex: /^\+(\d+) to intelligence$/i,
+        handler: (match) => ({
+          type: 'ADDED',
+          name: 'intelligence',
+          value: parseFloat(match[1]),
+          tags: [{ type: 'attribute', subtype: 'intelligence' }]
+        })
+      },
+
+      {
+        regex: /^\+(\d+) to all attributes$/i,
+        handler: (match) => [
+          {
+            type: 'ADDED' as ModifierType,
+            name: 'strength',
+            value: parseFloat(match[1]),
+            tags: [{ type: 'attribute' as const, subtype: 'strength' }]
+          },
+          {
+            type: 'ADDED' as ModifierType,
+            name: 'dexterity',
+            value: parseFloat(match[1]),
+            tags: [{ type: 'attribute' as const, subtype: 'dexterity' }]
+          },
+          {
+            type: 'ADDED' as ModifierType,
+            name: 'intelligence',
+            value: parseFloat(match[1]),
+            tags: [{ type: 'attribute' as const, subtype: 'intelligence' }]
+          }
+        ]
+      },
+
       // PoE2 SPECIFIC - Spirit System
       {
         regex: /^\+(\d+) to maximum spirit$/i,
@@ -622,37 +677,37 @@ export class ModifierList {
           type: 'ADDED',
           name: 'armour',
           value: parseFloat(match[1]),
-          tags: [{ type: 'defense' }]
+          tags: [{ type: 'defense', subtype: 'armour' }]
         })
       },
-      
+
       {
         regex: /^(\d+)% increased armour$/i,
         handler: (match) => ({
           type: 'INC',
           name: 'armour',
           value: parseFloat(match[1]),
-          tags: [{ type: 'defense' }]
+          tags: [{ type: 'defense', subtype: 'armour' }]
         })
       },
-      
+
       {
         regex: /^\+(\d+) to evasion rating$/i,
         handler: (match) => ({
           type: 'ADDED',
           name: 'evasion_rating',
           value: parseFloat(match[1]),
-          tags: [{ type: 'defense' }]
+          tags: [{ type: 'defense', subtype: 'evasion' }]
         })
       },
-      
+
       {
         regex: /^(\d+)% increased evasion rating$/i,
         handler: (match) => ({
           type: 'INC',
           name: 'evasion_rating',
           value: parseFloat(match[1]),
-          tags: [{ type: 'defense' }]
+          tags: [{ type: 'defense', subtype: 'evasion' }]
         })
       },
       
@@ -663,20 +718,20 @@ export class ModifierList {
           type: 'ADDED',
           name: 'attack_block_chance',
           value: parseFloat(match[1]),
-          tags: [{ type: 'defense' }]
+          tags: [{ type: 'defense', subtype: 'attack_block' }]
         })
       },
-      
+
       {
         regex: /^(\d+)% chance to block spell damage$/i,
         handler: (match) => ({
           type: 'ADDED',
           name: 'spell_block_chance',
           value: parseFloat(match[1]),
-          tags: [{ type: 'defense' }]
+          tags: [{ type: 'defense', subtype: 'spell_block' }]
         })
       },
-      
+
       // PoE2 specific - Dodge effectiveness
       {
         regex: /^(\d+)% increased dodge roll effectiveness$/i,
@@ -684,7 +739,7 @@ export class ModifierList {
           type: 'INC',
           name: 'dodge_effectiveness',
           value: parseFloat(match[1]),
-          tags: [{ type: 'defense' }]
+          tags: [{ type: 'defense', subtype: 'dodge_effectiveness' }]
         })
       },
       
@@ -729,7 +784,7 @@ export class ModifierList {
           type: 'ADDED',
           name: `maximum_${match[2].toLowerCase()}_charges`,
           value: parseFloat(match[1]),
-          tags: [{ type: 'resource' }]
+          tags: [{ type: 'resource', subtype: `${match[2].toLowerCase()}_charges` }]
         })
       },
       

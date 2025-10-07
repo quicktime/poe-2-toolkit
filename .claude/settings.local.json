@@ -61,7 +61,8 @@
       "Bash(components/crafting/CraftingWithData.tsx )",
       "Bash(components/crafting/MarketIntegration.tsx )",
       "Bash(components/crafting/CurrencyTierSelector.tsx)",
-      "Bash(components/crafting/ModPoolExplorer.tsx)"
+      "Bash(components/crafting/ModPoolExplorer.tsx)",
+      "Read(//c/**)"
     ],
     "deny": [],
     "ask": []
