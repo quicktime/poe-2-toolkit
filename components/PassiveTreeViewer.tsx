@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import PassiveTreeSVG from './PassiveTree/PassiveTreeSVG';
+import PassiveTreeCanvas from './PassiveTree/PassiveTreeCanvas';
 import NodeTooltip from './PassiveTree/NodeTooltip';
 import { passiveTreeService } from '@/lib/passiveTree/treeDataService';
 import type { PassiveTreeData, AllocatedPassives, PassiveNode } from '@/types/passiveTree';
@@ -320,7 +320,7 @@ export default function PassiveTreeViewer({
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden relative">
         {treeData ? (
           <>
-            <PassiveTreeSVG
+            <PassiveTreeCanvas
               treeData={treeData}
               allocated={allocated}
               highlightedNode={selectedSearchResult}

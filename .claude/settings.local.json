@@ -65,7 +65,10 @@
       "Read(//c/**)",
       "WebFetch(domain:maxroll.gg)",
       "Bash(npm ci:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(for i in {0..9})",
+      "Bash(do curl -s -O \"https://raw.githubusercontent.com/PathOfBuildingCommunity/PathOfBuilding-PoE2/dev/src/TreeData/0_3/orbit_normal$i.png\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
