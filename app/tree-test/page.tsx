@@ -73,7 +73,7 @@ export default function TreeTestPage() {
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
     ctx.translate(centerX + offset.x, centerY + offset.y);
-    ctx.scale(scale, scale);
+    ctx.scale(scale, -scale); // FLIP Y-axis - game uses Y-up, canvas uses Y-down
 
     console.log('Transform:', { centerX, centerY, scale, offset });
 
