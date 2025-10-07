@@ -158,24 +158,35 @@ export default function PassiveTreeCanvas({
     ctx.translate(centerX + offset.x, centerY + offset.y);
     ctx.scale(scale, scale);
 
-    // Draw connections first
+    // Draw connections - ONLY for orbit 0 nodes (line connectors between groups)
+    // Regular nodes are arranged in orbits and don't need individual connection lines
     ctx.lineWidth = 4 / scale;
     ctx.lineCap = 'round';
 
+    const drawnConnections = new Set<string>();
+
     Object.values(treeData.nodes).forEach(node => {
+      // Only draw connections for orbit 0 nodes (the line connectors)
+      if (node.orbit !== 0) return;
+
       const isFromAllocated = allocated.nodes.has(node.id);
 
       node.connections.forEach(targetId => {
         const targetNode = treeData.nodes[targetId];
         if (!targetNode) return;
 
+        // Avoid drawing same connection twice
+        const connKey = node.id < targetId ? `${node.id}-${targetId}` : `${targetId}-${node.id}`;
+        if (drawnConnections.has(connKey)) return;
+        drawnConnections.add(connKey);
+
         const isToAllocated = allocated.nodes.has(targetId);
         const bothAllocated = isFromAllocated && isToAllocated;
 
         if (bothAllocated) {
-          // Glow
-          ctx.strokeStyle = 'rgba(212, 175, 55, 0.3)';
-          ctx.lineWidth = 8 / scale;
+          // Glow for allocated paths
+          ctx.strokeStyle = 'rgba(212, 175, 55, 0.4)';
+          ctx.lineWidth = 10 / scale;
           ctx.beginPath();
           ctx.moveTo(node.position.x, node.position.y);
           ctx.lineTo(targetNode.position.x, targetNode.position.y);
@@ -183,9 +194,9 @@ export default function PassiveTreeCanvas({
         }
 
         // Main line
-        ctx.strokeStyle = bothAllocated ? '#d4af37' : '#3a3a3a';
-        ctx.lineWidth = (bothAllocated ? 5 : 1.5) / scale;
-        ctx.globalAlpha = bothAllocated ? 1 : 0.25;
+        ctx.strokeStyle = bothAllocated ? '#d4af37' : '#4a4a4a';
+        ctx.lineWidth = (bothAllocated ? 6 : 2) / scale;
+        ctx.globalAlpha = bothAllocated ? 1 : 0.3;
         ctx.beginPath();
         ctx.moveTo(node.position.x, node.position.y);
         ctx.lineTo(targetNode.position.x, targetNode.position.y);
