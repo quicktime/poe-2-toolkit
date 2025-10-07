@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import PassiveTreeCanvas from './PassiveTreeCanvas';
+import PassiveTreeSVG from './PassiveTree/PassiveTreeSVG';
+import NodeTooltip from './PassiveTree/NodeTooltip';
 import { passiveTreeService } from '@/lib/passiveTree/treeDataService';
 import type { PassiveTreeData, AllocatedPassives, PassiveNode } from '@/types/passiveTree';
 
@@ -36,6 +37,7 @@ export default function PassiveTreeViewer({
   const [showImportExport, setShowImportExport] = useState(false);
   const [importString, setImportString] = useState('');
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
+  const [hoveredNodeData, setHoveredNodeData] = useState<{ node: PassiveNode; position: { x: number; y: number } } | null>(null);
 
   // Load tree data
   useEffect(() => {
@@ -315,21 +317,39 @@ export default function PassiveTreeViewer({
       </div>
 
       {/* Tree Visualization */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden relative">
         {treeData ? (
-          <PassiveTreeCanvas
-            treeData={treeData}
-            allocated={allocated}
-            highlightedNode={selectedSearchResult}
-            onNodeClick={handleNodeClick}
-            onNodeHover={(nodeId) => {
-              // Optional: Handle node hover for tooltips
-            }}
-            characterEquipment={characterEquipment}
-            jewelSocketData={jewelSocketData}
-            showJewelEffects={showJewelEffects}
-            className="h-[600px]"
-          />
+          <>
+            <PassiveTreeSVG
+              treeData={treeData}
+              allocated={allocated}
+              highlightedNode={selectedSearchResult}
+              onNodeClick={handleNodeClick}
+              onNodeHover={(nodeId) => {
+                if (nodeId !== null && treeData.nodes[nodeId]) {
+                  // Get mouse position for tooltip
+                  const handleMouseMove = (e: MouseEvent) => {
+                    setHoveredNodeData({
+                      node: treeData.nodes[nodeId],
+                      position: { x: e.clientX, y: e.clientY }
+                    });
+                  };
+                  window.addEventListener('mousemove', handleMouseMove);
+                  setTimeout(() => window.removeEventListener('mousemove', handleMouseMove), 100);
+                } else {
+                  setHoveredNodeData(null);
+                }
+              }}
+              className="h-[600px]"
+            />
+            {hoveredNodeData && (
+              <NodeTooltip
+                node={hoveredNodeData.node}
+                isAllocated={allocated.nodes.has(hoveredNodeData.node.id)}
+                position={hoveredNodeData.position}
+              />
+            )}
+          </>
         ) : (
           <div className="h-[600px] flex items-center justify-center text-gray-500">
             Failed to load passive tree data
