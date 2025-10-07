@@ -56,6 +56,17 @@ export default function TreeTestPage() {
 
     console.log('Tree data available, rendering...');
 
+    // Log some debug info about the tree data
+    const groups = treeData.groups.filter((g: any) => g);
+    const groupPositions = groups.map((g: any) => ({ x: g.x, y: g.y }));
+    const distances = groupPositions.map((p: any) => Math.sqrt(p.x * p.x + p.y * p.y));
+    console.log('Groups:', {
+      total: groups.length,
+      minDist: Math.min(...distances).toFixed(0),
+      maxDist: Math.max(...distances).toFixed(0),
+      sampleGroup: groups[0]
+    });
+
     ctx.save();
 
     // Center and scale
@@ -64,15 +75,23 @@ export default function TreeTestPage() {
     ctx.translate(centerX + offset.x, centerY + offset.y);
     ctx.scale(scale, scale);
 
-    // Draw all groups as small dots to see structure
-    const groups = treeData.groups.filter((g: any) => g);
+    console.log('Transform:', { centerX, centerY, scale, offset });
 
-    ctx.fillStyle = '#444444';
+    // Draw all groups as small dots to see structure
+    ctx.fillStyle = '#00ff00'; // Bright green to see groups clearly
+    let groupsDrawn = 0;
     groups.forEach((group: any) => {
       ctx.beginPath();
-      ctx.arc(group.x, group.y, 50, 0, Math.PI * 2);
+      ctx.arc(group.x, group.y, 100, 0, Math.PI * 2);
       ctx.fill();
+      groupsDrawn++;
     });
+    console.log('Drew', groupsDrawn, 'group dots');
+
+    ctx.restore();
+
+    // DISABLE node rendering for now - just debug groups
+    return;
 
     // Draw all nodes
     Object.values(treeData.nodes).forEach((node: any) => {
