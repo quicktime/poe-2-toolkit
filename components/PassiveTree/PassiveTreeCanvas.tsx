@@ -22,42 +22,11 @@ export default function PassiveTreeCanvas({
 }: PassiveTreeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [sprites, setSprites] = useState<{
-    normal: HTMLImageElement[],
-    active: HTMLImageElement[]
-  } | null>(null);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(0.02); // Start very zoomed out to see whole tree (~30k unit range)
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [hoveredNode, setHoveredNode] = useState<number | null>(null);
-
-  // Load sprite assets
-  useEffect(() => {
-    const loadSprites = async () => {
-      const normal: HTMLImageElement[] = [];
-      const active: HTMLImageElement[] = [];
-
-      const loadPromises: Promise<void>[] = [];
-
-      for (let i = 0; i < 10; i++) {
-        const normalImg = new Image();
-        normalImg.src = `/assets/passive-tree/orbit_normal${i}.png`;
-        normal.push(normalImg);
-        loadPromises.push(new Promise(resolve => { normalImg.onload = () => resolve(); }));
-
-        const activeImg = new Image();
-        activeImg.src = `/assets/passive-tree/orbit_active${i}.png`;
-        active.push(activeImg);
-        loadPromises.push(new Promise(resolve => { activeImg.onload = () => resolve(); }));
-      }
-
-      await Promise.all(loadPromises);
-      setSprites({ normal, active });
-    };
-
-    loadSprites();
-  }, []);
 
   // Get node size based on orbit
   const getNodeSize = (orbit: number): number => {
@@ -201,7 +170,7 @@ export default function PassiveTreeCanvas({
       });
     });
 
-    // Draw nodes with actual sprites (skip orbit 0 - line connectors)
+    // Draw nodes as colored circles (skip orbit 0 - line connectors)
     Object.values(treeData.nodes).forEach(node => {
       const orbit = node.orbit || 0;
 
@@ -210,35 +179,51 @@ export default function PassiveTreeCanvas({
 
       const isAllocated = allocated.nodes.has(node.id);
       const isHovered = hoveredNode === node.id || highlightedNode === node.id;
+      const size = getNodeSize(orbit);
+      if (size === 0) return;
 
-      const spriteSet = isAllocated ? sprites.active : sprites.normal;
-      const sprite = spriteSet[orbit];
-
-      if (sprite && sprite.complete) {
-        const size = getNodeSize(orbit);
-        if (size === 0) return;
-
-        // Draw hover ring
-        if (isHovered) {
-          ctx.strokeStyle = '#ffffff';
-          ctx.lineWidth = 4 / scale;
-          ctx.beginPath();
-          ctx.arc(node.position.x, node.position.y, (size / 2) + (8 / scale), 0, Math.PI * 2);
-          ctx.stroke();
-        }
-
-        ctx.drawImage(
-          sprite,
-          node.position.x - size / 2,
-          node.position.y - size / 2,
-          size,
-          size
-        );
+      // Draw hover ring
+      if (isHovered) {
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 4 / scale;
+        ctx.beginPath();
+        ctx.arc(node.position.x, node.position.y, (size / 2) + (8 / scale), 0, Math.PI * 2);
+        ctx.stroke();
       }
+
+      // Draw node circle
+      ctx.beginPath();
+      ctx.arc(node.position.x, node.position.y, size / 2, 0, Math.PI * 2);
+
+      // Color based on node type and allocation
+      if (isAllocated) {
+        if (node.isKeystone) {
+          ctx.fillStyle = '#d4af37'; // Gold for allocated keystones
+        } else if (node.isNotable) {
+          ctx.fillStyle = '#8888ff'; // Blue for allocated notables
+        } else {
+          ctx.fillStyle = '#88ff88'; // Green for allocated regular nodes
+        }
+      } else {
+        if (node.isKeystone) {
+          ctx.fillStyle = '#6b5628'; // Dark gold for keystones
+        } else if (node.isNotable) {
+          ctx.fillStyle = '#444488'; // Dark blue for notables
+        } else {
+          ctx.fillStyle = '#444444'; // Gray for regular nodes
+        }
+      }
+
+      ctx.fill();
+
+      // Draw border
+      ctx.strokeStyle = isAllocated ? '#ffffff' : '#666666';
+      ctx.lineWidth = 2 / scale;
+      ctx.stroke();
     });
 
     ctx.restore();
-  }, [sprites, treeData, allocated, offset, scale, hoveredNode, highlightedNode]);
+  }, [treeData, allocated, offset, scale, hoveredNode, highlightedNode]);
 
   // Handle pan
   const handleMouseDown = (e: React.MouseEvent) => {
