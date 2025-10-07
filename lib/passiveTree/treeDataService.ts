@@ -1,12 +1,11 @@
 import type { PassiveTreeData, PassiveNode, AllocatedPassives } from '@/types/passiveTree';
-import { poeTreeDataFetcher } from './poeTreeDataFetcher';
+import { PoE2TreeDataLoader } from './poe2TreeDataLoader';
 
 export class PassiveTreeDataService {
   private static instance: PassiveTreeDataService;
   private treeData: PassiveTreeData | null = null;
   private loading: boolean = false;
   private loadPromise: Promise<PassiveTreeData> | null = null;
-  private useCDN: boolean = false; // Toggle for CDN vs mock data
 
   private constructor() {}
 
@@ -27,7 +26,6 @@ export class PassiveTreeDataService {
     }
 
     this.loading = true;
-    this.useCDN = forceCDN || process.env.NEXT_PUBLIC_USE_POE_CDN === 'true';
     this.loadPromise = this.fetchTreeData();
 
     try {
@@ -41,25 +39,13 @@ export class PassiveTreeDataService {
 
   private async fetchTreeData(): Promise<PassiveTreeData> {
     try {
-      // Try CDN first if enabled
-      if (this.useCDN) {
-        console.log('Fetching tree data from PoE CDN...');
-        const cdnData = await poeTreeDataFetcher.fetchTreeData();
-        if (cdnData && Object.keys(cdnData.nodes).length > 0) {
-          console.log('Successfully loaded tree data from CDN');
-          return cdnData;
-        }
-      }
-
-      // Fall back to our API endpoint
-      const baseUrl = typeof window !== 'undefined' ? '' : process.env.NEXTAUTH_URL || 'http://localhost:3000';
-      const response = await fetch(`${baseUrl}/api/passive-tree/data`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch passive tree data');
-      }
-      return await response.json();
+      // Load the real PoE2 v0.3 tree data
+      console.log('Loading real PoE2 v0.3 tree data...');
+      const realData = await PoE2TreeDataLoader.loadRealTreeData();
+      console.log('Successfully loaded real PoE2 tree data with', Object.keys(realData.nodes).length, 'nodes');
+      return realData;
     } catch (error) {
-      console.error('Error fetching passive tree data:', error);
+      console.error('Error loading real PoE2 tree data, falling back to mock data:', error);
       // Return mock data as fallback
       return this.generateMockTreeData();
     }

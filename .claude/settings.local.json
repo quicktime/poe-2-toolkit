@@ -62,7 +62,10 @@
       "Bash(components/crafting/MarketIntegration.tsx )",
       "Bash(components/crafting/CurrencyTierSelector.tsx)",
       "Bash(components/crafting/ModPoolExplorer.tsx)",
-      "Read(//c/**)"
+      "Read(//c/**)",
+      "WebFetch(domain:maxroll.gg)",
+      "Bash(npm ci:*)",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": []
