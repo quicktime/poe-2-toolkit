@@ -73,7 +73,7 @@ export default function TreeTestPage() {
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
     ctx.translate(centerX + offset.x, centerY + offset.y);
-    ctx.scale(scale, -scale); // Y-flip: game data has Y-up, canvas has Y-down
+    ctx.scale(scale, scale); // NO Y-flip - data appears to already be in canvas coords
 
     console.log('Transform:', { centerX, centerY, scale, offset });
 
@@ -117,13 +117,9 @@ export default function TreeTestPage() {
       ctx.arc(group.x, group.y, 300, 0, Math.PI * 2);
       ctx.fill();
 
-      // Draw name - flip text back since we flipped Y
-      ctx.save();
-      ctx.translate(group.x, group.y - 400);
-      ctx.scale(1, -1);
+      // Draw name
       ctx.font = '400px Arial';
-      ctx.fillText(node.name, 0, 0);
-      ctx.restore();
+      ctx.fillText(node.name, group.x, group.y - 400);
     });
 
     ctx.restore();
