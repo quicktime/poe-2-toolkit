@@ -136,12 +136,12 @@ export default function PassiveTreeSVG({
   };
 
   const getNodeRadius = (node: PassiveNode): number => {
-    if (node.isKeystone) return 30;
-    if (node.isNotable) return 22;
-    if (node.isJewelSocket) return 24;
-    if (node.isMastery) return 26;
-    if (node.ascendancyName) return 20;
-    return 14;
+    if (node.isKeystone) return 35;
+    if (node.isNotable) return 26;
+    if (node.isJewelSocket) return 28;
+    if (node.isMastery) return 30;
+    if (node.ascendancyName) return 24;
+    return 16;
   };
 
   const getNodeStrokeWidth = (node: PassiveNode, isAllocated: boolean, isHovered: boolean): number => {
@@ -165,7 +165,7 @@ export default function PassiveTreeSVG({
   };
 
   return (
-    <div className={`relative w-full h-full bg-[#0a0a0f] ${className}`}>
+    <div className={`relative w-full h-full bg-black ${className}`}>
       <svg
         ref={svgRef}
         className="w-full h-full cursor-move"
@@ -177,25 +177,25 @@ export default function PassiveTreeSVG({
         onMouseLeave={handleMouseUp}
       >
         <defs>
-          {/* Starfield background pattern */}
-          <pattern id="starfield" width="200" height="200" patternUnits="userSpaceOnUse">
-            <rect width="200" height="200" fill="#0a0a0f"/>
-            <circle cx="20" cy="30" r="0.8" fill="#ffffff" opacity="0.6"/>
-            <circle cx="50" cy="70" r="0.5" fill="#ffffff" opacity="0.4"/>
-            <circle cx="120" cy="40" r="0.6" fill="#ffffff" opacity="0.5"/>
-            <circle cx="180" cy="90" r="0.7" fill="#ffffff" opacity="0.6"/>
-            <circle cx="80" cy="150" r="0.4" fill="#ffffff" opacity="0.3"/>
-            <circle cx="150" cy="180" r="0.5" fill="#ffffff" opacity="0.5"/>
-            <circle cx="30" cy="120" r="0.6" fill="#ffffff" opacity="0.4"/>
-            <circle cx="170" cy="150" r="0.8" fill="#ffffff" opacity="0.7"/>
-            <circle cx="100" cy="10" r="0.4" fill="#a0a0ff" opacity="0.3"/>
-            <circle cx="60" cy="190" r="0.5" fill="#ffa0a0" opacity="0.3"/>
+          {/* Subtle starfield background pattern */}
+          <pattern id="starfield" width="300" height="300" patternUnits="userSpaceOnUse">
+            <rect width="300" height="300" fill="#000000"/>
+            <circle cx="30" cy="45" r="0.6" fill="#ffffff" opacity="0.3"/>
+            <circle cx="75" cy="105" r="0.4" fill="#ffffff" opacity="0.2"/>
+            <circle cx="180" cy="60" r="0.5" fill="#ffffff" opacity="0.25"/>
+            <circle cx="270" cy="135" r="0.6" fill="#ffffff" opacity="0.3"/>
+            <circle cx="120" cy="225" r="0.3" fill="#ffffff" opacity="0.15"/>
+            <circle cx="225" cy="270" r="0.4" fill="#ffffff" opacity="0.2"/>
+            <circle cx="45" cy="180" r="0.5" fill="#ffffff" opacity="0.2"/>
+            <circle cx="255" cy="225" r="0.7" fill="#ffffff" opacity="0.35"/>
+            <circle cx="150" cy="15" r="0.3" fill="#a0a0ff" opacity="0.15"/>
+            <circle cx="90" cy="285" r="0.4" fill="#ffa0a0" opacity="0.15"/>
           </pattern>
 
-          {/* Radial gradient for depth */}
+          {/* Very subtle radial gradient */}
           <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" style={{stopColor: '#0f0f1a', stopOpacity: 1}} />
-            <stop offset="100%" style={{stopColor: '#0a0a0f', stopOpacity: 1}} />
+            <stop offset="0%" style={{stopColor: '#0a0a0a', stopOpacity: 1}} />
+            <stop offset="100%" style={{stopColor: '#000000', stopOpacity: 1}} />
           </radialGradient>
 
           {/* Glow effects */}
@@ -267,10 +267,10 @@ export default function PassiveTreeSVG({
                       y1={node.position.y}
                       x2={targetNode.position.x}
                       y2={targetNode.position.y}
-                      stroke="url(#metalGold)"
-                      strokeWidth="5"
+                      stroke="#d4af37"
+                      strokeWidth="12"
                       strokeLinecap="round"
-                      opacity="0.3"
+                      opacity="0.4"
                       filter="url(#glow)"
                     />
                   )}
@@ -280,11 +280,24 @@ export default function PassiveTreeSVG({
                     y1={node.position.y}
                     x2={targetNode.position.x}
                     y2={targetNode.position.y}
-                    stroke={bothAllocated ? 'url(#metalGold)' : 'url(#metalBronze)'}
-                    strokeWidth={bothAllocated ? 2.5 : 1.5}
+                    stroke={bothAllocated ? '#d4af37' : '#4a4a4a'}
+                    strokeWidth={bothAllocated ? 6 : 2}
                     strokeLinecap="round"
-                    opacity={bothAllocated ? 0.9 : 0.4}
+                    opacity={bothAllocated ? 1 : 0.3}
                   />
+                  {/* Inner highlight for allocated */}
+                  {bothAllocated && (
+                    <line
+                      x1={node.position.x}
+                      y1={node.position.y}
+                      x2={targetNode.position.x}
+                      y2={targetNode.position.y}
+                      stroke="#ffd700"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      opacity="0.8"
+                    />
+                  )}
                 </g>
               );
             });
@@ -354,26 +367,68 @@ export default function PassiveTreeSVG({
                   />
                 )}
 
-                {/* Inner detail for special nodes */}
+                {/* Node icon/symbol */}
                 {node.isKeystone && (
-                  <circle
-                    cx={node.position.x}
-                    cy={node.position.y}
-                    r={radius * 0.5}
-                    fill="none"
-                    stroke="#ffffff"
-                    strokeWidth="1.5"
-                    opacity="0.6"
-                  />
+                  <>
+                    {/* Diamond shape for keystones */}
+                    <path
+                      d={`M ${node.position.x},${node.position.y - radius * 0.6} L ${node.position.x + radius * 0.6},${node.position.y} L ${node.position.x},${node.position.y + radius * 0.6} L ${node.position.x - radius * 0.6},${node.position.y} Z`}
+                      fill="none"
+                      stroke="#ffffff"
+                      strokeWidth="2"
+                      opacity="0.8"
+                    />
+                    <circle
+                      cx={node.position.x}
+                      cy={node.position.y}
+                      r={radius * 0.25}
+                      fill="#ffffff"
+                      opacity="0.6"
+                    />
+                  </>
                 )}
 
-                {/* Jewel socket indicator */}
+                {node.isNotable && (
+                  <>
+                    {/* Hexagon for notables */}
+                    {[0, 1, 2, 3, 4, 5].map(i => {
+                      const angle = (i * 60 - 90) * Math.PI / 180;
+                      const x = node.position.x + Math.cos(angle) * radius * 0.5;
+                      const y = node.position.y + Math.sin(angle) * radius * 0.5;
+                      return i === 0 ? `M ${x},${y}` : ` L ${x},${y}`;
+                    }).join('') && (
+                      <path
+                        d={[0, 1, 2, 3, 4, 5].map(i => {
+                          const angle = (i * 60 - 90) * Math.PI / 180;
+                          const x = node.position.x + Math.cos(angle) * radius * 0.5;
+                          const y = node.position.y + Math.sin(angle) * radius * 0.5;
+                          return i === 0 ? `M ${x},${y}` : ` L ${x},${y}`;
+                        }).join('') + ' Z'}
+                        fill="none"
+                        stroke="#ffffff"
+                        strokeWidth="1.5"
+                        opacity="0.7"
+                      />
+                    )}
+                  </>
+                )}
+
                 {node.isJewelSocket && (
                   <>
+                    {/* Double ring for jewel sockets */}
                     <circle
                       cx={node.position.x}
                       cy={node.position.y}
                       r={radius * 0.6}
+                      fill="none"
+                      stroke="#ffffff"
+                      strokeWidth="2"
+                      opacity="0.8"
+                    />
+                    <circle
+                      cx={node.position.x}
+                      cy={node.position.y}
+                      r={radius * 0.35}
                       fill="none"
                       stroke="#ffffff"
                       strokeWidth="1.5"
@@ -382,11 +437,22 @@ export default function PassiveTreeSVG({
                     <circle
                       cx={node.position.x}
                       cy={node.position.y}
-                      r={radius * 0.3}
+                      r={radius * 0.15}
                       fill="#ffffff"
-                      opacity="0.4"
+                      opacity="0.5"
                     />
                   </>
+                )}
+
+                {!node.isKeystone && !node.isNotable && !node.isJewelSocket && (
+                  /* Small dot for regular nodes */
+                  <circle
+                    cx={node.position.x}
+                    cy={node.position.y}
+                    r={radius * 0.25}
+                    fill="#ffffff"
+                    opacity={isAllocated ? 0.8 : 0.4}
+                  />
                 )}
 
                 {/* Hover/highlight ring */}
