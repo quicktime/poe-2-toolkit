@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCharacters } from '@/hooks/useCharacter';
 import LoadingSpinner from '@/components/LoadingSpinner';
-import BuildOptimizer from '@/components/BuildOptimizer';
+import { DynamicBuildOptimizer } from '@/lib/utils/dynamicImports';
 // import { OptimizationPanel } from '@/components/optimization/OptimizationPanel';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -180,12 +180,12 @@ export default function OptimizePage() {
         {/* Build Optimizer / Min-Max Panel */}
         {selectedCharacter ? (
           optimizationMode === 'min-max' ? (
-            <BuildOptimizer 
+            <DynamicBuildOptimizer 
               characterName={selectedCharacter}
               className="w-full"
             />
           ) : (
-            <BuildOptimizer
+            <DynamicBuildOptimizer
               characterName={selectedCharacter}
               className="w-full"
             />
