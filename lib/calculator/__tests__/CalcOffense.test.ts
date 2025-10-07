@@ -295,10 +295,11 @@ describe('CalcOffense', () => {
       });
 
       const result = calc.calculate();
-      
+
       // Accuracy 1000 vs Evasion 500
-      // Hit chance = 1000 / (1000 + 500) = 66.67%
-      expect(result.hitChance).toBeCloseTo(66.67, 1);
+      // PoE2 v0.3 Formula: Hit Chance = AA / (AA + (DE/4)^0.9)
+      // Hit chance = 1000 / (1000 + (500/4)^0.9) = 1000 / (1000 + 107.72) ≈ 92.84%
+      expect(result.hitChance).toBeCloseTo(92.84, 1);
     });
 
     test('should have 100% hit chance for spells', () => {

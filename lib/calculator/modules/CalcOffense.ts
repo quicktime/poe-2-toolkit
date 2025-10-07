@@ -520,40 +520,33 @@ export class CalcOffense {
     if (this.skill.type === 'spell') {
       return 100; // Spells always hit in PoE2
     }
-    
+
     // PoE2 base accuracy calculation
     const baseAccuracy = this.weapon?.accuracy || 100;
     const flatAccuracy = this.modifiers.sum('ADDED', { type: 'accuracy' });
     const increasedAccuracy = this.modifiers.sum('INC', { type: 'accuracy' });
-    
+
     // PoE2 dexterity grants accuracy (2 accuracy per dexterity)
     const dexterity = this.modifiers.sum('ADDED', { type: 'attribute', subtype: 'dexterity' });
     const dexAccuracy = dexterity * 2;
-    
+
     // PoE2 formula includes weapon mastery bonuses
     const weaponMasteryAccuracy = this.modifiers.sum('ADDED', { type: 'accuracy', subtype: 'weapon_mastery' });
-    
-    const totalAccuracy = (baseAccuracy + flatAccuracy + dexAccuracy + weaponMasteryAccuracy) * 
+
+    const totalAccuracy = (baseAccuracy + flatAccuracy + dexAccuracy + weaponMasteryAccuracy) *
                          (1 + increasedAccuracy / 100);
-    
+
     const enemyEvasion = this.config.enemyEvasion || 0;
-    
+
     if (enemyEvasion <= 0) return 100;
-    
-    // PoE2 hit formula with glancing blow mechanics
-    // Full hit chance = Accuracy / (Accuracy + Evasion * 1.25)
-    const fullHitChance = (totalAccuracy / (totalAccuracy + enemyEvasion * 1.25)) * 100;
-    
-    // PoE2 has glancing blows between 50-100% hit chance
-    // Below 50% is a miss, 50-85% is glancing (50% damage), 85%+ is full hit
-    if (fullHitChance < 50) {
-      return fullHitChance; // This represents chance to hit at all
-    } else if (fullHitChance < 85) {
-      // Glancing blow range - return effective damage percentage
-      return 50 + (fullHitChance - 50); // Gradual scaling
-    } else {
-      return Math.min(100, fullHitChance);
-    }
+
+    // PoE2 v0.3+ Hit Chance Formula (verified)
+    // Hit Chance = AA / (AA + (DE/4)^0.9)
+    // where AA = Attacker's Accuracy, DE = Defender's Evasion
+    const hitChance = (totalAccuracy / (totalAccuracy + Math.pow(enemyEvasion / 4, 0.9))) * 100;
+
+    // Minimum 5% hit chance always applies
+    return Math.max(5, Math.min(100, hitChance));
   }
 
   /**
