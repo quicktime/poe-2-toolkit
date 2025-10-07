@@ -103,6 +103,25 @@ export default function TreeTestPage() {
     });
     console.log('Drew', groupsDrawn, 'group dots');
 
+    // Label some known keystones for verification
+    const keystones = Object.values(treeData.nodes).filter((n: any) => n.isKeystone);
+    ctx.fillStyle = '#ffff00';
+    ctx.font = '400px Arial';
+    ctx.textAlign = 'center';
+
+    keystones.slice(0, 10).forEach((node: any) => {
+      const group = treeData.groups[node.group];
+      if (!group) return;
+
+      // Draw bright yellow circle for keystone
+      ctx.beginPath();
+      ctx.arc(group.x, group.y, 300, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Draw name
+      ctx.fillText(node.name, group.x, group.y - 400);
+    });
+
     ctx.restore();
 
     // DISABLE node rendering for now - just debug groups
