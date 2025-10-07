@@ -50,6 +50,7 @@ export enum WaystoneStat {
   MONSTER_SPEED = 'monster_speed',
   MONSTER_ELEMENTAL_RESISTANCE = 'monster_elemental_resistance',
   MONSTER_CHAOS_RESISTANCE = 'monster_chaos_resistance',
+  MONSTER_LEVEL = 'monster_level',
 
   // PoE 2 Tower and Tablet Mechanics
   PRECURSOR_TOWER = 'precursor_tower',
@@ -72,7 +73,14 @@ export enum WaystoneStat {
   NO_LEECH = 'no_leech',
   REDUCED_RECOVERY = 'reduced_recovery',
   CURSED_GROUND = 'cursed_ground',
-  REFLECTED_DAMAGE = 'reflected_damage'
+  REFLECTED_DAMAGE = 'reflected_damage',
+
+  // League Mechanics
+  BREACH = 'breach',
+  BEYOND = 'beyond',
+  DELIRIUM = 'delirium',
+  EXPEDITION = 'expedition',
+  RITUAL = 'ritual'
 }
 
 // ============== Currency Types ==============
