@@ -103,20 +103,36 @@ export default function PassiveTreeSVG({
     setIsDragging(false);
   }, []);
 
-  // Node styling
+  // Node styling - PoE2 color scheme
   const getNodeColor = (node: PassiveNode, isAllocated: boolean): string => {
     if (node.isKeystone) {
-      return isAllocated ? '#d4af37' : '#8b7355';
+      // Keystones: Gold/Bronze
+      return isAllocated ? '#d4af37' : '#5a4632';
     } else if (node.isNotable) {
-      return isAllocated ? '#ffd700' : '#b8860b';
+      // Notables: Bright gold/darker gold
+      return isAllocated ? '#c9aa71' : '#6e5a3a';
     } else if (node.isJewelSocket) {
-      return isAllocated ? '#9370db' : '#6a4c93';
+      // Jewel sockets: Cyan/Teal
+      return isAllocated ? '#4dd0e1' : '#1a4d52';
     } else if (node.isMastery) {
-      return isAllocated ? '#00ff00' : '#008000';
+      // Masteries: Bright cyan
+      return isAllocated ? '#00bcd4' : '#00687a';
     } else if (node.ascendancyName) {
-      return isAllocated ? '#ff6b6b' : '#c92a2a';
+      // Ascendancy: Red/Crimson
+      return isAllocated ? '#e74c3c' : '#7a2519';
     }
-    return isAllocated ? '#4dabf7' : '#364fc7';
+    // Regular nodes: White/Light gray to dark gray
+    return isAllocated ? '#c0c0c0' : '#404040';
+  };
+
+  const getNodeOuterGlow = (node: PassiveNode, isAllocated: boolean): string => {
+    if (!isAllocated) return 'transparent';
+    if (node.isKeystone) return '#ffd700';
+    if (node.isNotable) return '#c9aa71';
+    if (node.isJewelSocket) return '#4dd0e1';
+    if (node.isMastery) return '#00bcd4';
+    if (node.ascendancyName) return '#e74c3c';
+    return '#ffffff';
   };
 
   const getNodeRadius = (node: PassiveNode): number => {
@@ -149,7 +165,7 @@ export default function PassiveTreeSVG({
   };
 
   return (
-    <div className={`relative w-full h-full bg-gray-900 ${className}`}>
+    <div className={`relative w-full h-full bg-[#0a0a0f] ${className}`}>
       <svg
         ref={svgRef}
         className="w-full h-full cursor-move"
@@ -160,16 +176,27 @@ export default function PassiveTreeSVG({
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        {/* Background grid pattern */}
         <defs>
-          <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
-            <path
-              d="M 100 0 L 0 0 0 100"
-              fill="none"
-              stroke="rgba(255,255,255,0.05)"
-              strokeWidth="1"
-            />
+          {/* Starfield background pattern */}
+          <pattern id="starfield" width="200" height="200" patternUnits="userSpaceOnUse">
+            <rect width="200" height="200" fill="#0a0a0f"/>
+            <circle cx="20" cy="30" r="0.8" fill="#ffffff" opacity="0.6"/>
+            <circle cx="50" cy="70" r="0.5" fill="#ffffff" opacity="0.4"/>
+            <circle cx="120" cy="40" r="0.6" fill="#ffffff" opacity="0.5"/>
+            <circle cx="180" cy="90" r="0.7" fill="#ffffff" opacity="0.6"/>
+            <circle cx="80" cy="150" r="0.4" fill="#ffffff" opacity="0.3"/>
+            <circle cx="150" cy="180" r="0.5" fill="#ffffff" opacity="0.5"/>
+            <circle cx="30" cy="120" r="0.6" fill="#ffffff" opacity="0.4"/>
+            <circle cx="170" cy="150" r="0.8" fill="#ffffff" opacity="0.7"/>
+            <circle cx="100" cy="10" r="0.4" fill="#a0a0ff" opacity="0.3"/>
+            <circle cx="60" cy="190" r="0.5" fill="#ffa0a0" opacity="0.3"/>
           </pattern>
+
+          {/* Radial gradient for depth */}
+          <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style={{stopColor: '#0f0f1a', stopOpacity: 1}} />
+            <stop offset="100%" style={{stopColor: '#0a0a0f', stopOpacity: 1}} />
+          </radialGradient>
 
           {/* Glow effects */}
           <filter id="glow">
@@ -187,6 +214,19 @@ export default function PassiveTreeSVG({
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
+
+          {/* Metallic gradient for connections */}
+          <linearGradient id="metalGold" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style={{stopColor: '#9d7d3d', stopOpacity: 0.8}} />
+            <stop offset="50%" style={{stopColor: '#d4af37', stopOpacity: 1}} />
+            <stop offset="100%" style={{stopColor: '#9d7d3d', stopOpacity: 0.8}} />
+          </linearGradient>
+
+          <linearGradient id="metalBronze" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style={{stopColor: '#5a4a2a', stopOpacity: 0.6}} />
+            <stop offset="50%" style={{stopColor: '#8b7355', stopOpacity: 0.8}} />
+            <stop offset="100%" style={{stopColor: '#5a4a2a', stopOpacity: 0.6}} />
+          </linearGradient>
         </defs>
 
         {/* Background */}
@@ -195,7 +235,15 @@ export default function PassiveTreeSVG({
           y={viewBox.y}
           width={viewBox.width}
           height={viewBox.height}
-          fill="url(#grid)"
+          fill="url(#bgGradient)"
+        />
+        <rect
+          x={viewBox.x}
+          y={viewBox.y}
+          width={viewBox.width}
+          height={viewBox.height}
+          fill="url(#starfield)"
+          opacity="0.8"
         />
 
         {/* Draw connections */}
@@ -211,17 +259,33 @@ export default function PassiveTreeSVG({
               const bothAllocated = isFromAllocated && isToAllocated;
 
               return (
-                <line
-                  key={`${node.id}-${targetId}`}
-                  x1={node.position.x}
-                  y1={node.position.y}
-                  x2={targetNode.position.x}
-                  y2={targetNode.position.y}
-                  stroke={bothAllocated ? '#ffd700' : 'rgba(255,255,255,0.2)'}
-                  strokeWidth={bothAllocated ? 3 : 1.5}
-                  strokeLinecap="round"
-                  opacity={bothAllocated ? 0.8 : 0.3}
-                />
+                <g key={`${node.id}-${targetId}`}>
+                  {/* Outer glow for allocated paths */}
+                  {bothAllocated && (
+                    <line
+                      x1={node.position.x}
+                      y1={node.position.y}
+                      x2={targetNode.position.x}
+                      y2={targetNode.position.y}
+                      stroke="url(#metalGold)"
+                      strokeWidth="5"
+                      strokeLinecap="round"
+                      opacity="0.3"
+                      filter="url(#glow)"
+                    />
+                  )}
+                  {/* Main connection line */}
+                  <line
+                    x1={node.position.x}
+                    y1={node.position.y}
+                    x2={targetNode.position.x}
+                    y2={targetNode.position.y}
+                    stroke={bothAllocated ? 'url(#metalGold)' : 'url(#metalBronze)'}
+                    strokeWidth={bothAllocated ? 2.5 : 1.5}
+                    strokeLinecap="round"
+                    opacity={bothAllocated ? 0.9 : 0.4}
+                  />
+                </g>
               );
             });
           })}
@@ -250,25 +314,45 @@ export default function PassiveTreeSVG({
                   <circle
                     cx={node.position.x}
                     cy={node.position.y}
-                    r={radius + 4}
-                    fill={color}
-                    opacity="0.3"
+                    r={radius + 6}
+                    fill={getNodeOuterGlow(node, isAllocated)}
+                    opacity="0.4"
                     filter="url(#glow)"
                   />
                 )}
 
-                {/* Node circle */}
+                {/* Background shadow circle */}
                 <circle
                   cx={node.position.x}
                   cy={node.position.y}
                   r={radius}
+                  fill="#000000"
+                  opacity="0.6"
+                />
+
+                {/* Node circle with gradient */}
+                <circle
+                  cx={node.position.x}
+                  cy={node.position.y}
+                  r={radius - 1}
                   fill={color}
-                  stroke={isHovered ? '#ffffff' : isAllocated ? '#ffffff' : 'rgba(255,255,255,0.5)'}
+                  stroke={isHovered ? '#ffffff' : isAllocated ? getNodeOuterGlow(node, isAllocated) : '#2a2a2a'}
                   strokeWidth={strokeWidth}
-                  opacity={isAllocated ? 1 : 0.7}
+                  opacity={isAllocated ? 1 : 0.6}
                   filter={isHovered ? 'url(#strongGlow)' : undefined}
                   className="transition-all duration-150"
                 />
+
+                {/* Inner highlight */}
+                {isAllocated && (
+                  <circle
+                    cx={node.position.x}
+                    cy={node.position.y - radius * 0.3}
+                    r={radius * 0.3}
+                    fill="#ffffff"
+                    opacity="0.3"
+                  />
+                )}
 
                 {/* Inner detail for special nodes */}
                 {node.isKeystone && (
