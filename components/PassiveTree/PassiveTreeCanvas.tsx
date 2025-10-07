@@ -104,7 +104,7 @@ export default function PassiveTreeCanvas({
 
   // Render tree
   useEffect(() => {
-    if (!canvasRef.current || !containerRef.current || !sprites || !treeData) return;
+    if (!canvasRef.current || !containerRef.current || !treeData) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
