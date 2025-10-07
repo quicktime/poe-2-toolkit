@@ -182,3 +182,48 @@ export interface SkillCalculationContext {
     endurance: number;
   };
 }
+
+// PoE2 v0.3 Combo System
+export interface ComboState {
+  currentPoints: number;
+  maxPoints: number;
+  damageMultiplier: number;
+  duration: number;
+  lastHitTime?: number;
+}
+
+// Trigger conditions for skill interactions
+export interface TriggerCondition {
+  type: 'onCrit' | 'onHit' | 'onKill' | 'onAilment' | 'onBlock' | 'periodic';
+  chance: number;
+  cooldown?: number;
+  ailmentType?: 'ignite' | 'shock' | 'freeze' | 'poison' | 'bleed';
+  lastTriggerTime?: number;
+}
+
+// Triggered skill setup
+export interface TriggeredSkill {
+  skill: SkillSetup;
+  condition: TriggerCondition;
+  spiritCost?: number;
+  effectiveDPS: number;
+}
+
+// Skill chain configuration
+export interface SkillChain {
+  skills: SkillSetup[];
+  executionType: 'sequential' | 'simultaneous';
+  totalDPS: number;
+  totalManaCost: number;
+  totalSpiritCost: number;
+}
+
+// Complete interaction output
+export interface InteractionOutput {
+  primarySkill: CalculatedSkill;
+  triggeredSkills: TriggeredSkill[];
+  comboState?: ComboState;
+  chain?: SkillChain;
+  totalEffectiveDPS: number;
+  spiritRequired: number;
+}
