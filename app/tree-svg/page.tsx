@@ -1,21 +1,22 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { passiveTreeService } from '@/lib/passiveTree/treeDataService';
+import type { PassiveTreeData } from '@/types/passiveTree';
 
 export default function TreeSVGPage() {
-  const [treeData, setTreeData] = useState<any>(null);
+  const [treeData, setTreeData] = useState<PassiveTreeData | null>(null);
   const [viewBox, setViewBox] = useState('-17000 -17000 34000 34000');
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
 
-  // Load tree data
+  // Load tree data using the service (which includes position calculations)
   useEffect(() => {
-    fetch('/data/poe2-tree-v0.3.json')
-      .then(res => res.json())
+    passiveTreeService.loadTreeData()
       .then(data => {
-        console.log('Tree data loaded');
+        console.log('Tree data loaded with calculated positions');
         setTreeData(data);
       })
       .catch(err => console.error('Failed to load tree data:', err));
